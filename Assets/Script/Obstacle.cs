@@ -18,7 +18,20 @@ public class Obstacle : MonoBehaviour
     {
         rb.velocity = Vector3.left * moveSpeed;
         //rb.AddForce(Vector2.left * moveSpeed,ForceMode2D.Force);
-
-
+    }
+    private void Ontrigin (Collision2D collision)
+    {
+        collision.gameObject.CompareTag("Player");
+        Debug.Log("test");
+        //Destroy();
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            Destroy(gameObject);
+        }
+        
+        
     }
 }
