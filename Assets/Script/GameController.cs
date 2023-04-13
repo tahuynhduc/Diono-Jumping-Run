@@ -1,37 +1,40 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using Unity.VisualScripting.Antlr3.Runtime;
+using UnityEditor.SearchService;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.SocialPlatforms.Impl;
+using UnityEngine.UI;
+
 
 public class GameController : MonoBehaviour
 {
     public GameObject cubePrefab;
-    public float test;
-    private float m_test;
-    // Update is called once per frame
+    public float timeSpawn;
+    private float spawn;
+
+    private void Start()
+    {
+        Time.timeScale = 1;
+    }
     void Update()
     {
         RandomObstacle();
-
-
-
-        //Vector2 test = new Vector2(Random.Range(12,14),-3);
-        //return;
-        //if(cubePrefab)
-        //{ 
-        //    var position = new Vector2(Random.Range(-10.0f, 10.0f), 0);
-        //    Instantiate(cubePrefab, position, Quaternion.identity);
-        //}
     }
 
-    private void RandomObstacle()
+    //trong 2s tao ra 1 obstacle
+    public void RandomObstacle()
     {
-        m_test -= Time.deltaTime;
-        if (m_test < 0)
+        spawn -= Time.deltaTime;
+        if (spawn <= 0)
         {
-            GameObject cube = Instantiate(cubePrefab, new Vector3(Random.Range(10, 10), -5, 0), Quaternion.identity);
-            Debug.Log(m_test);
-            m_test = test;
+            GameObject cube = Instantiate(cubePrefab, new Vector3(Random.Range(20, 20), -5.66f, 0), Quaternion.identity);
+            spawn = timeSpawn;
         }
     }
+    
+
+
 }

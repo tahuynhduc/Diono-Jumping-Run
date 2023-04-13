@@ -5,7 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ground
-  - Destroy
+  - Obstacle
+  - DestroyObstacle
+  - BestScoreUI
+  - Uimanager
+  - PlayerNormal
   layers:
   - Default
   - TransparentFX
