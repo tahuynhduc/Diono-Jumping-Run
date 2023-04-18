@@ -15,11 +15,17 @@ public class Uimanager : MonoBehaviour
     public GameObject GameoverButton;
     public Text scoreText;
     public Text bestScoreText;
+    SceneLoader test;
 
     private int score;
     private int bestScore;
     private bool gameOver = false;
     private bool pause = false;
+    private void Start()
+    {
+        test = FindObjectOfType<SceneLoader>();
+        LoadBestScore();
+    }
     void Update()
     {
         ShowBestScore();
@@ -58,17 +64,17 @@ public class Uimanager : MonoBehaviour
             bestScore = score;
             SaveBestScore();
         }
-        LoadBestScore();
     }
     void SaveBestScore()
     {
+        bestScoreText.text = "Best: " + bestScore;
         PlayerPrefs.SetInt("BestScore", bestScore);
         PlayerPrefs.Save();
     }
     void LoadBestScore()
     {
+        bestScore = PlayerPrefs.GetInt("BestScore", bestScore);
         bestScoreText.text = "Best: " + bestScore;
-        bestScore = PlayerPrefs.GetInt("BestScore", 0);
     }
     #endregion
 
@@ -87,7 +93,6 @@ public class Uimanager : MonoBehaviour
     public void replayButton()
     {
         SceneManager.LoadScene("GameplayEndless");
-        Time.timeScale = 1;
         gameOver = false;
         GameoverButton.SetActive(false);
         pausePanel.SetActive(false);

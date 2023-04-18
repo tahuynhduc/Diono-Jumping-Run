@@ -27,8 +27,9 @@ public class Obstacle : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            UiEndless.ShowGameOver();
             Time.timeScale = 0;
+            Debug.Log(Time.timeScale);
+            UiEndless.ShowGameOver();
         }
         else if (collision.gameObject.CompareTag("GameController"))
         {
