@@ -1,8 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.IO;
-using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -12,7 +7,7 @@ public class Uimanager : MonoBehaviour
 {
     public GameObject pausePanel;
     public GameObject pauseButton;
-    public GameObject GameoverButton;
+    public GameObject GameOverButton;
     public Text scoreText;
     public Text bestScoreText;
     SceneLoader test;
@@ -81,7 +76,7 @@ public class Uimanager : MonoBehaviour
     #region state gameplay endless
     public void ShowGameOver()
     {
-        GameoverButton.SetActive(true);
+        GameOverButton.SetActive(true);
         //Player1.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
         gameOver = true;
     }
@@ -94,7 +89,7 @@ public class Uimanager : MonoBehaviour
     {
         SceneManager.LoadScene("GameplayEndless");
         gameOver = false;
-        GameoverButton.SetActive(false);
+        GameOverButton.SetActive(false);
         pausePanel.SetActive(false);
         pause = false;
         zeroScore();
@@ -103,12 +98,10 @@ public class Uimanager : MonoBehaviour
     {
         Time.timeScale = 1;
         gameOver = false;
-        GameoverButton.SetActive(false);
+        GameOverButton.SetActive(false);
         pausePanel.SetActive(false);
         pause = false;
     }
-
-
     #endregion
 
   

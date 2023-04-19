@@ -1,10 +1,11 @@
 ﻿using UnityEngine;
-
+using UnityEngine.SocialPlatforms;
 
 public class GameControllerNormal : MonoBehaviour
 {
     public GameObject coins;
     public GameObject cubePrefab;
+    public GameObject player;
     public float timeSpawn;
     public float timeCoins;
     private float spawnCoins;
@@ -12,6 +13,7 @@ public class GameControllerNormal : MonoBehaviour
 
     private void Start()
     {
+        GameObject character = Instantiate(player, new Vector3(Random.Range(-10,-10),-5.5f,0),Quaternion.identity);
         Time.timeScale = 1;
     }
     void Update()
@@ -21,6 +23,7 @@ public class GameControllerNormal : MonoBehaviour
     }
 
     //trong 2s tao ra 1 obstacle
+   
     public void RandomObstacle()
     {
         spawn -= Time.deltaTime;

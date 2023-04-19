@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 3793632378484461547}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: PlayerNormal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -52,7 +52,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 3
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -71,8 +71,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.10928488, y: -0.48681396}
-  m_Size: {x: 1.0069196, y: 1.2851071}
+  m_Offset: {x: 0.10928488, y: -0.48516735}
+  m_Size: {x: 1.0069196, y: 1.2818143}
   m_Direction: 0
 --- !u!95 &3793632378484461557
 Animator:
@@ -150,7 +150,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: 4a587e1c913636f4c812f857e5aa6c84, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -174,4 +174,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3eaccb1c848ae8b4892ce8940d9a4c76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jump: 8
+  jump: 22

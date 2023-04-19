@@ -6,12 +6,12 @@ using UnityEngine;
 public class SettingMusic : MonoBehaviour
 {
     public static SettingMusic instance;
-    static AudioSource audioSource;
+    public AudioSource audioSource;
     private void Awake()
     {
         if (instance != null && instance != this)
         {
-            Destroy(this.gameObject);
+            Destroy(gameObject);
             return;
         }
         instance = this;

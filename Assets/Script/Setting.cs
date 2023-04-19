@@ -2,18 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class test : MonoBehaviour
+public class Setting : MonoBehaviour
 {
-    SettingMusic demo;
+    SettingMusic music;
     public GameObject OffMusicButton;
     public GameObject OnMusicButton;
-    Player player;
+    SettingMusic player;
     public GameObject OffSoundButton;
     public GameObject OnSoundButton;
     private void Start()
     {
-        demo = FindAnyObjectByType<SettingMusic>();
-        player = FindAnyObjectByType<Player>();
+        music = FindAnyObjectByType<SettingMusic>();
+        player = FindAnyObjectByType<SettingMusic>();
     }
     private void Update()
     {
@@ -21,13 +21,13 @@ public class test : MonoBehaviour
     }
     public void OffMusic()
     {
-        demo.OffMusic();
+        music.OffMusic();
         OffMusicButton.SetActive(false);
         OnMusicButton.SetActive(true);
     }
     public void OnMusic()
     {
-        demo.OnMusic();
+        music.OnMusic();
         OffMusicButton.SetActive(true);
         OnMusicButton.SetActive(false);
     }
