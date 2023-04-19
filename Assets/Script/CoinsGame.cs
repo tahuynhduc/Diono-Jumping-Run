@@ -7,13 +7,11 @@ public class CoinsGame : MonoBehaviour
     static Rigidbody2D coins;
     public float moveSpeed;
     SaveGame SaveGame;
-    UimanagerNormal Ui;
 
     // Start is called before the first frame update
     void Start()
     {
         coins = GetComponent<Rigidbody2D>();
-        Ui = FindObjectOfType<UimanagerNormal>();
     }
 
     void Update()

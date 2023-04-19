@@ -29,8 +29,10 @@ public class SaveGame : MonoBehaviour
     #region coins game
     public static void BuyCoins()
     {
-        PlayerPrefs.SetInt("coinsGame", coinsGame + 10);
+        coinsGame += 10;
+        PlayerPrefs.SetInt("coinsGame",coinsGame);
         PlayerPrefs.Save();
+        Debug.Log(coinsGame);
     }
     public static void SaveCoins()
     {

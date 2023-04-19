@@ -5,12 +5,14 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    AudioSource audio;
     Rigidbody2D rb;
     public float jump;
     private Animator animate;
     private bool checkJump;
     void Start()
     {
+        audio = GetComponent<AudioSource>();
         rb = GetComponent<Rigidbody2D>();
         animate = GetComponent<Animator>();
     }
@@ -19,6 +21,7 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && checkJump == true)
         {
             rb.velocity = Vector3.up * jump;
+            audio.Play();
         }
     }
     private void OnCollisionEnter2D(Collision2D collision)
@@ -41,6 +44,14 @@ public class Player : MonoBehaviour
                 animate.SetTrigger("Jump");
             }
         }
+    }
+    public void OffSound()
+    {
+        audio.Stop();
+    }
+    public void OnSound()
+    {
+        audio.Play();
     }
 }
 

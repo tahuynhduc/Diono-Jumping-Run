@@ -656,14 +656,14 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 648084963}
         m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
-        m_MethodName: LoadShop
-        m_Mode: 1
+        m_MethodName: LoadScene
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: ShopScene
+          m_StringArgument: StoreScene
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 648084963}
@@ -728,6 +728,63 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b110acd6c797c3f4fa2f68f418484129, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &703193714
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6475555169362891171, guid: 27a32269eb22a9c419efe0c3fbb3951e, type: 3}
+      propertyPath: m_Name
+      value: GameObject
+      objectReference: {fileID: 0}
+    - target: {fileID: 6475555169362891174, guid: 27a32269eb22a9c419efe0c3fbb3951e, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6475555169362891174, guid: 27a32269eb22a9c419efe0c3fbb3951e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6475555169362891174, guid: 27a32269eb22a9c419efe0c3fbb3951e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6475555169362891174, guid: 27a32269eb22a9c419efe0c3fbb3951e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6475555169362891174, guid: 27a32269eb22a9c419efe0c3fbb3951e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6475555169362891174, guid: 27a32269eb22a9c419efe0c3fbb3951e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6475555169362891174, guid: 27a32269eb22a9c419efe0c3fbb3951e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6475555169362891174, guid: 27a32269eb22a9c419efe0c3fbb3951e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6475555169362891174, guid: 27a32269eb22a9c419efe0c3fbb3951e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6475555169362891174, guid: 27a32269eb22a9c419efe0c3fbb3951e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6475555169362891174, guid: 27a32269eb22a9c419efe0c3fbb3951e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 27a32269eb22a9c419efe0c3fbb3951e, type: 3}
 --- !u!1 &855635775
 GameObject:
   m_ObjectHideFlags: 0
@@ -1552,14 +1609,14 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1489184208}
         m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
-        m_MethodName: LoadShop
-        m_Mode: 1
+        m_MethodName: LoadScene
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: ShopScene
+          m_StringArgument: StoreScene
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1489184208}

@@ -12,7 +12,6 @@ public class ShopController : MonoBehaviour
     public GameObject CharacterView;
     SaveGame SaveGame;
 
-    private bool checkBuy = false;
 
     private void Awake()
     {
@@ -20,7 +19,7 @@ public class ShopController : MonoBehaviour
     }
     void Start()
     {
-        CoinsText.text = "Coins:" + SaveGame.coinsGame;
+        SaveGame.LoadCoins();
         if (SaveGame.checkShop == 1)
         {
             ShowCoinsView();
@@ -30,12 +29,13 @@ public class ShopController : MonoBehaviour
             ShowCharacterView();
         }
     }
-    public void BuyCoins()
+    private void Update()
     {
         CoinsText.text = "Coins:" + SaveGame.coinsGame;
+    }
+    public void BuyCoins()
+    {
         SaveGame.BuyCoins();
-        SaveGame.LoadCoins();
-        checkBuy = true;
     }
     public void ShowCoinsView()
     {

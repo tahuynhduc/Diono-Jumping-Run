@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,12 +7,14 @@ using UnityEngine.UI;
 
 public class SceneLoader : MonoBehaviour
 {
-
     SaveGame SaveGame;
-    private void Start()
+    private void Awake()
     {
         SaveGame = FindObjectOfType<SaveGame>();
         Time.timeScale = 1.0f;
+    }
+    private void Start()
+    {
     }
    
     //public void LoadScene()
@@ -46,24 +49,10 @@ public class SceneLoader : MonoBehaviour
     {
         SaveGame.checkShop = 1;
         SaveGame.Check();
-        Debug.Log(SaveGame.checkShop);
     }
     public void Character()
     {
         SaveGame.checkShop = 2;
         SaveGame.Check();
-        Debug.Log(SaveGame.checkShop);
-    }
-    public void LoadShop()
-    {
-        SaveGame.Load();
-        if (SaveGame.checkShop == 1)
-        {
-            SceneManager.LoadScene("StoreScene");
-        }
-        if (SaveGame.checkShop == 2)
-        {
-            SceneManager.LoadScene("StoreScene");
-        }
     }
 }
