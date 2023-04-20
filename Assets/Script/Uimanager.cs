@@ -103,6 +103,4 @@ public class Uimanager : MonoBehaviour
         pause = false;
     }
     #endregion
-
-  
 }

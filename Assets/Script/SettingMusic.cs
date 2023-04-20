@@ -5,8 +5,9 @@ using UnityEngine;
 
 public class SettingMusic : MonoBehaviour
 {
-    public static SettingMusic instance;
-    public AudioSource audioSource;
+    static SettingMusic instance;
+    [SerializeField] AudioSource music;
+    [SerializeField] AudioSource sound;
     private void Awake()
     {
         if (instance != null && instance != this)
@@ -17,26 +18,27 @@ public class SettingMusic : MonoBehaviour
         instance = this;
         DontDestroyOnLoad(this);
     }
-    // Start is called before the first frame update
     void Start()
     {
-        audioSource = GetComponent<AudioSource>();
-        audioSource.clip = Resources.Load<AudioClip>("audio/AudioManager/MusicGame");
-        audioSource.Play();
-        audioSource.loop = true;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        sound.clip = Resources.Load<AudioClip>("audio/AudioManager/JumpAudio");
+        music.clip = Resources.Load<AudioClip>("audio/AudioManager/MusicGame");
+        music.Play();
+        music.loop = true;
     }
     public void OffMusic()
     {
-        audioSource.Stop();
+        music.Stop();
     }
     public void OnMusic()
     {
-        audioSource.Play();
+        music.Play();
+    }
+    public void OffSound()
+    {
+        sound.Stop();
+    }
+    public void OnSound()
+    {
+        sound.Play();
     }
 }

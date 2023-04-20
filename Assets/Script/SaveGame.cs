@@ -45,5 +45,4 @@ public class SaveGame : MonoBehaviour
         coinsGame = PlayerPrefs.GetInt("coinsGame", 0);
     }
     #endregion
-
 }
