@@ -1961,6 +1961,7 @@ MonoBehaviour:
   VictoriPanel: {fileID: 1877180138}
   CoinsText: {fileID: 648909742}
   Slider: {fileID: 1040019634}
+  checkLevel: 0
   Timedown: 20
 --- !u!114 &956667651
 MonoBehaviour:
@@ -2268,10 +2269,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 283461508}
   m_HandleRect: {fileID: 1653656512}
   m_Direction: 0
-  m_MinValue: 0
-  m_MaxValue: 0.03
+  m_MinValue: 10
+  m_MaxValue: 20
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 20
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []

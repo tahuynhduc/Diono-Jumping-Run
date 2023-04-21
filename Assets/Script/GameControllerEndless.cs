@@ -3,7 +3,7 @@
 
 public class GameControllerEndless : MonoBehaviour
 {
-    public GameObject coins;
+    GameObject player;
     public GameObject cubePrefab;
     public float timeSpawn;
     private float spawn;
@@ -11,6 +11,7 @@ public class GameControllerEndless : MonoBehaviour
     private void Start()
     {
         Time.timeScale = 1;
+        GameObject character = Instantiate(Resources.Load<GameObject>("Prefab/Player"), new Vector3(Random.Range(-13, -13), -5.5f, 0), Quaternion.identity) ;
     }
     void Update()
     {

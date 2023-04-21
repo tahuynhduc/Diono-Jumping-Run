@@ -13,7 +13,7 @@ public class GameControllerNormal : MonoBehaviour
 
     private void Start()
     {
-        GameObject character = Instantiate(player, new Vector3(Random.Range(-10,-10),-5.5f,0),Quaternion.identity);
+        GameObject character = Instantiate(player, new Vector3(Random.Range(-14,-14),-5.5f,0),Quaternion.identity);
         Time.timeScale = 1;
     }
     void Update()

@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class CoinsGame : MonoBehaviour
 {
-    static Rigidbody2D coins;
+    UimanagerNormal ui;
+    Rigidbody2D coins;
     public float moveSpeed;
     SaveGame SaveGame;
 
     // Start is called before the first frame update
     void Start()
     {
+        ui = FindAnyObjectByType<UimanagerNormal>();
         coins = GetComponent<Rigidbody2D>();
     }
 
@@ -20,7 +22,7 @@ public class CoinsGame : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("PlayerNormal"))
+        if (collision.gameObject.CompareTag("Player"))
         {
             SaveGame.SaveCoins();
             Destroy(gameObject);

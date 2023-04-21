@@ -15,16 +15,27 @@ public class UimanagerNormal : MonoBehaviour
     public Slider Slider;
     SaveGame SaveGame;
 
+    public float checkLevel;
     public float Timedown;
     private bool gameOver = false;
     private bool pause = false;
     // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
         Time.timeScale = 1;
         SaveGame.LoadCoins();
-        Slider.maxValue = 5;
-        Slider.value = 5;
+        checkLevel = PlayerPrefs.GetFloat("checkLevel", checkLevel);
+        Debug.Log(checkLevel);
+        Slider.maxValue = checkLevel;
+        Slider.value = checkLevel;
+
+    }
+    void Start()
+    {
+        Debug.Log(Slider.value);
+        Debug.Log(Slider.maxValue);
+        PlayerPrefs.SetFloat("checkLevel",checkLevel);
+        PlayerPrefs.Save();
     }
 
     void Update()
@@ -81,10 +92,11 @@ public class UimanagerNormal : MonoBehaviour
     }
     public void NextButton()
     {
-        Slider.maxValue += 5;
-        Slider.value = Slider.maxValue;
-        VictoriPanel.SetActive(false);
+        SceneManager.LoadScene("GameplayNormal");
+        checkLevel +=20;
         Time.timeScale = 1;
+        PlayerPrefs.SetFloat("checkLevel", checkLevel);
+        PlayerPrefs.Save();
     }
     #endregion
 }

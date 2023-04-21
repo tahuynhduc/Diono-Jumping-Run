@@ -23,7 +23,6 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && checkJump == true)
         {
             rb.velocity = Vector3.up * jump;
-            Debug.Log(checkSound);
             if(checkSound == 2)
             {
                 music.OnSound();
@@ -55,6 +54,13 @@ public class Player : MonoBehaviour
             }
         }
     }
+    //private void OnTriggerEnter2D(Collider2D collision)
+    //{
+    //    if (collision.gameObject.CompareTag("Obstacle"))
+    //    {
+
+    //    }
+    //}
 }
 
 
