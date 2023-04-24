@@ -15,7 +15,12 @@ public class UimanagerNormal : MonoBehaviour
     public Slider Slider;
     SaveGame SaveGame;
 
-    public float checkLevel;
+    int checkMap;
+    float unlockState;
+    float unlockStateDesert;
+    float unlockStateGraveyard;
+    float unlockStateSnow;
+    public float valueSlider;
     public float Timedown;
     private bool gameOver = false;
     private bool pause = false;
@@ -24,18 +29,19 @@ public class UimanagerNormal : MonoBehaviour
     {
         Time.timeScale = 1;
         SaveGame.LoadCoins();
-        checkLevel = PlayerPrefs.GetFloat("checkLevel", checkLevel);
-        Debug.Log(checkLevel);
-        Slider.maxValue = checkLevel;
-        Slider.value = checkLevel;
+        unlockState = PlayerPrefs.GetFloat("unlockState", unlockState);
+        unlockStateDesert = PlayerPrefs.GetFloat("unlockStateDesert", unlockStateDesert);
+        unlockStateGraveyard = PlayerPrefs.GetFloat("unlockStateGraveyard", unlockStateGraveyard);
+        unlockStateSnow = PlayerPrefs.GetFloat("unlockStateSnow", unlockStateSnow);
+        valueSlider = PlayerPrefs.GetFloat("valueSlider", valueSlider);
+        checkMap = PlayerPrefs.GetInt("checkmap", checkMap);
+        Slider.maxValue = valueSlider;
+        Slider.value = valueSlider;
+        Slider.minValue = 0;
 
     }
     void Start()
     {
-        Debug.Log(Slider.value);
-        Debug.Log(Slider.maxValue);
-        PlayerPrefs.SetFloat("checkLevel",checkLevel);
-        PlayerPrefs.Save();
     }
 
     void Update()
@@ -59,7 +65,7 @@ public class UimanagerNormal : MonoBehaviour
     }
     public void ShowCoinsText()
     {
-        CoinsText.text = "Coins:" + SaveGame.coinsGame;
+        CoinsText.text = SaveGame.coinsGame.ToString();
     }
     #region state game
    
@@ -93,10 +99,31 @@ public class UimanagerNormal : MonoBehaviour
     public void NextButton()
     {
         SceneManager.LoadScene("GameplayNormal");
-        checkLevel +=20;
-        Time.timeScale = 1;
-        PlayerPrefs.SetFloat("checkLevel", checkLevel);
-        PlayerPrefs.Save();
+        valueSlider += 20;
+        if(checkMap == 1 && unlockState < valueSlider)
+        {
+            unlockState = valueSlider;
+            PlayerPrefs.SetFloat("unlockState", unlockState);
+            PlayerPrefs.Save();
+        }
+        if(checkMap == 2 && unlockStateDesert < valueSlider)
+        {
+            unlockStateDesert = valueSlider;
+            PlayerPrefs.SetFloat("unlockStateDesert", unlockStateDesert);
+            PlayerPrefs.Save();
+        }
+        if (checkMap == 3 && unlockStateGraveyard < valueSlider)
+        {
+            unlockStateGraveyard = valueSlider;
+            PlayerPrefs.SetFloat("unlockStateGraveyard", unlockStateGraveyard);
+            PlayerPrefs.Save();
+        }
+        if (checkMap == 4 && unlockStateSnow < valueSlider)
+        {
+            unlockStateSnow = valueSlider;
+            PlayerPrefs.SetFloat("unlockStateSnow", unlockStateSnow);
+            PlayerPrefs.Save();
+        }
     }
     #endregion
 }

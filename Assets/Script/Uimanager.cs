@@ -76,6 +76,7 @@ public class Uimanager : MonoBehaviour
     #region state gameplay endless
     public void ShowGameOver()
     {
+        Time.timeScale = 0;
         GameOverPanel.SetActive(true);
         //Player1.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
         gameOver = true;
@@ -93,6 +94,7 @@ public class Uimanager : MonoBehaviour
         pausePanel.SetActive(false);
         pause = false;
         zeroScore();
+        Time.timeScale = 1;
     }
     public void continueButton()
     {

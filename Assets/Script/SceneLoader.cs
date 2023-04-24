@@ -11,7 +11,7 @@ public class SceneLoader : MonoBehaviour
     private void Awake()
     {
         SaveGame = FindObjectOfType<SaveGame>();
-        Time.timeScale = 1.0f;
+        
     }
     private void Start()
     {
@@ -22,6 +22,7 @@ public class SceneLoader : MonoBehaviour
     {
         //GAME_SCENE scene = GAME_SCENE.ShopScene;
         SceneManager.LoadScene(scene);
+        Time.timeScale = 1.0f;
     }
     public void Endless()
     {

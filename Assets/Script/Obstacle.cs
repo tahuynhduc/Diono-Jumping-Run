@@ -28,10 +28,10 @@ public class Obstacle : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            Debug.Log(Time.timeScale);
             Time.timeScale = 0;
+            Debug.Log(Time.timeScale);
             UiEndless.ShowGameOver();
-            UiNormal.ShowGameOver();
+            //UiNormal.ShowGameOver();
         }
         else if (collision.gameObject.CompareTag("GameController"))
         {
