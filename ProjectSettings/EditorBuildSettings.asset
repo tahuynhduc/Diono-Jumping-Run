@@ -6,30 +6,30 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
+    path: Assets/Resources/Scenes/MainMenu.unity
     guid: e31344b01ea564747b81768ae6835edb
   - enabled: 1
-    path: Assets/Scenes/GameplayEndless.unity
+    path: Assets/Resources/Scenes/GameplayEndless.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/GameplayNormal.unity
+    path: Assets/Resources/Scenes/GameplayNormal.unity
     guid: 939259c0e60cfb84c8bbbc5d11d90277
   - enabled: 1
-    path: Assets/Scenes/MoreScene.unity
+    path: Assets/Resources/Scenes/MoreScene.unity
     guid: 786faaae05e95674f8d39592b52611cd
   - enabled: 1
-    path: Assets/Scenes/SelectLevel.unity
+    path: Assets/Resources/Scenes/SelectLevel.unity
     guid: a49992ad6dc4578478dbda8fa22d8f69
   - enabled: 1
-    path: Assets/Scenes/SelectMap.unity
+    path: Assets/Resources/Scenes/SelectMap.unity
     guid: 19995ec8009dfcc49985398baa15ae92
   - enabled: 1
-    path: Assets/Scenes/SelectMode.unity
+    path: Assets/Resources/Scenes/SelectMode.unity
     guid: e72b418be7f8fc64ea4dd3a196918886
   - enabled: 1
-    path: Assets/Scenes/SettingScene.unity
+    path: Assets/Resources/Scenes/SettingScene.unity
     guid: 61e155a0a0c440549a4a25ae0f945994
   - enabled: 1
-    path: Assets/Scenes/StoreScene.unity
+    path: Assets/Resources/Scenes/StoreScene.unity
     guid: 3ed579dcce4355f4aa0e2d5ce65c7d61
   m_configObjects: {}
