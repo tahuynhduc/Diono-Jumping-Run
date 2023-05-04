@@ -27,12 +27,11 @@ public class SaveGame : MonoBehaviour
         checkShop = PlayerPrefs.GetInt("checkShop", 0);
     }
     #region coins game
-    public static void BuyCoins()
+    public static void BuyCoins(int value)
     {
-        coinsGame += 10;
+        coinsGame += value;
         PlayerPrefs.SetInt("coinsGame",coinsGame);
         PlayerPrefs.Save();
-        Debug.Log(coinsGame);
     }
     public static void SaveCoins()
     {

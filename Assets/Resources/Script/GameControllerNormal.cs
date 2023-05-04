@@ -8,39 +8,59 @@ public class GameControllerNormal : MonoBehaviour
     public float timeCoins;
     private float spawnCoins;
     private float spawn;
+    int check;
 
     private void Awake()
     {
         checkmap = PlayerPrefs.GetInt("checkmap", 0);
+        check = PlayerPrefs.GetInt("checkCharacter", 1);
     }
     private void Start()
     {
         checkMap();
-        GameObject characterOne = Instantiate(Resources.Load<GameObject>("Prefab/Character/Dino01_Sprite"), new Vector3(Random.Range(-13.5f, -13.5f), 7f, 0), Quaternion.identity);
-        GameObject characterTwo = Instantiate(Resources.Load<GameObject>("Prefab/Character/Dino02_Sprite"), new Vector3(Random.Range(-12.37f, -12.37f), 7f, 0), Quaternion.identity);
-        GameObject characterThree = Instantiate(Resources.Load<GameObject>("Prefab/Character/Dino03_Sprite"), new Vector3(Random.Range(-12.7f, -12.7f), 7f, 0), Quaternion.identity);
-        GameObject characterFor = Instantiate(Resources.Load<GameObject>("Prefab/Character/Dino04_Sprite"), new Vector3(Random.Range(-12.74917f, -12.74917f), 7f, 0), Quaternion.identity);
-        GameObject characterFive = Instantiate(Resources.Load<GameObject>("Prefab/Character/Dino05_Sprite"), new Vector3(Random.Range(-12.55422f, -12.55422f), 7f, 0), Quaternion.identity);
-        GameObject characterSix = Instantiate(Resources.Load<GameObject>("Prefab/Character/Dino06_Sprite"), new Vector3(Random.Range(-12.35927f, -12.35927f), -7f, 0), Quaternion.identity);
+        if (check == 1)
+        {
+            GameObject characterOne = Instantiate(Resources.Load<GameObject>("Prefab/Character/Dino01_Sprite"), new Vector3(Random.Range(-13.5f, -13.5f), 7f, 0), Quaternion.identity);
+        }
+        if (check == 2)
+        {
+            GameObject characterTwo = Instantiate(Resources.Load<GameObject>("Prefab/Character/Dino02_Sprite"), new Vector3(Random.Range(-12.37f, -12.37f), 7f, 0), Quaternion.identity);
+        }
+        if (check == 3)
+        {
+            GameObject characterThree = Instantiate(Resources.Load<GameObject>("Prefab/Character/Dino03_Sprite"), new Vector3(Random.Range(-12.7f, -12.7f), 7f, 0), Quaternion.identity);
+        }
+        if (check == 4)
+        {
+            GameObject characterFor = Instantiate(Resources.Load<GameObject>("Prefab/Character/Dino04_Sprite"), new Vector3(Random.Range(-12.74917f, -12.74917f), 7f, 0), Quaternion.identity);
+        }
+        if (check == 5)
+        {
+            GameObject characterFive = Instantiate(Resources.Load<GameObject>("Prefab/Character/Dino05_Sprite"), new Vector3(Random.Range(-12.55422f, -12.55422f), 7f, 0), Quaternion.identity);
+        }
+        if (check == 6)
+        {
+            GameObject characterSix = Instantiate(Resources.Load<GameObject>("Prefab/Character/Dino06_Sprite"), new Vector3(Random.Range(-12.35927f, -12.35927f), -7f, 0), Quaternion.identity);
+        }
     }
 
     private void checkMap()
     {
         if (checkmap == 1)
         {
-            GameObject ParallaxDesert = Instantiate(Resources.Load<GameObject>("Prefab/ParallaxForest"), new Vector3(Random.Range(0, 0), 0, 0), Quaternion.identity);
+            GameObject ParallaxForest = Instantiate(Resources.Load<GameObject>("Prefab/Parallax/ParallaxForest"), new Vector3(Random.Range(0, 0), 0, 0), Quaternion.identity);
         }
         if (checkmap == 2)
         {
-            GameObject ParallaxDesert = Instantiate(Resources.Load<GameObject>("Prefab/ParallaxDesert"), new Vector3(Random.Range(0, 0), -1.1f, 0), Quaternion.identity);
+            GameObject ParallaxDesert = Instantiate(Resources.Load<GameObject>("Prefab/Parallax/ParallaxDesert"), new Vector3(Random.Range(0, 0), -1.1f, 0), Quaternion.identity);
         }
         if (checkmap == 3)
         {
-            GameObject ParallaxGraveyard = Instantiate(Resources.Load<GameObject>("Prefab/ParallaxGraveyard"), new Vector3(Random.Range(0, 0), 0, 0), Quaternion.identity);
+            GameObject ParallaxGraveyard = Instantiate(Resources.Load<GameObject>("Prefab/Parallax/ParallaxGraveyard"), new Vector3(Random.Range(0, 0), 0, 0), Quaternion.identity);
         }
         if (checkmap == 4)
         {
-            GameObject ParallaxSnow = Instantiate(Resources.Load<GameObject>("Prefab/ParallaxSnow"), new Vector3(Random.Range(0, 0), 0, 0), Quaternion.identity);
+            GameObject ParallaxSnow = Instantiate(Resources.Load<GameObject>("Prefab/Parallax/ParallaxSnow"), new Vector3(Random.Range(0, 0), 0, 0), Quaternion.identity);
         }
     }
 

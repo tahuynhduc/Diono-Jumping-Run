@@ -6,24 +6,41 @@ public class GameControllerEndless : MonoBehaviour
     int checkmap;
     public float timeSpawn;
     private float spawn;
-
+    int check;
     private void Awake()
     {
         checkmap = PlayerPrefs.GetInt("checkmap", 0);
+        check = PlayerPrefs.GetInt("checkCharacter", 1);
         Debug.Log(checkmap);
     }
     private void Start()
     {
         spawn = 2;
         CheckMap();
-        GameObject characterOne = Instantiate(Resources.Load<GameObject>("Prefab/Character/Dino01_Sprite"), new Vector3(Random.Range(-13.5f, -13.5f), 7f, 0), Quaternion.identity);
-        GameObject characterTwo = Instantiate(Resources.Load<GameObject>("Prefab/Character/Dino02_Sprite"), new Vector3(Random.Range(-12.37f, -12.37f), 7f, 0), Quaternion.identity);
-        GameObject characterThree = Instantiate(Resources.Load<GameObject>("Prefab/Character/Dino03_Sprite"), new Vector3(Random.Range(-12.7f, -12.7f), 7f, 0), Quaternion.identity);
-        GameObject characterFor = Instantiate(Resources.Load<GameObject>("Prefab/Character/Dino04_Sprite"), new Vector3(Random.Range(-12.74917f, -12.74917f), 7f, 0), Quaternion.identity);
-        GameObject characterFive = Instantiate(Resources.Load<GameObject>("Prefab/Character/Dino05_Sprite"), new Vector3(Random.Range(-12.55422f, -12.55422f), 7f, 0), Quaternion.identity);
-        GameObject characterSix = Instantiate(Resources.Load<GameObject>("Prefab/Character/Dino06_Sprite"), new Vector3(Random.Range(-12.35927f, -12.35927f), -7f, 0), Quaternion.identity);
-
-
+        if (check == 1)
+        {
+            GameObject characterOne = Instantiate(Resources.Load<GameObject>("Prefab/Character/Dino01_Sprite"), new Vector3(Random.Range(-13.5f, -13.5f), 7f, 0), Quaternion.identity);
+        }
+        if (check == 2)
+        {
+            GameObject characterTwo = Instantiate(Resources.Load<GameObject>("Prefab/Character/Dino02_Sprite"), new Vector3(Random.Range(-12.37f, -12.37f), 7f, 0), Quaternion.identity);
+        }
+        if (check == 3)
+        {
+            GameObject characterThree = Instantiate(Resources.Load<GameObject>("Prefab/Character/Dino03_Sprite"), new Vector3(Random.Range(-12.7f, -12.7f), 7f, 0), Quaternion.identity);
+        }
+        if (check == 4)
+        {
+            GameObject characterFor = Instantiate(Resources.Load<GameObject>("Prefab/Character/Dino04_Sprite"), new Vector3(Random.Range(-12.74917f, -12.74917f), 7f, 0), Quaternion.identity);
+        }
+        if (check == 5)
+        {
+            GameObject characterFive = Instantiate(Resources.Load<GameObject>("Prefab/Character/Dino05_Sprite"), new Vector3(Random.Range(-12.55422f, -12.55422f), 7f, 0), Quaternion.identity);
+        }
+        if (check == 6)
+        {
+            GameObject characterSix = Instantiate(Resources.Load<GameObject>("Prefab/Character/Dino06_Sprite"), new Vector3(Random.Range(-12.35927f, -12.35927f), -7f, 0), Quaternion.identity);
+        }
     }
 
     private void CheckMap()

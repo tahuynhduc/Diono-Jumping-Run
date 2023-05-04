@@ -23,11 +23,11 @@ public class ShopController : MonoBehaviour
         SaveGame.LoadCoins();
         if (SaveGame.checkShop == 1)
         {
-            //ShowCoinsView();
+            ShowCoinsView();
         }
         if (SaveGame.checkShop == 2)
         {
-            //ShowCharacterView();
+            ShowCharacterView();
         }
     }
     private void Update()
@@ -35,9 +35,9 @@ public class ShopController : MonoBehaviour
         CoinsText.fontStyle = FontStyles.Bold;
         CoinsText.text = SaveGame.coinsGame.ToString();
     }
-    public void BuyCoins()
+    public void BuyCoins(int value)
     {
-        SaveGame.BuyCoins();
+        SaveGame.BuyCoins(value);
     }
     public void ShowCoinsView()
     {

@@ -2494,7 +2494,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 470405708}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1497658425}
+        m_TargetAssemblyTypeName: ShopController, Assembly-CSharp
+        m_MethodName: BuyCoins
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 500
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &470405708
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3824,7 +3836,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 715607492}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1497658425}
+        m_TargetAssemblyTypeName: ShopController, Assembly-CSharp
+        m_MethodName: BuyCoins
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2500
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &715607492
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6329,7 +6353,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1320237469}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1497658425}
+        m_TargetAssemblyTypeName: ShopController, Assembly-CSharp
+        m_MethodName: BuyCoins
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 4000
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1320237469
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6823,7 +6859,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1488392024}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1497658425}
+        m_TargetAssemblyTypeName: ShopController, Assembly-CSharp
+        m_MethodName: BuyCoins
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1200
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1488392024
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7337,7 +7385,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1586746119}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1497658425}
+        m_TargetAssemblyTypeName: ShopController, Assembly-CSharp
+        m_MethodName: BuyCoins
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 250
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1586746119
 MonoBehaviour:
   m_ObjectHideFlags: 0
