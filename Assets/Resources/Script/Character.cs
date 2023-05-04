@@ -21,6 +21,7 @@ public class Character : MonoBehaviour
     [SerializeField] GameObject SelectedCharacterSeven;
     void Start()
     {
+        Debug.Log("test");
         check = PlayerPrefs.GetInt("checkCharacter",1);
     }
     void Update()

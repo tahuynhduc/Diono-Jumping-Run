@@ -38,6 +38,7 @@ public class UimanagerNormal : MonoBehaviour
         Slider.maxValue = valueSlider;
         Slider.value = valueSlider;
         Slider.minValue = 0;
+        Debug.Log(valueSlider);
 
     }
     void Start()
@@ -100,7 +101,9 @@ public class UimanagerNormal : MonoBehaviour
     {
         SceneManager.LoadScene("GameplayNormal");
         valueSlider += 20;
-        if(checkMap == 1 && unlockState < valueSlider)
+        PlayerPrefs.SetFloat("valueSlider", valueSlider);
+        PlayerPrefs.Save();
+        if (checkMap == 1 && unlockState < valueSlider)
         {
             unlockState = valueSlider;
             PlayerPrefs.SetFloat("unlockState", unlockState);

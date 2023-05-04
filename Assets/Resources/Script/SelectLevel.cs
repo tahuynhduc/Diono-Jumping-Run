@@ -30,7 +30,12 @@ public class SelectLevel : MonoBehaviour
     }
     void Start()
     {
-        if(checkMap == 1)
+        State();
+    }
+
+    private void State()
+    {
+        if (checkMap == 1)
         {
             if (unlockState <= 20)
             {
@@ -51,7 +56,7 @@ public class SelectLevel : MonoBehaviour
         }
         if (checkMap == 2)
         {
-            if(unlockState <= 100)
+            if (unlockState < 100)
             {
                 levelOne.interactable = false;
             }
@@ -74,7 +79,7 @@ public class SelectLevel : MonoBehaviour
         }
         if (checkMap == 3)
         {
-            if (unlockStateDesert <= 100)
+            if (unlockStateDesert < 100)
             {
                 levelOne.interactable = false;
             }
@@ -97,7 +102,7 @@ public class SelectLevel : MonoBehaviour
         }
         if (checkMap == 4)
         {
-            if (unlockStateGraveyard <= 100)
+            if (unlockStateGraveyard < 100)
             {
                 levelOne.interactable = false;
             }
@@ -118,10 +123,6 @@ public class SelectLevel : MonoBehaviour
                 levelFive.interactable = false;
             }
         }
-    }
-    void Update()
-    {
-        
     }
     public void checkLevelOne()
     {

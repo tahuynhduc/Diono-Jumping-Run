@@ -9,6 +9,7 @@ public class Obstacle : MonoBehaviour
     public float moveSpeed;
     Uimanager UiEndless;
     UimanagerNormal UiNormal;
+    SaveGame saveGame;
 
     
     // Start is called before the first frame update
@@ -30,18 +31,22 @@ public class Obstacle : MonoBehaviour
         {
             Time.timeScale = 0;
             Debug.Log(Time.timeScale);
-            UiEndless.ShowGameOver();
-            //UiNormal.ShowGameOver();
+            if(SaveGame.checkSaveMap == 1)
+            {
+                UiEndless.ShowGameOver();
+            }
+            else
+                UiNormal.ShowGameOver();
         }
         else if (collision.gameObject.CompareTag("GameController"))
         {
             UiEndless.ShowScore();
             Destroy(gameObject);
         }
-        //else if (collision.gameObject.CompareTag("DestroyObstacle"))
-        //{
-        //    Destroy(gameObject);
-        //}
+        else if (collision.gameObject.CompareTag("DestroyObstacle"))
+        {
+            Destroy(gameObject);
+        }
     }
   
 
