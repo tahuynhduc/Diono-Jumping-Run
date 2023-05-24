@@ -10,14 +10,17 @@ public class Obstacle : MonoBehaviour
     Uimanager UiEndless;
     UimanagerNormal UiNormal;
     SaveGame saveGame;
+    InterstitialAdExample interstitialAdExample;
 
-    
+
     // Start is called before the first frame update
+    
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         UiEndless = Uimanager.FindObjectOfType<Uimanager>();
         UiNormal = UimanagerNormal.FindObjectOfType<UimanagerNormal>();
+        interstitialAdExample = FindAnyObjectByType<InterstitialAdExample>();
     }
 
     // Update is called once per frame
@@ -33,10 +36,14 @@ public class Obstacle : MonoBehaviour
             Debug.Log(Time.timeScale);
             if(SaveGame.checkSaveMap == 1)
             {
+                interstitialAdExample.ShowAd();
                 UiEndless.ShowGameOver();
             }
             else
+            {
+                interstitialAdExample.ShowAd();
                 UiNormal.ShowGameOver();
+            }
         }
         else if (collision.gameObject.CompareTag("GameController"))
         {
