@@ -3,6 +3,7 @@ using GooglePlayGames;
 using UnityEngine;
 using UnityEngine.SocialPlatforms;
 using Mono.Cecil.Cil;
+using System;
 
 public class InitializePlayGamesLogin : MonoBehaviour
 {
@@ -33,5 +34,17 @@ public class InitializePlayGamesLogin : MonoBehaviour
                 Debug.Log(code);
             }
         });
+    }
+    public void ShowLeaderboard()
+    {
+        Social.ShowLeaderboardUI();
+    }
+    public void ShowAchiverment()
+    {
+        Social.ShowAchievementsUI();
+    }
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 }

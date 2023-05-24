@@ -70,9 +70,9 @@
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Editor\PlasticSCM\UI\Tree\TableViewOperations.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Editor\PlasticSCM\Views\History\HistorySelection.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Editor\PlasticSCM\Gluon\UpdateReport\UpdateReportListHeaderState.cs" />
-    <Compile Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Editor\PlasticSCM\UI\PlasticDialog.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Editor\PlasticSCM\Inspector\DrawInspectorOperations.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Editor\PlasticSCM\UI\Tree\TreeHeaderColumns.cs" />
+    <Compile Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Editor\PlasticSCM\UI\PlasticDialog.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Editor\PlasticSCM\UI\MeasureMaxWidth.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Editor\PlasticSCM\WebApi\ChangesetFromCollabCommitResponse.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Editor\PlasticSCM\Views\IncomingChanges\Gluon\Errors\ErrorListViewItem.cs" />
@@ -187,8 +187,8 @@
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Editor\PlasticSCM\UI\DrawUserIcon.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Editor\PlasticSCM\Configuration\CredentialsDialog.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Editor\PlasticSCM\UI\ScreenResolution.cs" />
-    <Compile Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Editor\PlasticSCM\AssetOverlays\Cache\BuildPathDictionary.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Editor\PlasticSCM\Inspector\InspectorAssetSelection.cs" />
+    <Compile Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Editor\PlasticSCM\AssetOverlays\Cache\BuildPathDictionary.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Editor\PlasticSCM\Views\CreateWorkspace\Dialogs\RepositoriesListView.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Editor\PlasticSCM\AssemblyInfo.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Editor\PlasticSCM\Tool\ToolConstants.cs" />
@@ -1052,13 +1052,13 @@
       <Project>{384D07D3-3FAA-5280-123F-49FD5DBC74E7}</Project>
       <Name>UnityEngine.UI</Name>
     </ProjectReference>
-    <ProjectReference Include="UnityEngine.TestRunner.csproj">
-      <Project>{879EA1D3-F205-5694-1E94-B548A5E40EFD}</Project>
-      <Name>UnityEngine.TestRunner</Name>
-    </ProjectReference>
     <ProjectReference Include="UnityEditor.TestRunner.csproj">
       <Project>{FDEE39E5-97FF-03B9-CC1A-6E5E4E73669A}</Project>
       <Name>UnityEditor.TestRunner</Name>
+    </ProjectReference>
+    <ProjectReference Include="UnityEngine.TestRunner.csproj">
+      <Project>{879EA1D3-F205-5694-1E94-B548A5E40EFD}</Project>
+      <Name>UnityEngine.TestRunner</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

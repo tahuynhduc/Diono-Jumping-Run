@@ -57,26 +57,52 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Script\CoinsGame.cs" />
+    <Compile Include="Assets\GooglePlayGames\BasicApi\Events\Event.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SkewTextExample.cs" />
+    <Compile Include="Assets\GooglePlayGames\BasicApi\SavedGame\ISavedGameMetadata.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SimpleScript.cs" />
     <Compile Include="Assets\Script\Obstacle.cs" />
+    <Compile Include="Assets\GooglePlayGames\ISocialPlatform\PlayGamesAchievement.cs" />
+    <Compile Include="Assets\GooglePlayGames\BasicApi\Nearby\INearbyConnectionClient.cs" />
+    <Compile Include="Assets\GooglePlayGames\BasicApi\CommonStatusCodes.cs" />
+    <Compile Include="Assets\GooglePlayGames\BasicApi\SignInStatus.cs" />
+    <Compile Include="Assets\GooglePlayGames\BasicApi\Achievement.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_A.cs" />
     <Compile Include="Assets\Script\SceneLoader.cs" />
+    <Compile Include="Assets\GooglePlayGames\Platforms\Android\AndroidNearbyConnectionClient.cs" />
+    <Compile Include="Assets\GooglePlayGames\BasicApi\Video\IVideoClient.cs" />
+    <Compile Include="Assets\GooglePlayGames\ISocialPlatform\PlayGamesScore.cs" />
     <Compile Include="Assets\Script\GAME_SCENE.cs" />
+    <Compile Include="Assets\GooglePlayGames\Platforms\Android\AndroidSavedGameClient.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeA.cs" />
+    <Compile Include="Assets\GooglePlayGames\BasicApi\PlayGamesClientConfiguration.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark04.cs" />
     <Compile Include="Assets\Script\ShopController.cs" />
     <Compile Include="Assets\Script\GameControllerEndless.cs" />
+    <Compile Include="Assets\GooglePlayGames\OurUtils\Logger.cs" />
+    <Compile Include="Assets\GooglePlayGames\BasicApi\Nearby\AdvertisingResult.cs" />
+    <Compile Include="Assets\GooglePlayGames\BasicApi\Video\VideoCaptureState.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ChatController.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshProFloatingText.cs" />
+    <Compile Include="Assets\GooglePlayGames\BasicApi\SignInInteractivity.cs" />
+    <Compile Include="Assets\GooglePlayGames\OurUtils\Misc.cs" />
+    <Compile Include="Assets\GooglePlayGames\BasicApi\SavedGame\SavedGameMetadataUpdate.cs" />
+    <Compile Include="Assets\GooglePlayGames\Platforms\Android\AndroidHelperFragment.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeB.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\EnvMapAnimator.cs" />
     <Compile Include="Assets\Script\SettingMusic.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_UiFrameRateCounter.cs" />
+    <Compile Include="Assets\Script\InitializePlayGamesLogin.cs" />
+    <Compile Include="Assets\GooglePlayGames\BasicApi\SavedGame\ISavedGameClient.cs" />
     <Compile Include="Assets\Script\Setting.cs" />
+    <Compile Include="Assets\GooglePlayGames\ISocialPlatform\PlayGamesLeaderboard.cs" />
+    <Compile Include="Assets\GPGSIds.cs" />
+    <Compile Include="Assets\GooglePlayGames\BasicApi\Nearby\NearbyConnectionConfiguration.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\CameraController.cs" />
+    <Compile Include="Assets\GooglePlayGames\Platforms\NearbyConnectionClientFactory.cs" />
     <Compile Include="Assets\Script\UimanagerNormal.cs" />
+    <Compile Include="Assets\GooglePlayGames\Platforms\Android\AndroidClient.cs" />
     <Compile Include="Assets\Script\SelectLevel.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMPro_InstructionOverlay.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_ExampleScript_01.cs" />
@@ -84,89 +110,64 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ObjectSpin.cs" />
     <Compile Include="Assets\Script\parallaxBackground.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextInfoDebugTool.cs" />
+    <Compile Include="Assets\GooglePlayGames\ISocialPlatform\PlayGamesUserProfile.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
+    <Compile Include="Assets\GooglePlayGames\BasicApi\PlayerProfile.cs" />
+    <Compile Include="Assets\GooglePlayGames\OurUtils\PlatformUtils.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ShaderPropAnimator.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
     <Compile Include="Assets\Script\GameControllerNormal.cs" />
+    <Compile Include="Assets\GooglePlayGames\OurUtils\NearbyHelperObject.cs" />
+    <Compile Include="Assets\GooglePlayGames\BasicApi\Video\VideoCapabilities.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_DigitValidator.cs" />
+    <Compile Include="Assets\GooglePlayGames\BasicApi\DummyClient.cs" />
+    <Compile Include="Assets\GooglePlayGames\ISocialPlatform\PlayGamesPlatform.cs" />
+    <Compile Include="Assets\GooglePlayGames\BasicApi\Events\IEvent.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
     <Compile Include="Assets\Script\Uimanager.cs" />
+    <Compile Include="Assets\GooglePlayGames\Platforms\Android\AndroidJavaConverter.cs" />
     <Compile Include="Assets\Script\Character.cs" />
+    <Compile Include="Assets\GooglePlayGames\Platforms\Android\AndroidTaskUtils.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshSpawner.cs" />
+    <Compile Include="Assets\GooglePlayGames\BasicApi\Nearby\DummyNearbyConnectionClient.cs" />
+    <Compile Include="Assets\GooglePlayGames\Platforms\PlayGamesClientFactory.cs" />
+    <Compile Include="Assets\GooglePlayGames\GameInfo.cs" />
+    <Compile Include="Assets\GooglePlayGames\ISocialPlatform\PlayGamesLocalUser.cs" />
     <Compile Include="Assets\Script\SelectMap.cs" />
+    <Compile Include="Assets\GooglePlayGames\BasicApi\Events\IEventsClient.cs" />
+    <Compile Include="Assets\GooglePlayGames\BasicApi\Player.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />
+    <Compile Include="Assets\GooglePlayGames\BasicApi\IPlayGamesClient.cs" />
+    <Compile Include="Assets\GooglePlayGames\BasicApi\Video\CaptureOverlayStateListener.cs" />
+    <Compile Include="Assets\GooglePlayGames\BasicApi\CommonTypes.cs" />
+    <Compile Include="Assets\GooglePlayGames\Platforms\Android\AndroidSnapshotMetadata.cs" />
+    <Compile Include="Assets\GooglePlayGames\BasicApi\ScorePageToken.cs" />
+    <Compile Include="Assets\GooglePlayGames\Platforms\Android\AndroidVideoClient.cs" />
+    <Compile Include="Assets\GooglePlayGames\PluginVersion.cs" />
+    <Compile Include="Assets\GooglePlayGames\BasicApi\LeaderboardScoreData.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_FrameRateCounter.cs" />
+    <Compile Include="Assets\GooglePlayGames\BasicApi\PlayerStats.cs" />
+    <Compile Include="Assets\GooglePlayGames\Platforms\TokenClient.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexJitter.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventHandler.cs" />
     <Compile Include="Assets\Script\Player.cs" />
+    <Compile Include="Assets\GooglePlayGames\BasicApi\Nearby\ConnectionResponse.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_B.cs" />
+    <Compile Include="Assets\GooglePlayGames\BasicApi\Nearby\ConnectionRequest.cs" />
+    <Compile Include="Assets\GooglePlayGames\Platforms\Android\AndroidEventsClient.cs" />
+    <Compile Include="Assets\GooglePlayGames\OurUtils\PlayGamesHelperObject.cs" />
+    <Compile Include="Assets\GooglePlayGames\BasicApi\SignInHelper.cs" />
     <Compile Include="Assets\Script\SaveGame.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\DropdownSample.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_PhoneNumberValidator.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexColorCycler.cs" />
+    <Compile Include="Assets\GooglePlayGames\Platforms\Android\AndroidTokenClient.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TeleType.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
     <Compile Include="Assets\Script\MainMenu.cs" />
-    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
-    <Compile Include="Assets\GooglePlayGames\BasicApi\Player.cs" />
-    <Compile Include="Assets\GooglePlayGames\BasicApi\ScorePageToken.cs" />
-    <Compile Include="Assets\GooglePlayGames\BasicApi\Video\VideoCapabilities.cs" />
-    <Compile Include="Assets\GooglePlayGames\Platforms\Android\AndroidSnapshotMetadata.cs" />
-    <Compile Include="Assets\GooglePlayGames\BasicApi\LeaderboardScoreData.cs" />
-    <Compile Include="Assets\GooglePlayGames\BasicApi\SavedGame\SavedGameMetadataUpdate.cs" />
-    <Compile Include="Assets\GooglePlayGames\Platforms\Android\AndroidHelperFragment.cs" />
-    <Compile Include="Assets\GooglePlayGames\BasicApi\DummyClient.cs" />
-    <Compile Include="Assets\GooglePlayGames\Platforms\Android\AndroidVideoClient.cs" />
-    <Compile Include="Assets\GooglePlayGames\BasicApi\Nearby\DummyNearbyConnectionClient.cs" />
-    <Compile Include="Assets\GooglePlayGames\Platforms\TokenClient.cs" />
-    <Compile Include="Assets\GooglePlayGames\Platforms\Android\AndroidJavaConverter.cs" />
-    <Compile Include="Assets\GooglePlayGames\BasicApi\SavedGame\ISavedGameMetadata.cs" />
-    <Compile Include="Assets\GooglePlayGames\ISocialPlatform\PlayGamesPlatform.cs" />
-    <Compile Include="Assets\GooglePlayGames\BasicApi\PlayGamesClientConfiguration.cs" />
-    <Compile Include="Assets\GooglePlayGames\Platforms\PlayGamesClientFactory.cs" />
-    <Compile Include="Assets\GooglePlayGames\BasicApi\PlayerProfile.cs" />
-    <Compile Include="Assets\GooglePlayGames\GameInfo.cs" />
-    <Compile Include="Assets\GooglePlayGames\Platforms\Android\AndroidTaskUtils.cs" />
-    <Compile Include="Assets\GooglePlayGames\BasicApi\Nearby\NearbyConnectionConfiguration.cs" />
-    <Compile Include="Assets\GooglePlayGames\BasicApi\Nearby\ConnectionRequest.cs" />
-    <Compile Include="Assets\GooglePlayGames\BasicApi\CommonStatusCodes.cs" />
-    <Compile Include="Assets\GooglePlayGames\ISocialPlatform\PlayGamesLocalUser.cs" />
-    <Compile Include="Assets\GooglePlayGames\BasicApi\Nearby\ConnectionResponse.cs" />
-    <Compile Include="Assets\GooglePlayGames\Platforms\Android\AndroidEventsClient.cs" />
-    <Compile Include="Assets\GooglePlayGames\BasicApi\SignInHelper.cs" />
-    <Compile Include="Assets\GooglePlayGames\ISocialPlatform\PlayGamesUserProfile.cs" />
     <Compile Include="Assets\GooglePlayGames\BasicApi\Nearby\EndpointDetails.cs" />
-    <Compile Include="Assets\GooglePlayGames\BasicApi\SavedGame\ISavedGameClient.cs" />
-    <Compile Include="Assets\GooglePlayGames\ISocialPlatform\PlayGamesAchievement.cs" />
-    <Compile Include="Assets\GooglePlayGames\BasicApi\SignInInteractivity.cs" />
-    <Compile Include="Assets\GooglePlayGames\OurUtils\PlayGamesHelperObject.cs" />
-    <Compile Include="Assets\GooglePlayGames\BasicApi\IPlayGamesClient.cs" />
-    <Compile Include="Assets\GooglePlayGames\PluginVersion.cs" />
-    <Compile Include="Assets\GooglePlayGames\OurUtils\PlatformUtils.cs" />
-    <Compile Include="Assets\GooglePlayGames\BasicApi\Events\IEvent.cs" />
-    <Compile Include="Assets\GooglePlayGames\ISocialPlatform\PlayGamesLeaderboard.cs" />
-    <Compile Include="Assets\GooglePlayGames\OurUtils\Logger.cs" />
-    <Compile Include="Assets\GooglePlayGames\Platforms\Android\AndroidClient.cs" />
-    <Compile Include="Assets\GooglePlayGames\OurUtils\NearbyHelperObject.cs" />
-    <Compile Include="Assets\GooglePlayGames\BasicApi\Video\CaptureOverlayStateListener.cs" />
-    <Compile Include="Assets\GooglePlayGames\BasicApi\Nearby\INearbyConnectionClient.cs" />
-    <Compile Include="Assets\GooglePlayGames\OurUtils\Misc.cs" />
-    <Compile Include="Assets\GooglePlayGames\BasicApi\PlayerStats.cs" />
-    <Compile Include="Assets\GooglePlayGames\BasicApi\Events\IEventsClient.cs" />
-    <Compile Include="Assets\GooglePlayGames\BasicApi\CommonTypes.cs" />
-    <Compile Include="Assets\GooglePlayGames\Platforms\NearbyConnectionClientFactory.cs" />
-    <Compile Include="Assets\GooglePlayGames\Platforms\Android\AndroidNearbyConnectionClient.cs" />
-    <Compile Include="Assets\GooglePlayGames\BasicApi\Video\IVideoClient.cs" />
-    <Compile Include="Assets\GooglePlayGames\Platforms\Android\AndroidTokenClient.cs" />
-    <Compile Include="Assets\GooglePlayGames\ISocialPlatform\PlayGamesScore.cs" />
-    <Compile Include="Assets\GooglePlayGames\BasicApi\SignInStatus.cs" />
-    <Compile Include="Assets\GooglePlayGames\BasicApi\Events\Event.cs" />
-    <Compile Include="Assets\GooglePlayGames\BasicApi\Nearby\AdvertisingResult.cs" />
-    <Compile Include="Assets\GooglePlayGames\BasicApi\Achievement.cs" />
-    <Compile Include="Assets\GooglePlayGames\Platforms\Android\AndroidSavedGameClient.cs" />
-    <Compile Include="Assets\GooglePlayGames\BasicApi\Video\VideoCaptureState.cs" />
-    <Compile Include="Assets\GPGSIds.cs" />
-    <Compile Include="Assets\Script\InitializePlayGamesLogin.cs" />
+    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
+    <Compile Include="Assets\Script\Class1.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
@@ -435,20 +436,23 @@
     <Reference Include="Unity.Burst.Unsafe">
       <HintPath>Library\PackageCache\com.unity.burst@1.6.6\Unity.Burst.Unsafe.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Burst.Cecil.Mdb">
-      <HintPath>Library\PackageCache\com.unity.burst@1.6.6\Unity.Burst.CodeGen\Unity.Burst.Cecil.Mdb.dll</HintPath>
+    <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
+      <HintPath>Library\PackageCache\com.unity.visualscripting@1.8.0\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Burst.Cecil.Pdb">
       <HintPath>Library\PackageCache\com.unity.burst@1.6.6\Unity.Burst.CodeGen\Unity.Burst.Cecil.Pdb.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>Library\PackageCache\com.unity.nuget.newtonsoft-json@3.0.2\Runtime\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Burst.Cecil.Mdb">
+      <HintPath>Library\PackageCache\com.unity.burst@1.6.6\Unity.Burst.CodeGen\Unity.Burst.Cecil.Mdb.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Burst.Cecil">
       <HintPath>Library\PackageCache\com.unity.burst@1.6.6\Unity.Burst.CodeGen\Unity.Burst.Cecil.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Burst.Cecil.Rocks">
       <HintPath>Library\PackageCache\com.unity.burst@1.6.6\Unity.Burst.CodeGen\Unity.Burst.Cecil.Rocks.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
-      <HintPath>Library\PackageCache\com.unity.visualscripting@1.8.0\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.iOS.Extensions.Xcode">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.20f1\Editor\Data\PlaybackEngines\iOSSupport\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
@@ -830,17 +834,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="Unity.VisualScripting.Flow.Editor.csproj">
-      <Project>{A3306B55-6CF9-DAE8-496E-2EFAA11FBDFC}</Project>
-      <Name>Unity.VisualScripting.Flow.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.2D.Tilemap.Extras.csproj">
-      <Project>{404769A6-8100-F6E9-2160-1A88A7A6413C}</Project>
-      <Name>Unity.2D.Tilemap.Extras</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.2D.Animation.Editor.csproj">
-      <Project>{26CD2B6D-EEEE-6B67-681F-416117C5ECE4}</Project>
-      <Name>Unity.2D.Animation.Editor</Name>
+    <ProjectReference Include="Purchasing.Common.csproj">
+      <Project>{90F2384F-C1A2-6894-5DDD-09C49E6AB093}</Project>
+      <Name>Purchasing.Common</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.InternalAPIEngineBridge.001.csproj">
       <Project>{591B91A2-0294-6E54-9D44-717BEDD89589}</Project>
@@ -854,9 +850,9 @@
       <Project>{41AB9292-120E-E1CA-6BD0-202E87B9F796}</Project>
       <Name>Unity.2D.PixelPerfect</Name>
     </ProjectReference>
-    <ProjectReference Include="Unity.2D.Tilemap.Editor.csproj">
-      <Project>{8B863083-C84B-827A-A92E-2056A10AD507}</Project>
-      <Name>Unity.2D.Tilemap.Editor</Name>
+    <ProjectReference Include="UnityEngine.Purchasing.csproj">
+      <Project>{607836C3-007F-9020-208E-F551A0A27D19}</Project>
+      <Name>UnityEngine.Purchasing</Name>
     </ProjectReference>
     <ProjectReference Include="PsdPlugin.csproj">
       <Project>{8378C1CC-9FA2-BA66-4B1F-287FEE6A6587}</Project>
@@ -866,9 +862,81 @@
       <Project>{B5102115-BB54-036E-0252-04E7E7C5A5E6}</Project>
       <Name>Unity.TextMeshPro.Editor</Name>
     </ProjectReference>
+    <ProjectReference Include="Unity.VisualScripting.State.Editor.csproj">
+      <Project>{99350768-EB83-942B-9A06-7C68526DF1BE}</Project>
+      <Name>Unity.VisualScripting.State.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="UnityEngine.Purchasing.SecurityStub.csproj">
+      <Project>{FFE972EA-BCC9-24D8-00E3-B084D28C617A}</Project>
+      <Name>UnityEngine.Purchasing.SecurityStub</Name>
+    </ProjectReference>
+    <ProjectReference Include="UnityEngine.Advertisements.csproj">
+      <Project>{8131DCFB-3E07-9A2C-74B5-878FBA335517}</Project>
+      <Name>UnityEngine.Advertisements</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.2D.IK.Editor.csproj">
+      <Project>{6FB9364D-BCB0-F052-BE88-656C0FB876FC}</Project>
+      <Name>Unity.2D.IK.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.VisualScripting.SettingsProvider.Editor.csproj">
+      <Project>{4BD17848-B1AA-07FC-498C-718EFF7D8C9A}</Project>
+      <Name>Unity.VisualScripting.SettingsProvider.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.2D.Path.Editor.csproj">
+      <Project>{0262242A-4E0D-3E18-20BC-09798494439F}</Project>
+      <Name>Unity.2D.Path.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="UnityEditor.UI.csproj">
+      <Project>{50481F4B-3280-41A8-AFD5-78D6E922B5FD}</Project>
+      <Name>UnityEditor.UI</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Rider.Editor.csproj">
+      <Project>{34235E49-E2AB-E034-95CD-64A1F3F8EA0F}</Project>
+      <Name>Unity.Rider.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="UnityEngine.UI.csproj">
+      <Project>{384D07D3-3FAA-5280-123F-49FD5DBC74E7}</Project>
+      <Name>UnityEngine.UI</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.2D.IK.Runtime.csproj">
+      <Project>{0826B18B-3877-AD2C-7087-51C3E535FA65}</Project>
+      <Name>Unity.2D.IK.Runtime</Name>
+    </ProjectReference>
+    <ProjectReference Include="UnityEngine.Purchasing.Codeless.csproj">
+      <Project>{6DFFAD06-B969-6B9D-F743-2DF71671EBA3}</Project>
+      <Name>UnityEngine.Purchasing.Codeless</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Mathematics.Editor.csproj">
+      <Project>{EC74EAB0-1076-E2E6-F422-0362B35DA8D5}</Project>
+      <Name>Unity.Mathematics.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.2D.Common.Editor.csproj">
+      <Project>{4DCAED71-89D9-CC90-EFB8-E748788DAC80}</Project>
+      <Name>Unity.2D.Common.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.VisualScripting.Flow.Editor.csproj">
+      <Project>{A3306B55-6CF9-DAE8-496E-2EFAA11FBDFC}</Project>
+      <Name>Unity.VisualScripting.Flow.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.2D.Tilemap.Extras.csproj">
+      <Project>{404769A6-8100-F6E9-2160-1A88A7A6413C}</Project>
+      <Name>Unity.2D.Tilemap.Extras</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.2D.Animation.Editor.csproj">
+      <Project>{26CD2B6D-EEEE-6B67-681F-416117C5ECE4}</Project>
+      <Name>Unity.2D.Animation.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.2D.Tilemap.Editor.csproj">
+      <Project>{8B863083-C84B-827A-A92E-2056A10AD507}</Project>
+      <Name>Unity.2D.Tilemap.Editor</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.VisualStudio.Editor.csproj">
       <Project>{BD18A66B-697E-A43C-5F8F-2B5418A802CB}</Project>
       <Name>Unity.VisualStudio.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Services.Analytics.Editor.csproj">
+      <Project>{81400BBF-8C7B-6266-2466-5B607862FCC0}</Project>
+      <Name>Unity.Services.Analytics.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.Timeline.csproj">
       <Project>{7181BE79-448C-4D73-DA0A-64CE908F61CB}</Project>
@@ -882,61 +950,41 @@
       <Project>{D61B03C2-A250-AE2E-8F80-F05A0B18E8F9}</Project>
       <Name>Unity.TextMeshPro</Name>
     </ProjectReference>
-    <ProjectReference Include="Unity.VisualScripting.State.Editor.csproj">
-      <Project>{99350768-EB83-942B-9A06-7C68526DF1BE}</Project>
-      <Name>Unity.VisualScripting.State.Editor</Name>
-    </ProjectReference>
     <ProjectReference Include="Unity.Burst.Editor.csproj">
       <Project>{D407174E-6DCE-6911-7C0F-26A492C81DE2}</Project>
       <Name>Unity.Burst.Editor</Name>
     </ProjectReference>
-    <ProjectReference Include="Unity.2D.IK.Editor.csproj">
-      <Project>{6FB9364D-BCB0-F052-BE88-656C0FB876FC}</Project>
-      <Name>Unity.2D.IK.Editor</Name>
+    <ProjectReference Include="Unity.Services.Analytics.csproj">
+      <Project>{35C73C79-5CB7-15A6-6E77-64B5BD48AD35}</Project>
+      <Name>Unity.Services.Analytics</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.2D.Sprite.Editor.csproj">
       <Project>{3F27F79A-3A63-A0D8-4940-5B805FEA1EF0}</Project>
       <Name>Unity.2D.Sprite.Editor</Name>
     </ProjectReference>
-    <ProjectReference Include="Unity.VisualScripting.SettingsProvider.Editor.csproj">
-      <Project>{4BD17848-B1AA-07FC-498C-718EFF7D8C9A}</Project>
-      <Name>Unity.VisualScripting.SettingsProvider.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.2D.Path.Editor.csproj">
-      <Project>{0262242A-4E0D-3E18-20BC-09798494439F}</Project>
-      <Name>Unity.2D.Path.Editor</Name>
-    </ProjectReference>
     <ProjectReference Include="Unity.2D.Psdimporter.Editor.csproj">
       <Project>{813D51E4-70C9-33E4-84DB-06974A87A04D}</Project>
       <Name>Unity.2D.Psdimporter.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.VisualScripting.Flow.csproj">
-      <Project>{9466DD17-6F62-CEAC-4AD7-880EFC1A2C93}</Project>
-      <Name>Unity.VisualScripting.Flow</Name>
-    </ProjectReference>
-    <ProjectReference Include="UnityEditor.UI.csproj">
-      <Project>{50481F4B-3280-41A8-AFD5-78D6E922B5FD}</Project>
-      <Name>UnityEditor.UI</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.PlasticSCM.Editor.csproj">
-      <Project>{F3E1451B-28CC-A3DC-A763-77CE48F302F6}</Project>
-      <Name>Unity.PlasticSCM.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.Rider.Editor.csproj">
-      <Project>{34235E49-E2AB-E034-95CD-64A1F3F8EA0F}</Project>
-      <Name>Unity.Rider.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.InternalAPIEditorBridge.001.csproj">
       <Project>{C9A05FA4-2CA1-CACA-F477-0CB61DE8CBC4}</Project>
       <Name>Unity.InternalAPIEditorBridge.001</Name>
     </ProjectReference>
-    <ProjectReference Include="UnityEngine.UI.csproj">
-      <Project>{384D07D3-3FAA-5280-123F-49FD5DBC74E7}</Project>
-      <Name>UnityEngine.UI</Name>
+    <ProjectReference Include="Unity.VisualScripting.Flow.csproj">
+      <Project>{9466DD17-6F62-CEAC-4AD7-880EFC1A2C93}</Project>
+      <Name>Unity.VisualScripting.Flow</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.PlasticSCM.Editor.csproj">
+      <Project>{F3E1451B-28CC-A3DC-A763-77CE48F302F6}</Project>
+      <Name>Unity.PlasticSCM.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.2D.Tilemap.Extras.Editor.csproj">
       <Project>{2ACEC126-4931-ECC5-76F2-36B419891947}</Project>
       <Name>Unity.2D.Tilemap.Extras.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Services.Core.csproj">
+      <Project>{DE27FB27-0862-853A-D491-F99F1EEFA6C0}</Project>
+      <Name>Unity.Services.Core</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.VisualScripting.Core.csproj">
       <Project>{E2F2BDC6-FE9A-10A2-B770-DF4AA958A175}</Project>
@@ -946,17 +994,25 @@
       <Project>{E25D7B02-D063-2543-5BC6-9E600D2C5B51}</Project>
       <Name>Unity.Mathematics</Name>
     </ProjectReference>
-    <ProjectReference Include="Unity.2D.IK.Runtime.csproj">
-      <Project>{0826B18B-3877-AD2C-7087-51C3E535FA65}</Project>
-      <Name>Unity.2D.IK.Runtime</Name>
+    <ProjectReference Include="Unity.Services.Core.Analytics.csproj">
+      <Project>{985FE5DB-AA44-2F64-3E7C-C13866DF96FB}</Project>
+      <Name>Unity.Services.Core.Analytics</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.Burst.csproj">
       <Project>{573DD627-F6EB-843C-0BAB-77C28BA7666F}</Project>
       <Name>Unity.Burst</Name>
     </ProjectReference>
+    <ProjectReference Include="UnityEngine.Purchasing.SecurityCore.csproj">
+      <Project>{74388C44-D6CC-4D46-B911-1691FBBFA9F4}</Project>
+      <Name>UnityEngine.Purchasing.SecurityCore</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.VisualScripting.Shared.Editor.csproj">
       <Project>{0FAED178-E262-8DE4-FDA3-FF6C03DB3CE6}</Project>
       <Name>Unity.VisualScripting.Shared.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Services.Core.Environments.csproj">
+      <Project>{30549608-28B4-C96A-5DE4-89748FC54753}</Project>
+      <Name>Unity.Services.Core.Environments</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.2D.Animation.Runtime.csproj">
       <Project>{FD727808-C901-26AB-A2DC-51AED226E262}</Project>
@@ -970,9 +1026,9 @@
       <Project>{2A617A33-8D3A-DB82-812A-1C080642BBE1}</Project>
       <Name>Unity.Timeline.Editor</Name>
     </ProjectReference>
-    <ProjectReference Include="Unity.Mathematics.Editor.csproj">
-      <Project>{EC74EAB0-1076-E2E6-F422-0362B35DA8D5}</Project>
-      <Name>Unity.Mathematics.Editor</Name>
+    <ProjectReference Include="UnityEngine.Purchasing.Stores.csproj">
+      <Project>{E21756FA-9691-C903-4EB0-C75C45985DDF}</Project>
+      <Name>UnityEngine.Purchasing.Stores</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.2D.Common.Runtime.csproj">
       <Project>{4750D587-C8A2-A42C-6661-3964F5271925}</Project>
@@ -982,9 +1038,13 @@
       <Project>{7070E5F5-FEAC-2AD7-C7CC-7883A07DA4FB}</Project>
       <Name>Unity.2D.SpriteShape.Editor</Name>
     </ProjectReference>
-    <ProjectReference Include="Unity.2D.Common.Editor.csproj">
-      <Project>{4DCAED71-89D9-CC90-EFB8-E748788DAC80}</Project>
-      <Name>Unity.2D.Common.Editor</Name>
+    <ProjectReference Include="UnityEditor.Purchasing.csproj">
+      <Project>{FEB0F7AA-45B7-1392-B5AC-C0C4773E0A9F}</Project>
+      <Name>UnityEditor.Purchasing</Name>
+    </ProjectReference>
+    <ProjectReference Include="UnityEngine.Advertisements.Editor.csproj">
+      <Project>{BD23D846-1EA8-E130-215B-9B81A96B33C9}</Project>
+      <Name>UnityEngine.Advertisements.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.2D.SpriteShape.Runtime.csproj">
       <Project>{26C52610-8082-6EE9-8477-488D3A40EA14}</Project>

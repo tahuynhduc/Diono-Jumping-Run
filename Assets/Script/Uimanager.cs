@@ -1,6 +1,10 @@
+﻿using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.SocialPlatforms;
+using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UI;
+using static UnityEngine.GUI;
 
 
 public class Uimanager : MonoBehaviour
@@ -10,20 +14,28 @@ public class Uimanager : MonoBehaviour
     public GameObject GameOverPanel;
     public Text scoreText;
     public Text bestScoreText;
-    SceneLoader test;
 
     private int score;
-    private int bestScore;
+    private long bestScore;
     private bool gameOver = false;
     private bool pause = false;
     private void Start()
     {
-        test = FindObjectOfType<SceneLoader>();
-        LoadBestScore();
+        Social.LoadScores(GPGSIds.leaderboard_testleaderboard, (score) =>
+        {
+            foreach (IScore test in score)
+            {
+                if (test.userID == Social.localUser.id)
+                {
+                    bestScore = test.value;
+                    bestScoreText.text = "Best:" + bestScore;
+                }
+            }
+        });
     }
     void Update()
     {
-        ShowBestScore();
+        
         if (pause)
         {
             Time.timeScale = 0;
@@ -57,19 +69,11 @@ public class Uimanager : MonoBehaviour
         if (score>bestScore)
         {
             bestScore = score;
-            SaveBestScore();
+            bestScoreText.text = "Best:" + bestScore.ToString();
+            Social.ReportScore(bestScore, GPGSIds.leaderboard_testleaderboard, (reportScore) =>
+            {
+            });
         }
-    }
-    void SaveBestScore()
-    {
-        bestScoreText.text = "Best: " + bestScore;
-        PlayerPrefs.SetInt("BestScore", bestScore);
-        PlayerPrefs.Save();
-    }
-    void LoadBestScore()
-    {
-        bestScore = PlayerPrefs.GetInt("BestScore", bestScore);
-        bestScoreText.text = "Best: " + bestScore;
     }
     #endregion
 

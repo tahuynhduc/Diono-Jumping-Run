@@ -56,19 +56,19 @@
     <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Library\PackageCache\com.unity.ads@4.4.1\Editor\DevX\Settings\AdsSettingsProvider.cs" />
-    <Compile Include="Library\PackageCache\com.unity.ads@4.4.1\Editor\DevX\Settings\UiUtils.cs" />
-    <Compile Include="Library\PackageCache\com.unity.ads@4.4.1\Editor\DevX\Settings\GettingStartedUi.cs" />
     <Compile Include="Library\PackageCache\com.unity.ads@4.4.1\Editor\DevX\Settings\GameIdsUi.cs" />
     <Compile Include="Library\PackageCache\com.unity.ads@4.4.1\Editor\DevX\Settings\PluginUtils.cs" />
+    <Compile Include="Library\PackageCache\com.unity.ads@4.4.1\Editor\DevX\Utils\AdsDashboardUrls.cs" />
+    <Compile Include="Library\PackageCache\com.unity.ads@4.4.1\Editor\DevX\EditorGameServices\AdsServiceIdentifier.cs" />
+    <Compile Include="Library\PackageCache\com.unity.ads@4.4.1\Editor\DevX\Settings\AdsSettingsProvider.cs" />
+    <Compile Include="Library\PackageCache\com.unity.ads@4.4.1\Editor\DevX\Settings\UiUtils.cs" />
+    <Compile Include="Library\PackageCache\com.unity.ads@4.4.1\Editor\DevX\Settings\UiConstants.cs" />
+    <Compile Include="Library\PackageCache\com.unity.ads@4.4.1\Editor\DevX\Networking\RequestGameIds.cs" />
+    <Compile Include="Library\PackageCache\com.unity.ads@4.4.1\Editor\DevX\EditorGameServices\AdsService.cs" />
+    <Compile Include="Library\PackageCache\com.unity.ads@4.4.1\Editor\DevX\Utils\EditorTimer.cs" />
+    <Compile Include="Library\PackageCache\com.unity.ads@4.4.1\Editor\DevX\Settings\GettingStartedUi.cs" />
     <Compile Include="Library\PackageCache\com.unity.ads@4.4.1\Editor\DevX\EditorGameServices\AdsServiceEnabler.cs" />
     <Compile Include="Library\PackageCache\com.unity.ads@4.4.1\Editor\DevX\Settings\AdsServiceTopMenu.cs" />
-    <Compile Include="Library\PackageCache\com.unity.ads@4.4.1\Editor\DevX\Utils\AdsDashboardUrls.cs" />
-    <Compile Include="Library\PackageCache\com.unity.ads@4.4.1\Editor\DevX\Networking\RequestGameIds.cs" />
-    <Compile Include="Library\PackageCache\com.unity.ads@4.4.1\Editor\DevX\Settings\UiConstants.cs" />
-    <Compile Include="Library\PackageCache\com.unity.ads@4.4.1\Editor\DevX\EditorGameServices\AdsService.cs" />
-    <Compile Include="Library\PackageCache\com.unity.ads@4.4.1\Editor\DevX\EditorGameServices\AdsServiceIdentifier.cs" />
-    <Compile Include="Library\PackageCache\com.unity.ads@4.4.1\Editor\DevX\Utils\EditorTimer.cs" />
     <Compile Include="Library\PackageCache\com.unity.ads@4.4.1\Editor\DevX\EditorGameServices\Analytics\EditorGameServiceAnalyticsSender.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -750,13 +750,13 @@
       <Project>{384D07D3-3FAA-5280-123F-49FD5DBC74E7}</Project>
       <Name>UnityEngine.UI</Name>
     </ProjectReference>
-    <ProjectReference Include="UnityEngine.TestRunner.csproj">
-      <Project>{879EA1D3-F205-5694-1E94-B548A5E40EFD}</Project>
-      <Name>UnityEngine.TestRunner</Name>
-    </ProjectReference>
     <ProjectReference Include="UnityEditor.TestRunner.csproj">
       <Project>{FDEE39E5-97FF-03B9-CC1A-6E5E4E73669A}</Project>
       <Name>UnityEditor.TestRunner</Name>
+    </ProjectReference>
+    <ProjectReference Include="UnityEngine.TestRunner.csproj">
+      <Project>{879EA1D3-F205-5694-1E94-B548A5E40EFD}</Project>
+      <Name>UnityEngine.TestRunner</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
