@@ -35,10 +35,6 @@ public class ShopController : MonoBehaviour
         CoinsText.fontStyle = FontStyles.Bold;
         CoinsText.text = SaveGame.coinsGame.ToString();
     }
-    public void BuyCoins(int value)
-    {
-        SaveGame.BuyCoins(value);
-    }
     public void ShowCoinsView()
     {
         CoinsViewText.fontStyle = FontStyles.Underline;
