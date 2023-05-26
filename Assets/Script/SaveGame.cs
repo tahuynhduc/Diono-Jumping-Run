@@ -35,7 +35,6 @@ public class SaveGame : MonoBehaviour
     }
     public static void SaveCoins()
     {
-        coinsGame++;
         PlayerPrefs.SetInt("coinsGame", coinsGame);
         PlayerPrefs.Save();
     }

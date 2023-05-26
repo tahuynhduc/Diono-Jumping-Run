@@ -24,6 +24,7 @@ public class CoinsGame : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            SaveGame.coinsGame++;
             SaveGame.SaveCoins();
             Destroy(gameObject);
 

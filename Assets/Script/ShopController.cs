@@ -50,4 +50,9 @@ public class ShopController : MonoBehaviour
         CoinsView.SetActive(false);
         CharacterView.SetActive(true);
     }
+    public void BuyCoins()
+    {
+        SaveGame.coinsGame += 1000;
+        SaveGame.SaveCoins();
+    }
 }
