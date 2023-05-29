@@ -8,6 +8,7 @@ public class SettingMusic : MonoBehaviour
     static SettingMusic instance;
     [SerializeField] AudioSource music;
     [SerializeField] AudioSource sound;
+    Setting setting;
     private void Awake()
     {
         if (instance != null && instance != this)
@@ -22,6 +23,22 @@ public class SettingMusic : MonoBehaviour
     {
         sound.clip = Resources.Load<AudioClip>("audio/AudioManager/JumpAudio");
         music.clip = Resources.Load<AudioClip>("audio/AudioManager/MusicGame");
+        if (setting.checkMusic == 1)
+        {
+            setting.OffMusic();
+        }
+        if (setting.checkMusic == 2)
+        {
+            setting.OnMusic();
+        }
+        if (setting.checkSound == 1)
+        {
+            setting.OffSound();
+        }
+        if (setting.checkSound == 2)
+        {
+            setting.OnSound();
+        }
         music.Play();
         music.loop = true;
     }

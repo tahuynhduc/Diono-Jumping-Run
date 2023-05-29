@@ -5,11 +5,6 @@ using UnityEngine;
 public class MainMenu : MonoBehaviour
 {
     [SerializeField] GameObject QuitPanel;
-    SettingMusic setting;
-    private void Update()
-    {
-        setting = FindAnyObjectByType<SettingMusic>();
-    }
     public void QuitButton()
     {
         QuitPanel.SetActive(true);

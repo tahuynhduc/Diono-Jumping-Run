@@ -34,15 +34,16 @@ public class Obstacle : MonoBehaviour
         {
             Time.timeScale = 0;
             Debug.Log(Time.timeScale);
+            Debug.Log(SaveGame.checkSaveMap);
             if(SaveGame.checkSaveMap == 1)
             {
-                interstitialAdExample.ShowAd();
                 UiEndless.ShowGameOver();
+                interstitialAdExample.ShowAd();
             }
             else
             {
-                interstitialAdExample.ShowAd();
                 UiNormal.ShowGameOver();
+                interstitialAdExample.ShowAd();
             }
         }
         else if (collision.gameObject.CompareTag("GameController"))

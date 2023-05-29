@@ -6,17 +6,19 @@ public class InterstitialAdExample : MonoBehaviour, IUnityAdsLoadListener, IUnit
     [SerializeField] string _androidAdUnitId = "Interstitial_Android";
     [SerializeField] string _iOsAdUnitId = "Interstitial_iOS";
     string _adUnitId;
+    Uimanager uimanager;
 
     void Awake()
     {
+
         // Get the Ad Unit ID for the current platform:
         _adUnitId = (Application.platform == RuntimePlatform.IPhonePlayer)
             ? _iOsAdUnitId
             : _androidAdUnitId;
-    }
-    private void Start()
-    {
-        LoadAd();
+        if(SaveGame.saveRemoveads != 1)
+        {
+            LoadAd();
+        }
     }
     // Load content to the Ad Unit:
     public void LoadAd()
@@ -37,6 +39,7 @@ public class InterstitialAdExample : MonoBehaviour, IUnityAdsLoadListener, IUnit
     // Implement Load Listener and Show Listener interface methods: 
     public void OnUnityAdsAdLoaded(string adUnitId)
     {
+        uimanager.continueButton();
         // Optionally execute code if the Ad Unit successfully loads content.
     }
 
