@@ -35,95 +35,36 @@ public class SelectLevel : MonoBehaviour
 
     private void State()
     {
-        if (checkMap == 1)
+        CheckUnlockLevel(1, float.MaxValue, unlockState);
+        CheckUnlockLevel(2, unlockState, unlockStateDesert);
+        CheckUnlockLevel(3,unlockStateDesert, unlockStateGraveyard);
+        CheckUnlockLevel(4,unlockStateGraveyard, unlockStateSnow);
+    }
+
+    private void CheckUnlockLevel(int map,float preCondition, float currentState)
+    {
+        if (checkMap == map)
         {
-            if (unlockState <= 20)
+            levelOne.interactable = preCondition >= 100;
+            if (currentState <= 20)
             {
                 levelTwo.interactable = false;
             }
-            if (unlockState <= 40)
+            if (currentState <= 40)
             {
                 levelThree.interactable = false;
             }
-            if (unlockState <= 60)
+            if (currentState <= 60)
             {
                 levelFour.interactable = false;
             }
-            if (unlockState <= 80)
-            {
-                levelFive.interactable = false;
-            }
-        }
-        if (checkMap == 2)
-        {
-            if (unlockState < 100)
-            {
-                levelOne.interactable = false;
-            }
-            if (unlockStateDesert <= 20)
-            {
-                levelTwo.interactable = false;
-            }
-            if (unlockStateDesert <= 40)
-            {
-                levelThree.interactable = false;
-            }
-            if (unlockStateDesert <= 60)
-            {
-                levelFour.interactable = false;
-            }
-            if (unlockStateDesert <= 80)
-            {
-                levelFive.interactable = false;
-            }
-        }
-        if (checkMap == 3)
-        {
-            if (unlockStateDesert < 100)
-            {
-                levelOne.interactable = false;
-            }
-            if (unlockStateGraveyard <= 20)
-            {
-                levelTwo.interactable = false;
-            }
-            if (unlockStateGraveyard <= 40)
-            {
-                levelThree.interactable = false;
-            }
-            if (unlockStateGraveyard <= 60)
-            {
-                levelFour.interactable = false;
-            }
-            if (unlockStateGraveyard <= 80)
-            {
-                levelFive.interactable = false;
-            }
-        }
-        if (checkMap == 4)
-        {
-            if (unlockStateGraveyard < 100)
-            {
-                levelOne.interactable = false;
-            }
-            if (unlockStateSnow <= 20)
-            {
-                levelTwo.interactable = false;
-            }
-            if (unlockStateSnow <= 40)
-            {
-                levelThree.interactable = false;
-            }
-            if (unlockStateSnow <= 60)
-            {
-                levelFour.interactable = false;
-            }
-            if (unlockStateSnow <= 80)
+            if (currentState <= 80)
             {
                 levelFive.interactable = false;
             }
         }
     }
+
     public void checkLevelOne()
     {
         SceneManager.LoadScene("GameplayNormal");

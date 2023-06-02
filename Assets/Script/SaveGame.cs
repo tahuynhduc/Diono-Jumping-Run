@@ -8,7 +8,13 @@ public class SaveGame : MonoBehaviour
     public static int checkSaveMap;
     public static int coinsGame;
     public static int checkShop;
-    public static int saveRemoveads;
+    public static int removeAds;
+    public static void SaveRemoveAds()
+    {
+        removeAds = 1;
+        PlayerPrefs.SetInt("removeAds", removeAds);
+        PlayerPrefs.Save();
+    }
     public static void SaveMap()
     {
         PlayerPrefs.SetInt("checkSaveMap", checkSaveMap);

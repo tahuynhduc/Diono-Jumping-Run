@@ -13,6 +13,7 @@ public class UimanagerNormal : MonoBehaviour
     public GameObject GameoverPanel,VictoriPanel;
     public Text CoinsText;
     public Slider Slider;
+    public GameObject PopupAds;
     SaveGame SaveGame;
 
     int checkMap;
@@ -24,6 +25,8 @@ public class UimanagerNormal : MonoBehaviour
     public float Timedown;
     private bool gameOver = false;
     private bool pause = false;
+    InterstitialAdExample interstitialAdExample;
+    
     // Start is called before the first frame update
     private void Awake()
     {
@@ -35,16 +38,13 @@ public class UimanagerNormal : MonoBehaviour
         unlockStateSnow = PlayerPrefs.GetFloat("unlockStateSnow", unlockStateSnow);
         valueSlider = PlayerPrefs.GetFloat("valueSlider", valueSlider);
         checkMap = PlayerPrefs.GetInt("checkmap", checkMap);
+        interstitialAdExample = FindAnyObjectByType<InterstitialAdExample>();
         Slider.maxValue = valueSlider;
         Slider.value = valueSlider;
         Slider.minValue = 0;
         Debug.Log(valueSlider);
 
     }
-    void Start()
-    {
-    }
-
     void Update()
     {
         ShowCoinsText();
@@ -68,12 +68,30 @@ public class UimanagerNormal : MonoBehaviour
     {
         CoinsText.text = SaveGame.coinsGame.ToString();
     }
+    public void ShowPopup()
+    {
+        Time.timeScale = 0;
+        PopupAds.SetActive(true);
+    }
+    public void HidenPopup()
+    {
+        PopupAds.SetActive(false);
+    }
+    public void ContinueWith10Coins()
+    {
+        if(SaveGame.coinsGame >= 10 && interstitialAdExample.unContinue == false)
+        {
+            Debug.Log("test");
+            SaveGame.coinsGame = SaveGame.coinsGame - 10;
+            interstitialAdExample.unContinue = true;
+            continueButton();
+        }
+    }
     #region state game
-   
+
     public void ShowGameOver()
     {
         GameoverPanel.SetActive(true);
-        //Player1.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
         gameOver = true;
     }
     public void ShowPauseButton()
@@ -91,10 +109,12 @@ public class UimanagerNormal : MonoBehaviour
     }
     public void continueButton()
     {
+        PopupAds.SetActive(false);
         Time.timeScale = 1;
         gameOver = false;
         GameoverPanel.SetActive(false);
         pausePanel.SetActive(false);
+        pauseButton.SetActive(true);
         pause = false;
     }
     public void NextButton()
@@ -102,31 +122,27 @@ public class UimanagerNormal : MonoBehaviour
         SceneManager.LoadScene("GameplayNormal");
         valueSlider += 20;
         PlayerPrefs.SetFloat("valueSlider", valueSlider);
-        PlayerPrefs.Save();
         if (checkMap == 1 && unlockState < valueSlider)
         {
             unlockState = valueSlider;
             PlayerPrefs.SetFloat("unlockState", unlockState);
-            PlayerPrefs.Save();
         }
         if(checkMap == 2 && unlockStateDesert < valueSlider)
         {
             unlockStateDesert = valueSlider;
             PlayerPrefs.SetFloat("unlockStateDesert", unlockStateDesert);
-            PlayerPrefs.Save();
         }
         if (checkMap == 3 && unlockStateGraveyard < valueSlider)
         {
             unlockStateGraveyard = valueSlider;
             PlayerPrefs.SetFloat("unlockStateGraveyard", unlockStateGraveyard);
-            PlayerPrefs.Save();
         }
         if (checkMap == 4 && unlockStateSnow < valueSlider)
         {
             unlockStateSnow = valueSlider;
             PlayerPrefs.SetFloat("unlockStateSnow", unlockStateSnow);
-            PlayerPrefs.Save();
         }
+        PlayerPrefs.Save();
     }
     #endregion
 }

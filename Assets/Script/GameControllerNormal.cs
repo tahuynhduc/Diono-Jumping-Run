@@ -105,7 +105,7 @@ public class GameControllerNormal : MonoBehaviour
         spawnCoins -= Time.deltaTime;
         if (spawnCoins <= 0)
         {
-            GameObject coins = Instantiate(Resources.Load<GameObject>("Prefab/Circle"), new Vector3(Random.Range(20, 30), -6f, 0), Quaternion.identity);
+            GameObject coins = Instantiate(Resources.Load<GameObject>("Prefab/Parallax/Circle"), new Vector3(Random.Range(20, 30), -6f, 0), Quaternion.identity);
             spawnCoins = timeCoins;
         }
     }

@@ -40,26 +40,6 @@ public class Character : MonoBehaviour
     [SerializeField] GameObject BuyCharacterPanel;
     void Start()
     {
-        //characterTwo= 0;
-        //characterThree= 0;
-        //characterFour= 0;
-        //characterFive= 0;
-        //characterSix= 0;
-        //characterSeven= 0;
-        //PlayerPrefs.SetInt("checkCharacter", check);
-        //PlayerPrefs.Save();
-        //PlayerPrefs.SetInt("characterTwo", characterTwo);
-        //PlayerPrefs.Save();
-        //PlayerPrefs.SetInt("characterThree", characterThree);
-        //PlayerPrefs.Save();
-        //PlayerPrefs.SetInt("characterFour", characterFour);
-        //PlayerPrefs.Save();
-        //PlayerPrefs.SetInt("characterFive", characterFive);
-        //PlayerPrefs.Save();
-        //PlayerPrefs.SetInt("characterSix", characterSix);
-        //PlayerPrefs.Save();
-        //PlayerPrefs.SetInt("characterSeven", characterSeven);
-        //PlayerPrefs.Save();
         check = PlayerPrefs.GetInt("checkCharacter", 1);
         characterTwo = PlayerPrefs.GetInt("characterTwo", 0);
         characterThree = PlayerPrefs.GetInt("characterThree", 0);

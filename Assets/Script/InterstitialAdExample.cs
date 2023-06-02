@@ -6,19 +6,24 @@ public class InterstitialAdExample : MonoBehaviour, IUnityAdsLoadListener, IUnit
     [SerializeField] string _androidAdUnitId = "Interstitial_Android";
     [SerializeField] string _iOsAdUnitId = "Interstitial_iOS";
     string _adUnitId;
-    Uimanager uimanager;
+    UimanagerNormal uimanager;
+    int removeads;
+    public bool unContinue = false;
 
     void Awake()
     {
-
         // Get the Ad Unit ID for the current platform:
         _adUnitId = (Application.platform == RuntimePlatform.IPhonePlayer)
             ? _iOsAdUnitId
             : _androidAdUnitId;
-        if(SaveGame.saveRemoveads != 1)
+        if (SaveGame.removeAds != 1)
         {
             LoadAd();
         }
+    }
+    private void Start()
+    {
+        uimanager = FindAnyObjectByType<UimanagerNormal>();
     }
     // Load content to the Ad Unit:
     public void LoadAd()
@@ -39,7 +44,6 @@ public class InterstitialAdExample : MonoBehaviour, IUnityAdsLoadListener, IUnit
     // Implement Load Listener and Show Listener interface methods: 
     public void OnUnityAdsAdLoaded(string adUnitId)
     {
-        uimanager.continueButton();
         // Optionally execute code if the Ad Unit successfully loads content.
     }
 
@@ -51,11 +55,25 @@ public class InterstitialAdExample : MonoBehaviour, IUnityAdsLoadListener, IUnit
 
     public void OnUnityAdsShowFailure(string _adUnitId, UnityAdsShowError error, string message)
     {
+        uimanager.ShowGameOver();
         Debug.Log($"Error showing Ad Unit {_adUnitId}: {error.ToString()} - {message}");
         // Optionally execute code if the Ad Unit fails to show, such as loading another ad.
     }
 
     public void OnUnityAdsShowStart(string _adUnitId) { }
-    public void OnUnityAdsShowClick(string _adUnitId) { }
-    public void OnUnityAdsShowComplete(string _adUnitId, UnityAdsShowCompletionState showCompletionState) { }
+    public void OnUnityAdsShowClick(string _adUnitId)
+    {
+    }
+    public void OnUnityAdsShowComplete(string _adUnitId, UnityAdsShowCompletionState showCompletionState) 
+    {
+        uimanager.continueButton();
+    }
+    public void ContinueWhenBuyProductRemoveAds()
+    {
+        if (SaveGame.removeAds == 1 && unContinue == false)
+        {
+            uimanager.PopupAds.SetActive(false);
+            uimanager.continueButton();
+        }
+    }
 }

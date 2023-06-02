@@ -1,10 +1,12 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.Purchasing;
+using GooglePlayGames.BasicApi;
+using GooglePlayGames;
 using UnityEngine;
 
 
-public class IAPManager : MonoBehaviour
+public class IAPManager : IAPButton
 {
     private string productone = "productone";
     private string producttwo = "producttwo";
@@ -15,14 +17,26 @@ public class IAPManager : MonoBehaviour
         {
             BuyCoins(250);
         }
+        if (product.definition.id == producttwo)
+        {
+            BuyCoins(500);
+        }
         if (product.definition.id == removeads)
         {
-            SaveGame.saveRemoveads = 1;
+            SaveGame.SaveRemoveAds();
+            Debug.Log(SaveGame.removeAds);
+            // Handle the non-consumable purchase completion
         }
+        
     }
-    public void FailPurchaseOnclick(Product product,PurchaseFailureReason purchaseFailureReason)
+    public void FailPurchaseOnclick(Product product, PurchaseFailureReason purchaseFailureReason)
     {
-        Debug.Log("fail:"+ purchaseFailureReason);
+        Debug.Log("fail:" + purchaseFailureReason);
+        if (product.receipt != null)
+        {
+            SaveGame.SaveRemoveAds();
+            Debug.Log(SaveGame.removeAds);
+        }
     }
     public void BuyCoins(int value)
     {

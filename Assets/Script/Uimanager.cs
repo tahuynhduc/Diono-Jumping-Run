@@ -12,6 +12,7 @@ public class Uimanager : MonoBehaviour
     public GameObject pausePanel;
     public GameObject pauseButton;
     public GameObject GameOverPanel;
+    public GameObject Removeads;
     public Text scoreText;
     public Text bestScoreText;
 
@@ -19,6 +20,8 @@ public class Uimanager : MonoBehaviour
     private long bestScore;
     private bool gameOver = false;
     private bool pause = false;
+   
+
     private void Start()
     {
         Social.LoadScores(GPGSIds.leaderboard_testleaderboard, (score) =>
@@ -82,18 +85,21 @@ public class Uimanager : MonoBehaviour
     {
         Time.timeScale = 0;
         GameOverPanel.SetActive(true);
+        Removeads.SetActive(true);
         //Player1.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
         gameOver = true;
     }
     public void ShowPauseButton()
     {
         pausePanel.SetActive(true);
+        Removeads.SetActive(true);
         pause = true;
     }
     public void replayButton()
     {
         SceneManager.LoadScene("GameplayEndless");
         gameOver = false;
+        Removeads.SetActive(false);
         GameOverPanel.SetActive(false);
         pausePanel.SetActive(false);
         pause = false;
@@ -104,6 +110,7 @@ public class Uimanager : MonoBehaviour
     {
         Time.timeScale = 1;
         gameOver = false;
+        Removeads.SetActive(false);
         GameOverPanel.SetActive(false);
         pausePanel.SetActive(false);
         pause = false;

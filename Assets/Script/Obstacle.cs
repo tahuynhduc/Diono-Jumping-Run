@@ -11,16 +11,19 @@ public class Obstacle : MonoBehaviour
     UimanagerNormal UiNormal;
     SaveGame saveGame;
     InterstitialAdExample interstitialAdExample;
+    AdsInitializer adsInitializer;
 
-
+    private int removeAds;
     // Start is called before the first frame update
     
     void Start()
     {
+        removeAds = PlayerPrefs.GetInt("removeAds", removeAds);
         rb = GetComponent<Rigidbody2D>();
         UiEndless = Uimanager.FindObjectOfType<Uimanager>();
         UiNormal = UimanagerNormal.FindObjectOfType<UimanagerNormal>();
         interstitialAdExample = FindAnyObjectByType<InterstitialAdExample>();
+        adsInitializer = FindAnyObjectByType<AdsInitializer>();
     }
 
     // Update is called once per frame
@@ -32,18 +35,25 @@ public class Obstacle : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            adsInitializer.OnInitializationComplete();
             Time.timeScale = 0;
-            Debug.Log(Time.timeScale);
-            Debug.Log(SaveGame.checkSaveMap);
             if(SaveGame.checkSaveMap == 1)
             {
-                UiEndless.ShowGameOver();
                 interstitialAdExample.ShowAd();
+                UiEndless.ShowGameOver();
+                if (removeAds != 1)
+                {
+                    interstitialAdExample.ShowAd();
+                }
             }
             else
             {
+                UiNormal.ShowPopup();
                 UiNormal.ShowGameOver();
-                interstitialAdExample.ShowAd();
+                if (removeAds != 1)
+                {
+                    interstitialAdExample.ShowAd();
+                }
             }
         }
         else if (collision.gameObject.CompareTag("GameController"))
