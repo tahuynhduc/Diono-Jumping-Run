@@ -6,13 +6,17 @@ using GooglePlayGames;
 using UnityEngine;
 
 
-public class IAPManager : IAPButton
+public class IAPManager : MonoBehaviour
 {
     private string productone = "productone";
     private string producttwo = "producttwo";
-    private string removeads = "removeads";
+    private string removeads = "testnonconsumable";
+    private void Start()
+    {
+    }
     public void OnPurchaseClicked(Product product)
     {
+        Debug.Log($"on purchasing success: {product.definition.id}");
         if (product.definition.id == productone)
         {
             BuyCoins(250);
@@ -24,19 +28,28 @@ public class IAPManager : IAPButton
         if (product.definition.id == removeads)
         {
             SaveGame.SaveRemoveAds();
-            Debug.Log(SaveGame.removeAds);
+            Debug.Log("test function check non consumable" + SaveGame.removeAds);
             // Handle the non-consumable purchase completion
         }
-        
+    }
+
+    public void OnRestoreRemoveAds(bool success,string error)
+    {
+            Debug.Log($"restore: {success}\n:error: {error}");
+        if (success)
+        {
+            Debug.Log(removeads);
+            SaveGame.SaveRemoveAds();
+            // Handle the non-consumable purchase completion
+        }
+        else
+        {
+            Debug.LogError($"restore with error: {error}");
+        }
     }
     public void FailPurchaseOnclick(Product product, PurchaseFailureReason purchaseFailureReason)
     {
         Debug.Log("fail:" + purchaseFailureReason);
-        if (product.receipt != null)
-        {
-            SaveGame.SaveRemoveAds();
-            Debug.Log(SaveGame.removeAds);
-        }
     }
     public void BuyCoins(int value)
     {

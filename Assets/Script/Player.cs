@@ -20,7 +20,7 @@ public class Player : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && checkJump == true)
+        if (Input.anyKeyDown && checkJump == true)
         {
             rb.velocity = Vector3.up * jump;
             if(checkSound == 2)

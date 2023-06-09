@@ -10,11 +10,10 @@ public class UimanagerNormal : MonoBehaviour
 {
     public GameObject pausePanel;
     public GameObject pauseButton;
-    public GameObject GameoverPanel,VictoriPanel;
+    public GameObject GameoverPanel, VictoriPanel;
     public Text CoinsText;
     public Slider Slider;
     public GameObject PopupAds;
-    SaveGame SaveGame;
 
     int checkMap;
     float unlockState;
@@ -26,7 +25,7 @@ public class UimanagerNormal : MonoBehaviour
     private bool gameOver = false;
     private bool pause = false;
     InterstitialAdExample interstitialAdExample;
-    
+
     // Start is called before the first frame update
     private void Awake()
     {
@@ -71,7 +70,10 @@ public class UimanagerNormal : MonoBehaviour
     public void ShowPopup()
     {
         Time.timeScale = 0;
-        PopupAds.SetActive(true);
+        if (interstitialAdExample.unContinue)
+            PopupAds.SetActive(false);
+        else
+            PopupAds.SetActive(true);
     }
     public void HidenPopup()
     {
@@ -79,9 +81,8 @@ public class UimanagerNormal : MonoBehaviour
     }
     public void ContinueWith10Coins()
     {
-        if(SaveGame.coinsGame >= 10 && interstitialAdExample.unContinue == false)
+        if (SaveGame.coinsGame >= 10 && interstitialAdExample.unContinue == false)
         {
-            Debug.Log("test");
             SaveGame.coinsGame = SaveGame.coinsGame - 10;
             interstitialAdExample.unContinue = true;
             continueButton();
@@ -127,7 +128,7 @@ public class UimanagerNormal : MonoBehaviour
             unlockState = valueSlider;
             PlayerPrefs.SetFloat("unlockState", unlockState);
         }
-        if(checkMap == 2 && unlockStateDesert < valueSlider)
+        if (checkMap == 2 && unlockStateDesert < valueSlider)
         {
             unlockStateDesert = valueSlider;
             PlayerPrefs.SetFloat("unlockStateDesert", unlockStateDesert);

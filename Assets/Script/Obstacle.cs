@@ -9,7 +9,6 @@ public class Obstacle : MonoBehaviour
     public float moveSpeed;
     Uimanager UiEndless;
     UimanagerNormal UiNormal;
-    SaveGame saveGame;
     InterstitialAdExample interstitialAdExample;
     AdsInitializer adsInitializer;
 
@@ -18,7 +17,6 @@ public class Obstacle : MonoBehaviour
     
     void Start()
     {
-        removeAds = PlayerPrefs.GetInt("removeAds", removeAds);
         rb = GetComponent<Rigidbody2D>();
         UiEndless = Uimanager.FindObjectOfType<Uimanager>();
         UiNormal = UimanagerNormal.FindObjectOfType<UimanagerNormal>();
@@ -41,7 +39,7 @@ public class Obstacle : MonoBehaviour
             {
                 interstitialAdExample.ShowAd();
                 UiEndless.ShowGameOver();
-                if (removeAds != 1)
+                if (SaveGame.removeAds != 1)
                 {
                     interstitialAdExample.ShowAd();
                 }
@@ -50,7 +48,7 @@ public class Obstacle : MonoBehaviour
             {
                 UiNormal.ShowPopup();
                 UiNormal.ShowGameOver();
-                if (removeAds != 1)
+                if (SaveGame.removeAds != 1)
                 {
                     interstitialAdExample.ShowAd();
                 }

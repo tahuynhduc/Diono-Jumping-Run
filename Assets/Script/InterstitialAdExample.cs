@@ -7,7 +7,6 @@ public class InterstitialAdExample : MonoBehaviour, IUnityAdsLoadListener, IUnit
     [SerializeField] string _iOsAdUnitId = "Interstitial_iOS";
     string _adUnitId;
     UimanagerNormal uimanager;
-    int removeads;
     public bool unContinue = false;
 
     void Awake()
@@ -64,16 +63,24 @@ public class InterstitialAdExample : MonoBehaviour, IUnityAdsLoadListener, IUnit
     public void OnUnityAdsShowClick(string _adUnitId)
     {
     }
-    public void OnUnityAdsShowComplete(string _adUnitId, UnityAdsShowCompletionState showCompletionState) 
+    public void OnUnityAdsShowComplete(string _adUnitId, UnityAdsShowCompletionState showCompletionState)
     {
-        uimanager.continueButton();
     }
-    public void ContinueWhenBuyProductRemoveAds()
+    public void SkipAd()
     {
-        if (SaveGame.removeAds == 1 && unContinue == false)
+        if (unContinue == false)
         {
             uimanager.PopupAds.SetActive(false);
-            uimanager.continueButton();
+            unContinue = true;
+            if(SaveGame.removeAds != 1)
+            {
+                ShowAd();
+                uimanager.continueButton();
+            }
+            if (SaveGame.removeAds == 1)
+            {
+                uimanager.continueButton();
+            }
         }
     }
 }

@@ -20,7 +20,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3616061061829411963
 RectTransform:
   m_ObjectHideFlags: 0
@@ -41,7 +41,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -425.61, y: -74.06}
-  m_SizeDelta: {x: 291.81, y: 99.43}
+  m_SizeDelta: {x: 291.81, y: 99.42999}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3616061061829411942
 CanvasRenderer:
@@ -143,7 +143,7 @@ MonoBehaviour:
   onTransactionsRestored:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3616061061829411941}
+      - m_Target: {fileID: 3616061061829411938}
         m_TargetAssemblyTypeName: UnityEngine.Purchasing.IAPButton, UnityEngine.Purchasing.Codeless
         m_MethodName: OnTransactionsRestored
         m_Mode: 0
@@ -326,7 +326,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -0.006378174, y: 27.03}
+  m_AnchoredPosition: {x: -0.0063476562, y: 27.03006}
   m_SizeDelta: {x: -0.01, y: 54.06}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3616061062172258778
