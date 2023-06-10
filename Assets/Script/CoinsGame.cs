@@ -5,15 +5,12 @@ using UnityEngine;
 
 public class CoinsGame : MonoBehaviour
 {
-    UimanagerNormal ui;
     Rigidbody2D coins;
     public float moveSpeed;
-    SaveGame SaveGame;
 
     // Start is called before the first frame update
     void Start()
     {
-        ui = FindAnyObjectByType<UimanagerNormal>();
         coins = GetComponent<Rigidbody2D>();
     }
 

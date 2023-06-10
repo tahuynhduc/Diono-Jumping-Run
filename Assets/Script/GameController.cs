@@ -6,7 +6,6 @@ using UnityEngine.UIElements;
 
 public class GameController: MonoBehaviour
 {
-    int checkmap;
     public float timeSpawn;
     private float spawn;
     int check;
@@ -18,7 +17,6 @@ public class GameController: MonoBehaviour
     List<GameObject> listObstacle = new List<GameObject>();
     private void Awake()
     {
-        checkmap = PlayerPrefs.GetInt("checkmap", 0);
         check = PlayerPrefs.GetInt("checkCharacter", 1);
     }
     private void Start()
@@ -70,23 +68,23 @@ public class GameController: MonoBehaviour
     public void CreateParallax()
     {
         GameObject parallax;
-        if (checkmap == 1)
+        if (SaveGame.checkmap == 1)
         {
             parallax = Instantiate(Resources.Load<GameObject>("Prefab/Parallax/ParallaxForest"), new Vector3(Random.Range(0, 0), 0, 0), Quaternion.identity);
         }
-        if (checkmap == 2)
+        if (SaveGame.checkmap == 2)
         {
             parallax = Instantiate(Resources.Load<GameObject>("Prefab/Parallax/ParallaxForest"), new Vector3(Random.Range(0, 0), 0, 0), Quaternion.identity);
         }
-        if (checkmap == 3)
+        if (SaveGame.checkmap == 3)
         {
             parallax = Instantiate(Resources.Load<GameObject>("Prefab/Parallax/ParallaxForest"), new Vector3(Random.Range(0, 0), 0, 0), Quaternion.identity);
         }
-        if (checkmap == 4)
+        if (SaveGame.checkmap == 4)
         {
             parallax = Instantiate(Resources.Load<GameObject>("Prefab/Parallax/ParallaxForest"), new Vector3(Random.Range(0, 0), 0, 0), Quaternion.identity);
         }
-        if (checkmap == 5)
+        if (SaveGame.checkmap == 5)
         {
             parallax = Instantiate(Resources.Load<GameObject>("Prefab/Parallax/ParallaxForest"), new Vector3(Random.Range(0, 0), 0, 0), Quaternion.identity);
         }
@@ -94,30 +92,30 @@ public class GameController: MonoBehaviour
     public void CreateFromPoolAction()
     {
         GameObject obstacle;
-        if (checkmap == 1)
+        if (SaveGame.checkmap == 1)
         {
             obstacle = EasyObjectPool.instance.GetObjectFromPool(obstacleForest, new Vector3(Random.Range(22, 22), -6.027962f, 0), Quaternion.identity);
             listObstacle.Add(obstacle);
         }
-        if (checkmap == 2)
+        if (SaveGame.checkmap == 2)
         {
             obstacle = EasyObjectPool.instance.GetObjectFromPool(obstacleDesert, new Vector3(Random.Range(22, 22), -6f, 0), Quaternion.identity);
             listObstacle.Add(obstacle);
 
         }
-        if (checkmap == 3)
+        if (SaveGame.checkmap == 3)
         {
             obstacle = EasyObjectPool.instance.GetObjectFromPool(obstacleCity, new Vector3(Random.Range(22, 22), -6.1f, 0), Quaternion.identity);
             listObstacle.Add(obstacle);
 
         }
-        if (checkmap == 4)
+        if (SaveGame.checkmap == 4)
         {
             obstacle = EasyObjectPool.instance.GetObjectFromPool(obstacleMars, new Vector3(Random.Range(22, 22), -6f, 0), Quaternion.identity);
             listObstacle.Add(obstacle);
 
         }
-        if (checkmap == 5)
+        if (SaveGame.checkmap == 5)
         {
             obstacle = EasyObjectPool.instance.GetObjectFromPool(obstacleSnow, new Vector3(Random.Range(22, 22), -6f, 0), Quaternion.identity);
             listObstacle.Add(obstacle);

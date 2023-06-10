@@ -15,7 +15,6 @@ public class UimanagerNormal : MonoBehaviour
     public Slider Slider;
     public GameObject PopupAds;
 
-    int checkMap;
     float unlockState;
     float unlockStateDesert;
     float unlockStateGraveyard;
@@ -35,13 +34,10 @@ public class UimanagerNormal : MonoBehaviour
         unlockStateGraveyard = PlayerPrefs.GetFloat("unlockStateGraveyard", unlockStateGraveyard);
         unlockStateSnow = PlayerPrefs.GetFloat("unlockStateSnow", unlockStateSnow);
         valueSlider = PlayerPrefs.GetFloat("valueSlider", valueSlider);
-        checkMap = PlayerPrefs.GetInt("checkmap", checkMap);
         interstitialAdExample = FindAnyObjectByType<InterstitialAdExample>();
         Slider.maxValue = valueSlider;
         Slider.value = valueSlider;
         Slider.minValue = 0;
-        Debug.Log(valueSlider);
-
     }
     void Update()
     {
@@ -122,22 +118,22 @@ public class UimanagerNormal : MonoBehaviour
         SceneManager.LoadScene("GameplayNormal");
         valueSlider += 20;
         PlayerPrefs.SetFloat("valueSlider", valueSlider);
-        if (checkMap == 1 && unlockState < valueSlider)
+        if (SaveGame.checkmap == 1 && unlockState < valueSlider)
         {
             unlockState = valueSlider;
             PlayerPrefs.SetFloat("unlockState", unlockState);
         }
-        if (checkMap == 2 && unlockStateDesert < valueSlider)
+        if (SaveGame.checkmap == 2 && unlockStateDesert < valueSlider)
         {
             unlockStateDesert = valueSlider;
             PlayerPrefs.SetFloat("unlockStateDesert", unlockStateDesert);
         }
-        if (checkMap == 3 && unlockStateGraveyard < valueSlider)
+        if (SaveGame.checkmap == 3 && unlockStateGraveyard < valueSlider)
         {
             unlockStateGraveyard = valueSlider;
             PlayerPrefs.SetFloat("unlockStateGraveyard", unlockStateGraveyard);
         }
-        if (checkMap == 4 && unlockStateSnow < valueSlider)
+        if (SaveGame.checkmap == 4 && unlockStateSnow < valueSlider)
         {
             unlockStateSnow = valueSlider;
             PlayerPrefs.SetFloat("unlockStateSnow", unlockStateSnow);

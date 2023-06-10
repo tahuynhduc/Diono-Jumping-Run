@@ -21,12 +21,10 @@ public class SceneLoader : MonoBehaviour
     public void Endless()
     {
         SaveGame.saveMode = 1;
-        SaveGame.SaveMode();
     }
     public void Normal()
     {
         SaveGame.saveMode = 2;
-        SaveGame.SaveMode();
     }
     public void LoadGameplay()
     {
@@ -42,12 +40,10 @@ public class SceneLoader : MonoBehaviour
     public void Shop()
     {
         SaveGame.loadshop = 1;
-        SaveGame.LoadShop();
     }
     public void Character()
     {
         SaveGame.loadshop = 2;
-        SaveGame.LoadShop();
 
     }
 }

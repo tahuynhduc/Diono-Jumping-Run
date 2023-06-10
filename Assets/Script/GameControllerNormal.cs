@@ -27,5 +27,6 @@ public class GameControllerNormal : GameController
     private void CreateCoins()
     {
         GameObject coins = EasyObjectPool.instance.GetObjectFromPool(coin, new Vector3(Random.Range(20, 30), -6f, 0), Quaternion.identity);
+        listCoins.Add(coins);
     }
 }
