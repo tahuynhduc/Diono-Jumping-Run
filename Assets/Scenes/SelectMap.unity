@@ -270,7 +270,6 @@ GameObject:
   - component: {fileID: 51201109}
   - component: {fileID: 51201108}
   - component: {fileID: 51201107}
-  - component: {fileID: 51201110}
   m_Layer: 5
   m_Name: Button (Legacy) (3)
   m_TagString: Untagged
@@ -345,7 +344,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1536316466}
         m_TargetAssemblyTypeName: SelectMap, Assembly-CSharp
-        m_MethodName: Snow
+        m_MethodName: Mars
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -355,7 +354,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 51201110}
+      - m_Target: {fileID: 1536316467}
         m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
         m_MethodName: LoadGameplay
         m_Mode: 1
@@ -405,18 +404,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 51201105}
   m_CullTransparentMesh: 1
---- !u!114 &51201110
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 51201105}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b110acd6c797c3f4fa2f68f418484129, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &259635769
 GameObject:
   m_ObjectHideFlags: 0
@@ -950,7 +937,6 @@ GameObject:
   - component: {fileID: 1457452920}
   - component: {fileID: 1457452919}
   - component: {fileID: 1457452918}
-  - component: {fileID: 1457452917}
   m_Layer: 5
   m_Name: Button (Legacy) (4)
   m_TagString: Untagged
@@ -979,18 +965,6 @@ RectTransform:
   m_AnchoredPosition: {x: 1017, y: 0}
   m_SizeDelta: {x: 214, y: 420}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1457452917
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1457452915}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b110acd6c797c3f4fa2f68f418484129, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1457452918
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1047,7 +1021,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1457452917}
+      - m_Target: {fileID: 1536316467}
         m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
         m_MethodName: LoadGameplay
         m_Mode: 1
@@ -1270,6 +1244,7 @@ GameObject:
   - component: {fileID: 1536316463}
   - component: {fileID: 1536316462}
   - component: {fileID: 1536316466}
+  - component: {fileID: 1536316467}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1371,6 +1346,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2a437e4e8f141d44ea9c985d5cd254aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1536316467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1536316461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b110acd6c797c3f4fa2f68f418484129, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1558171488
@@ -1639,7 +1626,6 @@ GameObject:
   - component: {fileID: 1664137817}
   - component: {fileID: 1664137816}
   - component: {fileID: 1664137815}
-  - component: {fileID: 1664137818}
   m_Layer: 5
   m_Name: Button (Legacy) (1)
   m_TagString: Untagged
@@ -1724,7 +1710,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1664137818}
+      - m_Target: {fileID: 1536316467}
         m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
         m_MethodName: LoadGameplay
         m_Mode: 1
@@ -1774,18 +1760,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1664137813}
   m_CullTransparentMesh: 1
---- !u!114 &1664137818
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1664137813}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b110acd6c797c3f4fa2f68f418484129, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1667714290
 GameObject:
   m_ObjectHideFlags: 0
@@ -1945,7 +1919,6 @@ GameObject:
   - component: {fileID: 1683294616}
   - component: {fileID: 1683294615}
   - component: {fileID: 1683294614}
-  - component: {fileID: 1683294617}
   m_Layer: 5
   m_Name: Button (Legacy)
   m_TagString: Untagged
@@ -2018,7 +1991,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1683294617}
+      - m_Target: {fileID: 1536316467}
         m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
         m_MethodName: LoadGameplay
         m_Mode: 1
@@ -2080,18 +2053,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1683294612}
   m_CullTransparentMesh: 1
---- !u!114 &1683294617
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1683294612}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b110acd6c797c3f4fa2f68f418484129, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1757594032
 GameObject:
   m_ObjectHideFlags: 0
@@ -2239,7 +2200,6 @@ GameObject:
   - component: {fileID: 1916108805}
   - component: {fileID: 1916108804}
   - component: {fileID: 1916108803}
-  - component: {fileID: 1916108806}
   m_Layer: 5
   m_Name: Button (Legacy) (2)
   m_TagString: Untagged
@@ -2314,7 +2274,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1536316466}
         m_TargetAssemblyTypeName: SelectMap, Assembly-CSharp
-        m_MethodName: Graveyard
+        m_MethodName: City
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2324,7 +2284,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1916108806}
+      - m_Target: {fileID: 1536316467}
         m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
         m_MethodName: LoadGameplay
         m_Mode: 1
@@ -2374,18 +2334,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1916108801}
   m_CullTransparentMesh: 1
---- !u!114 &1916108806
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1916108801}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b110acd6c797c3f4fa2f68f418484129, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1974531166
 GameObject:
   m_ObjectHideFlags: 0

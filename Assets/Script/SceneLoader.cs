@@ -7,53 +7,47 @@ using UnityEngine.UI;
 
 public class SceneLoader : MonoBehaviour
 {
-    SaveGame SaveGame;
     private void Awake()
     {
-        SaveGame = FindObjectOfType<SaveGame>();
     }
-    private void Start()
-    {
-    }
-   
     //public void LoadScene()
     public void LoadScene(string scene)
     {
         //GAME_SCENE scene = GAME_SCENE.ShopScene;
         SceneManager.LoadScene(scene);
         Time.timeScale = 1.0f;
-        SaveGame.SaveCoins();
+        SaveGame.SaveCoins(0);
     }
     public void Endless()
     {
-        SaveGame.checkSaveMap = 1;
-        SaveGame.SaveMap();
+        SaveGame.saveMode = 1;
+        SaveGame.SaveMode();
     }
     public void Normal()
     {
-        SaveGame.checkSaveMap = 2;
-        SaveGame.SaveMap();
+        SaveGame.saveMode = 2;
+        SaveGame.SaveMode();
     }
     public void LoadGameplay()
     {
-        SaveGame.LoadMap();
-        if (SaveGame.checkSaveMap == 1)
+        if (SaveGame.saveMode == 1)
         {
-            SceneManager.LoadScene("GameplayEndless");
+            LoadScene("GameplayEndless");
         }
-        if (SaveGame.checkSaveMap == 2)
+        if (SaveGame.saveMode == 2)
         {
-            SceneManager.LoadScene("SelectLevel");
+            LoadScene("SelectLevel");
         }
     }
     public void Shop()
     {
-        SaveGame.checkShop = 1;
-        SaveGame.Check();
+        SaveGame.loadshop = 1;
+        SaveGame.LoadShop();
     }
     public void Character()
     {
-        SaveGame.checkShop = 2;
-        SaveGame.Check();
+        SaveGame.loadshop = 2;
+        SaveGame.LoadShop();
+
     }
 }

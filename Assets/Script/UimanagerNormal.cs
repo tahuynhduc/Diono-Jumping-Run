@@ -30,7 +30,6 @@ public class UimanagerNormal : MonoBehaviour
     private void Awake()
     {
         Time.timeScale = 1;
-        SaveGame.LoadCoins();
         unlockState = PlayerPrefs.GetFloat("unlockState", unlockState);
         unlockStateDesert = PlayerPrefs.GetFloat("unlockStateDesert", unlockStateDesert);
         unlockStateGraveyard = PlayerPrefs.GetFloat("unlockStateGraveyard", unlockStateGraveyard);

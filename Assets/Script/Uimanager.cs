@@ -17,7 +17,7 @@ public class Uimanager : MonoBehaviour
     public Text bestScoreText;
 
     private int score;
-    private long bestScore;
+    public long bestScore;
     private bool gameOver = false;
     private bool pause = false;
    

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7311063756356953653}
   - component: {fileID: 7311063756356953657}
   m_Layer: 0
-  m_Name: ParallaxGraveyard
+  m_Name: ParallaxMars
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

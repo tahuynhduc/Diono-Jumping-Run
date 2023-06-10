@@ -53,6 +53,6 @@ public class IAPManager : MonoBehaviour
     }
     public void BuyCoins(int value)
     {
-        SaveGame.BuyCoins(value);
+        SaveGame.SaveCoins(value);
     }
 }

@@ -1,3 +1,4 @@
+using MarchingBytes;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -35,7 +36,7 @@ public class Obstacle : MonoBehaviour
         {
             adsInitializer.OnInitializationComplete();
             Time.timeScale = 0;
-            if(SaveGame.checkSaveMap == 1)
+            if(SaveGame.saveMode == 1)
             {
                 interstitialAdExample.ShowAd();
                 UiEndless.ShowGameOver();
@@ -57,11 +58,11 @@ public class Obstacle : MonoBehaviour
         else if (collision.gameObject.CompareTag("GameController"))
         {
             UiEndless.ShowScore();
-            Destroy(gameObject);
+            EasyObjectPool.instance.ReturnObjectToPool(gameObject);
         }
         else if (collision.gameObject.CompareTag("DestroyObstacle"))
         {
-            Destroy(gameObject);
+            EasyObjectPool.instance.ReturnObjectToPool(gameObject);
         }
     }
   

@@ -11,22 +11,21 @@ public class ShopController : MonoBehaviour
     public TextMeshProUGUI CharacterViewText;
     public GameObject CoinsView;
     public GameObject CharacterView;
-    
-
-
     private void Awake()
     {
-        
     }
     void Start()
     {
-        int checkShop = DatabaseManager.LoadData<int>(DatabaseManager.DatabaseKey.CheckShop);
-        int checkCharacter = DatabaseManager.LoadData<int>(DatabaseManager.DatabaseKey.CheckCharacter);
-        if (checkShop == 1)
+        Debug.Log(SaveGame.loadshop);
+        //bool checkShop = DatabaseManager.LoadData<bool>(DatabaseManager.DatabaseKey.CheckShop);
+        //string loadedPlayerName = DatabaseManager.LoadData<string>(DatabaseManager.DatabaseKey.PlayerName);
+        //Debug.Log(checkShop);
+        //Debug.Log(loadedPlayerName);
+        if (SaveGame.loadshop == 1)
         {
             ShowCoinsView();
         }
-        if (checkCharacter == 1)
+        if (SaveGame.loadshop == 2)
         {
             ShowCharacterView();
         }

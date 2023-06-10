@@ -65,6 +65,7 @@ public class InterstitialAdExample : MonoBehaviour, IUnityAdsLoadListener, IUnit
     }
     public void OnUnityAdsShowComplete(string _adUnitId, UnityAdsShowCompletionState showCompletionState)
     {
+        LoadAd();
     }
     public void SkipAd()
     {

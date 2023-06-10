@@ -5,49 +5,39 @@ using UnityEngine;
 
 public class SaveGame : MonoBehaviour
 {
-    public static int checkSaveMap;
+    public static int saveMode;
     public static int coinsGame;
     public static int checkShop;
     public static int removeAds;
+    public static int loadshop;
+    public static int checkmap;
     public static void SaveRemoveAds()
     {
         removeAds = 1;
         PlayerPrefs.SetInt("removeAds", removeAds);
         PlayerPrefs.Save();
     }
+    public static void SaveMode()
+    {
+        PlayerPrefs.SetInt("saveMode", saveMode);
+        PlayerPrefs.Save();
+    }
     public static void SaveMap()
     {
-        PlayerPrefs.SetInt("checkSaveMap", checkSaveMap);
+        PlayerPrefs.SetInt("checkmap", checkmap);
         PlayerPrefs.Save();
-    }
-    public static void LoadMap()
-    {
-        checkSaveMap = PlayerPrefs.GetInt("checkSaveMap", 0);
-    }
-    public static void Check()
-    {
-        PlayerPrefs.SetInt("checkShop", checkShop);
-        PlayerPrefs.Save();
-    }
-    public static void Load()
-    {
-        checkShop = PlayerPrefs.GetInt("checkShop", 0);
     }
     #region coins game
-    public static void BuyCoins(int value)
+    public static void SaveCoins(int value)
     {
         coinsGame += value;
         PlayerPrefs.SetInt("coinsGame",coinsGame);
         PlayerPrefs.Save();
     }
-    public static void SaveCoins()
+    public static void LoadShop()
     {
-        PlayerPrefs.SetInt("coinsGame", coinsGame);
+        PlayerPrefs.SetInt("loadshop", loadshop);
         PlayerPrefs.Save();
-    }
-    public static void LoadCoins()
-    {
-        coinsGame = PlayerPrefs.GetInt("coinsGame", 0);
     }
     #endregion
 }

@@ -4,31 +4,30 @@ using UnityEngine;
 
 public class SelectMap : MonoBehaviour
 {
-    int checkmap;
     // Start is called before the first frame update
     public void Forest()
     {
-        checkmap = 1;
-        PlayerPrefs.SetInt("checkmap", checkmap);
-        PlayerPrefs.Save();
+        SaveGame.checkmap = 1;
+        SaveGame.SaveMap();
     }
     public void Desert()
     {
-        checkmap = 2;
-        PlayerPrefs.SetInt("checkmap", checkmap);
-        PlayerPrefs.Save();
+        SaveGame.checkmap = 2;
+        SaveGame.SaveMap();
     }
-    public void Graveyard()
+    public void City()
     {
-        checkmap = 3;
-        PlayerPrefs.SetInt("checkmap", checkmap);
-        PlayerPrefs.Save();
+        SaveGame.checkmap = 3;
+        SaveGame.SaveMap();
+    }
+    public void Mars()
+    {
+        SaveGame.checkmap = 4;
+        SaveGame.SaveMap();
     }
     public void Snow()
     {
-        checkmap = 4;
-        PlayerPrefs.SetInt("checkmap", checkmap);
-        PlayerPrefs.Save();
+        SaveGame.checkmap = 5;
+        SaveGame.SaveMap();
     }
-
 }

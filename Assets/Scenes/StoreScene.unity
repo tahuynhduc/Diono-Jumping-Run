@@ -2789,7 +2789,7 @@ MonoBehaviour:
   onPurchaseComplete:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1594326028}
         m_TargetAssemblyTypeName: IAPManager, Assembly-CSharp
         m_MethodName: OnPurchaseClicked
         m_Mode: 0
@@ -2804,7 +2804,7 @@ MonoBehaviour:
   onPurchaseFailed:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1594326028}
         m_TargetAssemblyTypeName: IAPManager, Assembly-CSharp
         m_MethodName: FailPurchaseOnclick
         m_Mode: 0
@@ -6584,18 +6584,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1497658425}
-        m_TargetAssemblyTypeName: ShopController, Assembly-CSharp
-        m_MethodName: setTxt
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &1337453931
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7003,19 +6991,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1488392024}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1497658425}
-        m_TargetAssemblyTypeName: ShopController, Assembly-CSharp
-        m_MethodName: BuyCoins
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1200
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1488392024
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7067,6 +7043,7 @@ GameObject:
   - component: {fileID: 1497658420}
   - component: {fileID: 1497658419}
   - component: {fileID: 1497658425}
+  - component: {fileID: 1497658426}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -7176,6 +7153,18 @@ MonoBehaviour:
   CharacterViewText: {fileID: 1549811654}
   CoinsView: {fileID: 485021642}
   CharacterView: {fileID: 583564588}
+--- !u!114 &1497658426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1497658418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e4f4ce693e30f44287f2a3938847345, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1528232151
 GameObject:
   m_ObjectHideFlags: 0
@@ -7591,7 +7580,7 @@ MonoBehaviour:
   onPurchaseComplete:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1594326028}
         m_TargetAssemblyTypeName: IAPManager, Assembly-CSharp
         m_MethodName: OnPurchaseClicked
         m_Mode: 0
@@ -7606,7 +7595,7 @@ MonoBehaviour:
   onPurchaseFailed:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1594326028}
         m_TargetAssemblyTypeName: IAPManager, Assembly-CSharp
         m_MethodName: FailPurchaseOnclick
         m_Mode: 0
@@ -7631,7 +7620,7 @@ PrefabInstance:
     - target: {fileID: 3616061061829411938, guid: ed3b4c01baf488e4c86280cdd2e62b58,
         type: 3}
       propertyPath: productId
-      value: testver2
+      value: testnonconsumable
       objectReference: {fileID: 0}
     - target: {fileID: 3616061061829411962, guid: ed3b4c01baf488e4c86280cdd2e62b58,
         type: 3}
@@ -7771,6 +7760,18 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1594326025}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1594326028 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3616061061829411941, guid: ed3b4c01baf488e4c86280cdd2e62b58,
+    type: 3}
+  m_PrefabInstance: {fileID: 1594326025}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b3a8c4ff5b123842a8b659c30227c7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1690276517
 GameObject:
   m_ObjectHideFlags: 0

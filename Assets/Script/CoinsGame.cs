@@ -1,3 +1,4 @@
+using MarchingBytes;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -24,14 +25,13 @@ public class CoinsGame : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            SaveGame.coinsGame++;
-            SaveGame.SaveCoins();
-            Destroy(gameObject);
+            SaveGame.SaveCoins(1);
+            EasyObjectPool.instance.ReturnObjectToPool(gameObject);
 
         }
         if (collision.gameObject.CompareTag("DestroyObstacle"))
         {
-            Destroy(gameObject);
+            EasyObjectPool.instance.ReturnObjectToPool(gameObject);
         }
     }
 
