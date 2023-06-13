@@ -7,9 +7,6 @@ using UnityEngine.UI;
 
 public class SceneLoader : MonoBehaviour
 {
-    private void Awake()
-    {
-    }
     //public void LoadScene()
     public void LoadScene(string scene)
     {
@@ -18,32 +15,21 @@ public class SceneLoader : MonoBehaviour
         Time.timeScale = 1.0f;
         SaveGame.SaveCoins(0);
     }
-    public void Endless()
+    public void CheckMap(int value)
     {
-        SaveGame.saveMode = 1;
-    }
-    public void Normal()
-    {
-        SaveGame.saveMode = 2;
+        int checkMap = value;
+        DatabaseManager.SaveData(DatabaseManager.DatabaseKey.SaveMap,checkMap);
     }
     public void LoadGameplay()
     {
-        if (SaveGame.saveMode == 1)
+        bool checkMode = DatabaseManager.LoadData<bool>(DatabaseManager.DatabaseKey.CheckMode);
+        if (checkMode)
         {
             LoadScene("GameplayEndless");
         }
-        if (SaveGame.saveMode == 2)
+        if (checkMode == false)
         {
             LoadScene("SelectLevel");
         }
-    }
-    public void Shop()
-    {
-        SaveGame.loadshop = 1;
-    }
-    public void Character()
-    {
-        SaveGame.loadshop = 2;
-
     }
 }

@@ -8,7 +8,7 @@ using UnityEngine.UI;
 
 public class SelectLevel : MonoBehaviour
 {
-    float valueSlider;
+    float TargetLevel;
     float unlockState;
     float unlockStateDesert;
     float unlockStateGraveyard;
@@ -21,12 +21,12 @@ public class SelectLevel : MonoBehaviour
     [SerializeField] Button levelFive;
     private void Awake()
     {
-        valueSlider = PlayerPrefs.GetFloat("valueSlider", 0);
-        unlockState = PlayerPrefs.GetFloat("unlockState", 0);
-        checkMap = PlayerPrefs.GetInt("checkmap", 0);
-        unlockStateDesert = PlayerPrefs.GetInt("unlockStateDesert", 0);
-        unlockStateGraveyard = PlayerPrefs.GetInt("unlockStateGraveyard",0);
-        unlockStateSnow = PlayerPrefs.GetInt("unlockStateSnow",0);
+        checkMap = DatabaseManager.LoadData<int>(DatabaseManager.DatabaseKey.SaveMap);
+        TargetLevel = DatabaseManager.LoadData<float>(DatabaseManager.DatabaseKey.TargetLevel);
+        unlockState = DatabaseManager.LoadData<float>(DatabaseManager.DatabaseKey.unlockState);
+        unlockStateDesert = DatabaseManager.LoadData<float>(DatabaseManager.DatabaseKey.unlockStateDesert);
+        unlockStateGraveyard = DatabaseManager.LoadData<float>(DatabaseManager.DatabaseKey.unlockStateGraveyard);
+        unlockStateSnow = DatabaseManager.LoadData<float>(DatabaseManager.DatabaseKey.unlockStateSnow);
     }
     void Start()
     {
@@ -40,7 +40,6 @@ public class SelectLevel : MonoBehaviour
         CheckUnlockLevel(3,unlockStateDesert, unlockStateGraveyard);
         CheckUnlockLevel(4,unlockStateGraveyard, unlockStateSnow);
     }
-
     private void CheckUnlockLevel(int map,float preCondition, float currentState)
     {
         if (checkMap == map)
@@ -64,160 +63,30 @@ public class SelectLevel : MonoBehaviour
             }
         }
     }
-
-    public void checkLevelOne()
+    public void CheckLevel(float value)
     {
         SceneManager.LoadScene("GameplayNormal");
-        valueSlider = 20;
-        PlayerPrefs.SetFloat("valueSlider", valueSlider);
-        PlayerPrefs.Save();
-        if(unlockState < valueSlider)
+        TargetLevel = value;
+        if (unlockState <= TargetLevel)
         {
-            unlockState = valueSlider;
-            PlayerPrefs.SetFloat("unlockState", unlockState);
-            PlayerPrefs.Save();
+            unlockState = TargetLevel;
         }
-        if (unlockStateDesert < valueSlider && unlockState >= 100)
+        if (unlockStateDesert < TargetLevel && unlockState >= 100)
         {
-            unlockStateDesert = valueSlider;
-            PlayerPrefs.SetFloat("unlockStateDesert", unlockStateDesert);
-            PlayerPrefs.Save();
+            unlockStateDesert = TargetLevel;
         }
-        if (unlockStateGraveyard < valueSlider && unlockStateDesert >= 100)
+        if (unlockStateGraveyard < TargetLevel && unlockStateDesert >= 100)
         {
-            unlockStateGraveyard = valueSlider;
-            PlayerPrefs.SetFloat("unlockStateGraveyard", unlockStateGraveyard);
-            PlayerPrefs.Save();
+            unlockStateGraveyard = TargetLevel;
         }
-        if (unlockStateSnow < valueSlider && unlockStateGraveyard >= 100)
+        if (unlockStateSnow < TargetLevel && unlockStateGraveyard >= 100)
         {
-            unlockStateSnow = valueSlider;
-            PlayerPrefs.SetFloat("unlockStateSnow", unlockStateSnow);
-            PlayerPrefs.Save();
+            unlockStateSnow = TargetLevel;
         }
-    }
-    public void checkLevelTwo()
-    {
-        SceneManager.LoadScene("GameplayNormal");
-        valueSlider = 40;
-        PlayerPrefs.SetFloat("valueSlider", valueSlider);
-        PlayerPrefs.Save();
-        if (unlockState < valueSlider)
-        {
-            unlockState = valueSlider;
-            PlayerPrefs.SetFloat("unlockState", unlockState);
-            PlayerPrefs.Save();
-        }
-        if (unlockStateDesert < valueSlider && unlockState >= 100)
-        {
-            unlockStateDesert = valueSlider;
-            PlayerPrefs.SetFloat("unlockStateDesert", unlockStateDesert);
-            PlayerPrefs.Save();
-        }
-        if (unlockStateGraveyard < valueSlider && unlockStateDesert >= 100)
-        {
-            unlockStateGraveyard = valueSlider;
-            PlayerPrefs.SetFloat("unlockStateGraveyard", unlockStateGraveyard);
-            PlayerPrefs.Save();
-        }
-        if (unlockStateSnow < valueSlider && unlockStateGraveyard >= 100)
-        {
-            unlockStateSnow = valueSlider;
-            PlayerPrefs.SetFloat("unlockStateSnow", unlockStateSnow);
-            PlayerPrefs.Save();
-        }
-    }
-    public void checkLevelThree()
-    {
-        SceneManager.LoadScene("GameplayNormal");
-        valueSlider = 60;
-        PlayerPrefs.SetFloat("valueSlider", valueSlider);
-        PlayerPrefs.Save();
-        if (unlockState < valueSlider && unlockState >= 100)
-        {
-            unlockState = valueSlider;
-            PlayerPrefs.SetFloat("unlockState", unlockState);
-            PlayerPrefs.Save();
-        }
-        if (unlockStateDesert < valueSlider)
-        {
-            unlockStateDesert = valueSlider;
-            PlayerPrefs.SetFloat("unlockStateDesert", unlockStateDesert);
-            PlayerPrefs.Save();
-        }
-        if (unlockStateGraveyard < valueSlider && unlockStateDesert >= 100)
-        {
-            unlockStateGraveyard = valueSlider;
-            PlayerPrefs.SetFloat("unlockStateGraveyard", unlockStateGraveyard);
-            PlayerPrefs.Save();
-        }
-        if (unlockStateSnow < valueSlider && unlockStateGraveyard >= 100)
-        {
-            unlockStateSnow = valueSlider;
-            PlayerPrefs.SetFloat("unlockStateSnow", unlockStateSnow);
-            PlayerPrefs.Save();
-        }
-    }
-    public void checkLevelFor()
-    {
-        SceneManager.LoadScene("GameplayNormal");
-        valueSlider = 80;
-        PlayerPrefs.SetFloat("valueSlider", valueSlider);
-        PlayerPrefs.Save();
-        if (unlockState < valueSlider)
-        {
-            unlockState = valueSlider;
-            PlayerPrefs.SetFloat("unlockState", unlockState);
-            PlayerPrefs.Save();
-        }
-        if (unlockStateDesert < valueSlider && unlockState >=100)
-        {
-            unlockStateDesert = valueSlider;
-            PlayerPrefs.SetFloat("unlockStateDesert", unlockStateDesert);
-            PlayerPrefs.Save();
-        }
-        if (unlockStateGraveyard < valueSlider && unlockStateDesert >= 100)
-        {
-            unlockStateGraveyard = valueSlider;
-            PlayerPrefs.SetFloat("unlockStateGraveyard", unlockStateGraveyard);
-            PlayerPrefs.Save();
-        }
-        if (unlockStateSnow < valueSlider && unlockStateGraveyard >= 100)
-        {
-            unlockStateSnow = valueSlider;
-            PlayerPrefs.SetFloat("unlockStateSnow", unlockStateSnow);
-            PlayerPrefs.Save();
-        }
-    }
-    public void checkLevelFive()
-    {
-        SceneManager.LoadScene("GameplayNormal");
-        valueSlider = 100;
-        PlayerPrefs.SetFloat("valueSlider", valueSlider);
-        PlayerPrefs.Save();
-        if (unlockState < valueSlider)
-        {
-            unlockState = valueSlider;
-            PlayerPrefs.SetFloat("unlockState", unlockState);
-            PlayerPrefs.Save();
-        }
-        if (unlockStateDesert < valueSlider && unlockState >= 100)
-        {
-            unlockStateDesert = valueSlider;
-            PlayerPrefs.SetFloat("unlockStateDesert", unlockStateDesert);
-            PlayerPrefs.Save();
-        }
-        if (unlockStateGraveyard < valueSlider && unlockStateDesert >= 100)
-        {
-            unlockStateGraveyard = valueSlider;
-            PlayerPrefs.SetFloat("unlockStateGraveyard", unlockStateGraveyard);
-            PlayerPrefs.Save();
-        }
-        if (unlockStateSnow < valueSlider && unlockStateGraveyard >= 100)
-        {
-            unlockStateSnow = valueSlider;
-            PlayerPrefs.SetFloat("unlockStateSnow", unlockStateSnow);
-            PlayerPrefs.Save();
-        }
+        DatabaseManager.SaveData(DatabaseManager.DatabaseKey.TargetLevel, TargetLevel);
+        DatabaseManager.SaveData(DatabaseManager.DatabaseKey.unlockState, unlockState);
+        DatabaseManager.SaveData(DatabaseManager.DatabaseKey.unlockStateDesert, unlockStateDesert);
+        DatabaseManager.SaveData(DatabaseManager.DatabaseKey.unlockStateGraveyard, unlockStateGraveyard);
+        DatabaseManager.SaveData(DatabaseManager.DatabaseKey.unlockStateSnow, unlockStateSnow);
     }
 }

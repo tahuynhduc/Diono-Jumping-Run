@@ -1031,7 +1031,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Select
+  m_text: 4000
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1107,167 +1107,6 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 173633802}
-  m_CullTransparentMesh: 1
---- !u!1 &199017469
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 199017470}
-  - component: {fileID: 199017472}
-  - component: {fileID: 199017471}
-  - component: {fileID: 199017474}
-  - component: {fileID: 199017473}
-  m_Layer: 5
-  m_Name: Restore
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!224 &199017470
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 199017469}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 825238701}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 661, y: 251.22}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &199017471
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 199017469}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 36a5f511b0d8142cba0aeb92d0b264c9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  productId: testver2
-  buttonType: 1
-  consumePurchase: 1
-  onTransactionsRestored:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: IAPManager, Assembly-CSharp
-        m_MethodName: OnRestoreRemoveAds
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onPurchaseComplete:
-    m_PersistentCalls:
-      m_Calls: []
-  onPurchaseFailed:
-    m_PersistentCalls:
-      m_Calls: []
-  titleText: {fileID: 0}
-  descriptionText: {fileID: 0}
-  priceText: {fileID: 0}
---- !u!114 &199017472
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 199017469}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 199017473}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!114 &199017473
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 199017469}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &199017474
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 199017469}
   m_CullTransparentMesh: 1
 --- !u!1 &201636441
 GameObject:
@@ -2432,7 +2271,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Select
+  m_text: 7000
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2789,7 +2628,7 @@ MonoBehaviour:
   onPurchaseComplete:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1594326028}
+      - m_Target: {fileID: 1497658427}
         m_TargetAssemblyTypeName: IAPManager, Assembly-CSharp
         m_MethodName: OnPurchaseClicked
         m_Mode: 0
@@ -2804,7 +2643,7 @@ MonoBehaviour:
   onPurchaseFailed:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1594326028}
+      - m_Target: {fileID: 1497658427}
         m_TargetAssemblyTypeName: IAPManager, Assembly-CSharp
         m_MethodName: FailPurchaseOnclick
         m_Mode: 0
@@ -4212,7 +4051,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Select
+  m_text: 2000
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4323,7 +4162,6 @@ RectTransform:
   - {fileID: 1337453929}
   - {fileID: 485021643}
   - {fileID: 583564589}
-  - {fileID: 199017470}
   - {fileID: 1594326026}
   m_Father: {fileID: 1497658422}
   m_RootOrder: 2
@@ -6755,7 +6593,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7e5c897f1dcc5545bb7fb6fcf3fe423, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SelectedCharacterOne: {fileID: 1971814417}
+  SelectedCharacterOne: {fileID: 1162489994}
   SelectCharacterOne: {fileID: 1484588516}
   priceCharacterTwo: {fileID: 812258352}
   SelectCharacterTwo: {fileID: 490967608}
@@ -7044,6 +6882,7 @@ GameObject:
   - component: {fileID: 1497658419}
   - component: {fileID: 1497658425}
   - component: {fileID: 1497658426}
+  - component: {fileID: 1497658427}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -7163,6 +7002,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6e4f4ce693e30f44287f2a3938847345, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1497658427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1497658418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b3a8c4ff5b123842a8b659c30227c7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1528232151
@@ -7580,7 +7431,7 @@ MonoBehaviour:
   onPurchaseComplete:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1594326028}
+      - m_Target: {fileID: 1497658427}
         m_TargetAssemblyTypeName: IAPManager, Assembly-CSharp
         m_MethodName: OnPurchaseClicked
         m_Mode: 0
@@ -7595,7 +7446,7 @@ MonoBehaviour:
   onPurchaseFailed:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1594326028}
+      - m_Target: {fileID: 1497658427}
         m_TargetAssemblyTypeName: IAPManager, Assembly-CSharp
         m_MethodName: FailPurchaseOnclick
         m_Mode: 0
@@ -7619,18 +7470,28 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3616061061829411938, guid: ed3b4c01baf488e4c86280cdd2e62b58,
         type: 3}
-      propertyPath: productId
-      value: testnonconsumable
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1497658427}
+    - target: {fileID: 3616061061829411938, guid: ed3b4c01baf488e4c86280cdd2e62b58,
+        type: 3}
+      propertyPath: onPurchaseComplete.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1497658427}
+    - target: {fileID: 3616061061829411938, guid: ed3b4c01baf488e4c86280cdd2e62b58,
+        type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: FailPurchaseOnclick
+      objectReference: {fileID: 0}
+    - target: {fileID: 3616061061829411938, guid: ed3b4c01baf488e4c86280cdd2e62b58,
+        type: 3}
+      propertyPath: onPurchaseComplete.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnPurchaseClicked
       objectReference: {fileID: 0}
     - target: {fileID: 3616061061829411962, guid: ed3b4c01baf488e4c86280cdd2e62b58,
         type: 3}
       propertyPath: m_Name
       value: RemoveAdsButton
-      objectReference: {fileID: 0}
-    - target: {fileID: 3616061061829411962, guid: ed3b4c01baf488e4c86280cdd2e62b58,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3616061061829411963, guid: ed3b4c01baf488e4c86280cdd2e62b58,
         type: 3}
@@ -7676,21 +7537,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SizeDelta.y
       value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 3616061061829411963, guid: ed3b4c01baf488e4c86280cdd2e62b58,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3616061061829411963, guid: ed3b4c01baf488e4c86280cdd2e62b58,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3616061061829411963, guid: ed3b4c01baf488e4c86280cdd2e62b58,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3616061061829411963, guid: ed3b4c01baf488e4c86280cdd2e62b58,
         type: 3}
@@ -7752,7 +7598,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3616061061829411941, guid: ed3b4c01baf488e4c86280cdd2e62b58, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ed3b4c01baf488e4c86280cdd2e62b58, type: 3}
 --- !u!224 &1594326026 stripped
 RectTransform:
@@ -7760,18 +7607,6 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1594326025}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1594326028 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3616061061829411941, guid: ed3b4c01baf488e4c86280cdd2e62b58,
-    type: 3}
-  m_PrefabInstance: {fileID: 1594326025}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b3a8c4ff5b123842a8b659c30227c7b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1690276517
 GameObject:
   m_ObjectHideFlags: 0
@@ -8177,7 +8012,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Select
+  m_text: 6000
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -9154,7 +8989,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Select
+  m_text: 5000
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -9289,7 +9124,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Select
+  m_text: 3000
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

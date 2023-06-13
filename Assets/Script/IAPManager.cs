@@ -10,10 +10,7 @@ public class IAPManager : MonoBehaviour
 {
     private string productone = "productone";
     private string producttwo = "producttwo";
-    private string removeads = "testnonconsumable";
-    private void Start()
-    {
-    }
+    private string removeads = "testver2Name";
     public void OnPurchaseClicked(Product product)
     {
         Debug.Log($"on purchasing success: {product.definition.id}");
@@ -27,24 +24,13 @@ public class IAPManager : MonoBehaviour
         }
         if (product.definition.id == removeads)
         {
-            SaveGame.SaveRemoveAds();
-            Debug.Log("test function check non consumable" + SaveGame.removeAds);
-            // Handle the non-consumable purchase completion
-        }
-    }
+            bool checkBuy = true;
+            DatabaseManager.SaveData(DatabaseManager.DatabaseKey.RemoveAds, checkBuy);
+            Debug.Log(checkBuy);
 
-    public void OnRestoreRemoveAds(bool success,string error)
-    {
-            Debug.Log($"restore: {success}\n:error: {error}");
-        if (success)
-        {
-            Debug.Log(removeads);
-            SaveGame.SaveRemoveAds();
+            //SaveGame.SaveRemoveAds();
+            //Debug.Log("test function check non consumable" + SaveGame.removeAds);
             // Handle the non-consumable purchase completion
-        }
-        else
-        {
-            Debug.LogError($"restore with error: {error}");
         }
     }
     public void FailPurchaseOnclick(Product product, PurchaseFailureReason purchaseFailureReason)
@@ -53,6 +39,6 @@ public class IAPManager : MonoBehaviour
     }
     public void BuyCoins(int value)
     {
-        SaveGame.SaveCoins(value);
+        DatabaseManager.CoinsGame(value);
     }
 }

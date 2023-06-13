@@ -1198,6 +1198,7 @@ MonoBehaviour:
   Removeads: {fileID: 1501900095}
   scoreText: {fileID: 2057204899}
   bestScoreText: {fileID: 616421181}
+  bestScore: 0
 --- !u!114 &956667649
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1579,7 +1580,7 @@ PrefabInstance:
     - target: {fileID: 3616061061829411938, guid: ed3b4c01baf488e4c86280cdd2e62b58,
         type: 3}
       propertyPath: productId
-      value: testver2
+      value: testver2Name
       objectReference: {fileID: 0}
     - target: {fileID: 3616061061829411962, guid: ed3b4c01baf488e4c86280cdd2e62b58,
         type: 3}
@@ -2229,6 +2230,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: GameController
+      objectReference: {fileID: 0}
+    - target: {fileID: 8893341635945334014, guid: 9b5b2e2178108154a9db4dd8460ec509,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8893341635945334015, guid: 9b5b2e2178108154a9db4dd8460ec509,
         type: 3}

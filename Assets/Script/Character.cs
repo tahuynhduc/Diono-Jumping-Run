@@ -9,94 +9,77 @@ using UnityEngine.UI;
 public class Character : MonoBehaviour
 {
     int check;
-    SaveGame saveGame;
     [SerializeField] TextMeshProUGUI SelectedCharacterOne;
     [SerializeField] GameObject SelectCharacterOne;
 
     [SerializeField] TextMeshProUGUI priceCharacterTwo;
     [SerializeField] GameObject SelectCharacterTwo;
-    int characterTwo;
+    bool characterTwo;
 
     [SerializeField] TextMeshProUGUI priceCharacterThree;
     [SerializeField] GameObject SelectCharacterThree;
-    int characterThree;
+    bool characterThree;
 
     [SerializeField] TextMeshProUGUI priceCharacterFour;
     [SerializeField] GameObject SelectCharacterFour;
-    int characterFour;
+    bool characterFour;
 
     [SerializeField] TextMeshProUGUI priceCharacterFive;
     [SerializeField] GameObject SelectCharacterFive;
-    int characterFive;
+    bool characterFive;
 
     [SerializeField] TextMeshProUGUI priceCharacterSix;
     [SerializeField] GameObject SelectCharacterSix;
-    int characterSix;
+    bool characterSix;
 
     [SerializeField] TextMeshProUGUI priceCharacterSeven;
     [SerializeField] GameObject SelectCharacterSeven;
-    int characterSeven;
+    bool characterSeven;
 
     [SerializeField] GameObject BuyCharacterPanel;
+    int coinsGame;
     void Start()
     {
-        check = PlayerPrefs.GetInt("checkCharacter", 1);
-        characterTwo = PlayerPrefs.GetInt("characterTwo", 0);
-        characterThree = PlayerPrefs.GetInt("characterThree", 0);
-        characterFour = PlayerPrefs.GetInt("characterFour", 0);
-        characterFive = PlayerPrefs.GetInt("characterFive", 0);
-        characterSix = PlayerPrefs.GetInt("characterSix", 0);
-        characterSeven = PlayerPrefs.GetInt("characterSeven", 0);
+        check = DatabaseManager.LoadData<int>(DatabaseManager.DatabaseKey.chooseCharacter);
+        characterTwo = DatabaseManager.LoadData<bool>(DatabaseManager.DatabaseKey.CharacterTwo);
+        characterThree = DatabaseManager.LoadData<bool>(DatabaseManager.DatabaseKey.CharacterThree);
+        characterFour = DatabaseManager.LoadData<bool>(DatabaseManager.DatabaseKey.CharacterFour);
+        characterFive = DatabaseManager.LoadData<bool>(DatabaseManager.DatabaseKey.CharacterFive);
+        characterSix = DatabaseManager.LoadData<bool>(DatabaseManager.DatabaseKey.CharacterSix);
+        characterSeven = DatabaseManager.LoadData<bool>(DatabaseManager.DatabaseKey.CharacterSeven);
+        coinsGame = DatabaseManager.LoadData<int>(DatabaseManager.DatabaseKey.CoinsGame);
         chooseCharacter();
-        if (characterTwo >= 2 )
+        BuyedCharacter();
+    }
+    private void BuyedCharacter()
+    {
+        if (characterTwo)
         {
             priceCharacterTwo.text = "Select";
         }
-        if (characterTwo == 0)
-        {
-            priceCharacterTwo.text = "1000";
-        }
-        if (characterThree >= 3)
+        if (characterThree)
         {
             priceCharacterThree.text = "Select";
+
         }
-        if (characterThree == 0)
-        {
-            priceCharacterThree.text = "2000";
-        }
-        if (characterFour >= 4)
+        if (characterFour)
         {
             priceCharacterFour.text = "Select";
         }
-        if (characterFour == 0)
-        {
-            priceCharacterFour.text = "3000";
-        }
-        if (characterFive >= 5)
+        if (characterFive)
         {
             priceCharacterFive.text = "Select";
         }
-        if (characterFive == 0)
-        {
-            priceCharacterFive.text = "4000";
-        }
-        if (characterSix >= 6)
+        if (characterSix)
         {
             priceCharacterSix.text = "Select";
         }
-        if (characterSix == 0)
-        {
-            priceCharacterSix.text = "5000";
-        }
-        if (characterSeven >= 7)
+        if (characterSeven)
         {
             priceCharacterSeven.text = "Select";
         }
-        if (characterSeven == 0)
-        {
-            priceCharacterSeven.text = "6000";
-        }
     }
+
     public void ShowCharacterPanel()
     {
         BuyCharacterPanel.SetActive(true);
@@ -105,117 +88,95 @@ public class Character : MonoBehaviour
     {
         if (check == 1)
         {
-            PlayerPrefs.SetInt("checkCharacter", check);
             chooseCharacter();
         }
         if (check == 2)
         {
-            if (characterTwo == check && priceCharacterTwo.text == "1000" && SaveGame.coinsGame >= 1000)
+            if (characterTwo == false && coinsGame >= 2000)
             {
-                SaveGame.coinsGame -= 1000;
-                chooseCharacter();
+                coinsGame -= 2000;
                 priceCharacterTwo.text = "Select";
-                PlayerPrefs.SetInt("characterTwo", characterTwo);
-                PlayerPrefs.SetInt("checkCharacter", check);
+                characterTwo = true;
             }
-            if (characterSeven == check && priceCharacterTwo.text == "Select")
+            if (characterTwo)
             {
                 chooseCharacter();
-                PlayerPrefs.SetInt("characterTwo", characterTwo);
-                PlayerPrefs.SetInt("checkCharacter", check);
             }
         }
         if (check == 3)
         {
-            if (characterThree == check && priceCharacterThree.text == "2000" && SaveGame.coinsGame >= 2000)
+            if (characterThree = false && coinsGame >= 3000)
             {
-                SaveGame.coinsGame -= 2000;
-                chooseCharacter();
+                coinsGame -= 3000;
                 priceCharacterThree.text = "Select";
-                PlayerPrefs.SetInt("checkCharacter", check);
-                PlayerPrefs.SetInt("characterThree", characterThree);
+                characterThree = true;
             }
-            if (characterSeven == check && priceCharacterThree.text == "Select")
+            if (characterThree)
             {
-                PlayerPrefs.SetInt("checkCharacter", check);
-                PlayerPrefs.SetInt("characterThree", characterThree);
                 chooseCharacter();
             }
         }
         if (check == 4)
         {
-            if (characterFour == check && priceCharacterFour.text == "3000" && SaveGame.coinsGame >= 3000)
+            if (characterFour = false && coinsGame >= 4000)
             {
-                SaveGame.coinsGame -= 3000;
-                chooseCharacter();
+                coinsGame -= 4000;
                 priceCharacterFour.text = "Select";
-                PlayerPrefs.SetInt("checkCharacter", check);
-                PlayerPrefs.SetInt("characterFour", characterFour);
-                PlayerPrefs.Save();
+                characterFour = true;
             }
-            if (characterSeven == check && priceCharacterFour.text == "Select")
+            if (characterFour)
             {
-                PlayerPrefs.SetInt("checkCharacter", check);
-                PlayerPrefs.SetInt("characterFour", characterFour);
                 chooseCharacter();
             }
         }
         if (check == 5)
         {
-            if (characterFive == check && priceCharacterFive.text == "4000" && SaveGame.coinsGame >= 4000)
+            if (characterFive = false && coinsGame >= 5000)
             {
-                SaveGame.coinsGame -= 4000;
-                chooseCharacter();
+                coinsGame -= 5000;
                 priceCharacterFive.text = "Select";
-                PlayerPrefs.SetInt("checkCharacter", check);
-                PlayerPrefs.SetInt("characterFive", characterFive);
-                PlayerPrefs.Save();
+                characterFive = true;
             }
-            if (characterSeven == check && priceCharacterFive.text == "Select")
+            if (characterFive)
             {
-                PlayerPrefs.SetInt("checkCharacter", check);
-                PlayerPrefs.SetInt("characterFive", characterFive);
                 chooseCharacter();
             }
         }
         if (check == 6)
         {
-            if (characterSix == check && priceCharacterSix.text == "5000" && SaveGame.coinsGame >= 5000)
+            if (characterSix = false && coinsGame >= 6000)
             {
-                SaveGame.coinsGame -= 5000;
-                chooseCharacter();
+                coinsGame -= 6000;
                 priceCharacterSix.text = "Select";
-                PlayerPrefs.SetInt("checkCharacter", check);
-                PlayerPrefs.SetInt("characterSix", characterSix);
-                PlayerPrefs.Save();
+                characterSix = true;
             }
-            if (characterSeven == check && priceCharacterSix.text == "Select")
+            if (characterSix)
             {
-                PlayerPrefs.SetInt("checkCharacter", check);
-                PlayerPrefs.SetInt("characterSix", characterSix);
                 chooseCharacter();
             }
         }
         if (check == 7)
         {
-            if (characterSeven == check && priceCharacterSeven.text == "6000" && SaveGame.coinsGame >= 6000)
+            if (characterSeven = false && coinsGame >= 7000)
             {
-                SaveGame.coinsGame -= 6000;
-                chooseCharacter();
+                coinsGame -= 7000;
                 priceCharacterSeven.text = "Select";
-                PlayerPrefs.SetInt("checkCharacter", check);
-                PlayerPrefs.SetInt("characterSeven", characterSeven);
-                PlayerPrefs.Save();
+                characterSeven = true;
             }
-            if (characterSeven == check && priceCharacterSeven.text == "Select")
+            if (characterSeven)
             {
-                PlayerPrefs.SetInt("checkCharacter", check);
-                PlayerPrefs.SetInt("characterSeven", characterSeven);
                 chooseCharacter();
             }
         }
+        DatabaseManager.SaveData(DatabaseManager.DatabaseKey.CoinsGame,coinsGame);
+        DatabaseManager.SaveData(DatabaseManager.DatabaseKey.CharacterTwo, characterTwo);
+        DatabaseManager.SaveData(DatabaseManager.DatabaseKey.CharacterThree, characterThree);
+        DatabaseManager.SaveData(DatabaseManager.DatabaseKey.CharacterFour, characterFour);
+        DatabaseManager.SaveData(DatabaseManager.DatabaseKey.CharacterFive, characterFive);
+        DatabaseManager.SaveData(DatabaseManager.DatabaseKey.CharacterSix, characterSix);
+        DatabaseManager.SaveData(DatabaseManager.DatabaseKey.CharacterSeven, characterSeven);
+        DatabaseManager.SaveData(DatabaseManager.DatabaseKey.chooseCharacter,check);
         BuyCharacterPanel.SetActive(false);
-        PlayerPrefs.Save();
     }
     public void NoBtn()
     {
@@ -223,6 +184,16 @@ public class Character : MonoBehaviour
     }
     private void chooseCharacter()
     {
+        if (check == 1)
+        {
+            SelectCharacterOne.SetActive(false);
+            SelectCharacterTwo.SetActive(true);
+            SelectCharacterThree.SetActive(true);
+            SelectCharacterFour.SetActive(true);
+            SelectCharacterFive.SetActive(true);
+            SelectCharacterSix.SetActive(true);
+            SelectCharacterSeven.SetActive(true);
+        }
         if (check == 2)
         {
             SelectCharacterOne.SetActive(true);
@@ -284,25 +255,9 @@ public class Character : MonoBehaviour
             SelectCharacterSix.SetActive(true);
             SelectCharacterSeven.SetActive(false);
         }
-        if (check == 1)
-        {
-            SelectCharacterOne.SetActive(false);
-            SelectCharacterTwo.SetActive(true);
-            SelectCharacterThree.SetActive(true);
-            SelectCharacterFour.SetActive(true);
-            SelectCharacterFive.SetActive(true);
-            SelectCharacterSix.SetActive(true);
-            SelectCharacterSeven.SetActive(true);
-        }
     }
     public void checkCharacter(int value)
     {
         check = value;
-        characterTwo = value;
-        characterThree = value;
-        characterFour = value;
-        characterFive = value;
-        characterSix = value;
-        characterSeven = value;
     }
 }

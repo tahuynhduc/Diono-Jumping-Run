@@ -342,8 +342,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1536316466}
-        m_TargetAssemblyTypeName: SelectMap, Assembly-CSharp
+      - m_Target: {fileID: 1536316467}
+        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
         m_MethodName: CheckMap
         m_Mode: 3
         m_Arguments:
@@ -1009,8 +1009,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1536316466}
-        m_TargetAssemblyTypeName: SelectMap, Assembly-CSharp
+      - m_Target: {fileID: 1536316467}
+        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
         m_MethodName: CheckMap
         m_Mode: 3
         m_Arguments:
@@ -1698,8 +1698,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1536316466}
-        m_TargetAssemblyTypeName: SelectMap, Assembly-CSharp
+      - m_Target: {fileID: 1536316467}
+        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
         m_MethodName: CheckMap
         m_Mode: 3
         m_Arguments:
@@ -2003,8 +2003,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1536316466}
-        m_TargetAssemblyTypeName: SelectMap, Assembly-CSharp
+      - m_Target: {fileID: 1536316467}
+        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
         m_MethodName: CheckMap
         m_Mode: 3
         m_Arguments:
@@ -2272,8 +2272,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1536316466}
-        m_TargetAssemblyTypeName: SelectMap, Assembly-CSharp
+      - m_Target: {fileID: 1536316467}
+        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
         m_MethodName: CheckMap
         m_Mode: 3
         m_Arguments:

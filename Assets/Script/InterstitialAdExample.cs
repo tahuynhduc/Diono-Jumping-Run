@@ -6,8 +6,6 @@ public class InterstitialAdExample : MonoBehaviour, IUnityAdsLoadListener, IUnit
     [SerializeField] string _androidAdUnitId = "Interstitial_Android";
     [SerializeField] string _iOsAdUnitId = "Interstitial_iOS";
     string _adUnitId;
-    UimanagerNormal uimanager;
-    public bool unContinue = false;
 
     void Awake()
     {
@@ -15,14 +13,10 @@ public class InterstitialAdExample : MonoBehaviour, IUnityAdsLoadListener, IUnit
         _adUnitId = (Application.platform == RuntimePlatform.IPhonePlayer)
             ? _iOsAdUnitId
             : _androidAdUnitId;
-        if (SaveGame.removeAds != 1)
-        {
-            LoadAd();
-        }
+        LoadAd();
     }
     private void Start()
     {
-        uimanager = FindAnyObjectByType<UimanagerNormal>();
     }
     // Load content to the Ad Unit:
     public void LoadAd()
@@ -54,7 +48,6 @@ public class InterstitialAdExample : MonoBehaviour, IUnityAdsLoadListener, IUnit
 
     public void OnUnityAdsShowFailure(string _adUnitId, UnityAdsShowError error, string message)
     {
-        uimanager.ShowGameOver();
         Debug.Log($"Error showing Ad Unit {_adUnitId}: {error.ToString()} - {message}");
         // Optionally execute code if the Ad Unit fails to show, such as loading another ad.
     }
@@ -67,21 +60,5 @@ public class InterstitialAdExample : MonoBehaviour, IUnityAdsLoadListener, IUnit
     {
         LoadAd();
     }
-    public void SkipAd()
-    {
-        if (unContinue == false)
-        {
-            uimanager.PopupAds.SetActive(false);
-            unContinue = true;
-            if(SaveGame.removeAds != 1)
-            {
-                ShowAd();
-                uimanager.continueButton();
-            }
-            if (SaveGame.removeAds == 1)
-            {
-                uimanager.continueButton();
-            }
-        }
-    }
+  
 }

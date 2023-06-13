@@ -141,7 +141,6 @@
     <Compile Include="Assets\GooglePlayGames\Platforms\PlayGamesClientFactory.cs" />
     <Compile Include="Assets\GooglePlayGames\GameInfo.cs" />
     <Compile Include="Assets\GooglePlayGames\ISocialPlatform\PlayGamesLocalUser.cs" />
-    <Compile Include="Assets\Script\SelectMap.cs" />
     <Compile Include="Assets\GooglePlayGames\BasicApi\Events\IEventsClient.cs" />
     <Compile Include="Assets\GooglePlayGames\BasicApi\Player.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />

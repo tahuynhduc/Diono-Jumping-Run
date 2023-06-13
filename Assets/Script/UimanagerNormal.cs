@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -11,7 +12,7 @@ public class UimanagerNormal : MonoBehaviour
     public GameObject pausePanel;
     public GameObject pauseButton;
     public GameObject GameoverPanel, VictoriPanel;
-    public Text CoinsText;
+    public TextMeshProUGUI CoinsText;
     public Slider Slider;
     public GameObject PopupAds;
 
@@ -19,25 +20,26 @@ public class UimanagerNormal : MonoBehaviour
     float unlockStateDesert;
     float unlockStateGraveyard;
     float unlockStateSnow;
-    public float valueSlider;
+    public float TargetLevel;
     public float Timedown;
     private bool gameOver = false;
     private bool pause = false;
+    bool unContinue;
     InterstitialAdExample interstitialAdExample;
 
     // Start is called before the first frame update
     private void Awake()
     {
-        Time.timeScale = 1;
-        unlockState = PlayerPrefs.GetFloat("unlockState", unlockState);
-        unlockStateDesert = PlayerPrefs.GetFloat("unlockStateDesert", unlockStateDesert);
-        unlockStateGraveyard = PlayerPrefs.GetFloat("unlockStateGraveyard", unlockStateGraveyard);
-        unlockStateSnow = PlayerPrefs.GetFloat("unlockStateSnow", unlockStateSnow);
-        valueSlider = PlayerPrefs.GetFloat("valueSlider", valueSlider);
+        TargetLevel = DatabaseManager.LoadData<float>(DatabaseManager.DatabaseKey.TargetLevel);
+        unlockState =DatabaseManager.LoadData<float>(DatabaseManager.DatabaseKey.unlockState);
+        unlockStateDesert =DatabaseManager.LoadData<float>(DatabaseManager.DatabaseKey.unlockStateDesert);
+        unlockStateGraveyard = DatabaseManager.LoadData<float>(DatabaseManager.DatabaseKey.unlockStateGraveyard);
+        unlockStateSnow = DatabaseManager.LoadData<float>(DatabaseManager.DatabaseKey.unlockStateSnow);
         interstitialAdExample = FindAnyObjectByType<InterstitialAdExample>();
-        Slider.maxValue = valueSlider;
-        Slider.value = valueSlider;
+        Slider.maxValue = TargetLevel;
+        Slider.value = TargetLevel;
         Slider.minValue = 0;
+        Time.timeScale = 1;
     }
     void Update()
     {
@@ -60,26 +62,39 @@ public class UimanagerNormal : MonoBehaviour
     }
     public void ShowCoinsText()
     {
-        CoinsText.text = SaveGame.coinsGame.ToString();
+        CoinsText.text = DatabaseManager.coinsGame.ToString();
     }
     public void ShowPopup()
     {
-        Time.timeScale = 0;
-        if (interstitialAdExample.unContinue)
+        if (unContinue)
             PopupAds.SetActive(false);
         else
             PopupAds.SetActive(true);
     }
-    public void HidenPopup()
+    public void ContinueWith10Coins()
+    {
+        if (DatabaseManager.coinsGame >= 10 && unContinue == false)
+        {
+            DatabaseManager.coinsGame -= 10;
+            unContinue = true;
+            continueButton();
+        }
+    }
+    public void hidenPopup()
     {
         PopupAds.SetActive(false);
     }
-    public void ContinueWith10Coins()
+    public void SkipAd()
     {
-        if (SaveGame.coinsGame >= 10 && interstitialAdExample.unContinue == false)
+        if (unContinue == false)
         {
-            SaveGame.coinsGame = SaveGame.coinsGame - 10;
-            interstitialAdExample.unContinue = true;
+            bool checkBuy = DatabaseManager.LoadData<bool>(DatabaseManager.DatabaseKey.RemoveAds);
+            unContinue = true;
+            hidenPopup();
+            if (checkBuy == false)
+            {
+                interstitialAdExample.ShowAd();
+            }
             continueButton();
         }
     }
@@ -105,7 +120,7 @@ public class UimanagerNormal : MonoBehaviour
     }
     public void continueButton()
     {
-        PopupAds.SetActive(false);
+        hidenPopup();
         Time.timeScale = 1;
         gameOver = false;
         GameoverPanel.SetActive(false);
@@ -116,29 +131,32 @@ public class UimanagerNormal : MonoBehaviour
     public void NextButton()
     {
         SceneManager.LoadScene("GameplayNormal");
-        valueSlider += 20;
-        PlayerPrefs.SetFloat("valueSlider", valueSlider);
-        if (SaveGame.checkmap == 1 && unlockState < valueSlider)
+        TargetLevel += 20;
+        int checkMap = DatabaseManager.LoadData<int>(DatabaseManager.DatabaseKey.SaveMap);
+        switch (checkMap)
         {
-            unlockState = valueSlider;
-            PlayerPrefs.SetFloat("unlockState", unlockState);
+            case 1:
+                if (unlockState < TargetLevel)
+                    unlockState = TargetLevel;
+                break;
+            case 2:
+                if (unlockStateDesert < TargetLevel)
+                    unlockStateDesert = TargetLevel;
+                break;
+            case 3:
+                if (unlockStateGraveyard < TargetLevel)
+                    unlockStateGraveyard = TargetLevel;
+                break;
+            case 4:
+                if (unlockStateSnow < TargetLevel)
+                    unlockStateSnow = TargetLevel;
+                break;
         }
-        if (SaveGame.checkmap == 2 && unlockStateDesert < valueSlider)
-        {
-            unlockStateDesert = valueSlider;
-            PlayerPrefs.SetFloat("unlockStateDesert", unlockStateDesert);
-        }
-        if (SaveGame.checkmap == 3 && unlockStateGraveyard < valueSlider)
-        {
-            unlockStateGraveyard = valueSlider;
-            PlayerPrefs.SetFloat("unlockStateGraveyard", unlockStateGraveyard);
-        }
-        if (SaveGame.checkmap == 4 && unlockStateSnow < valueSlider)
-        {
-            unlockStateSnow = valueSlider;
-            PlayerPrefs.SetFloat("unlockStateSnow", unlockStateSnow);
-        }
-        PlayerPrefs.Save();
+        DatabaseManager.SaveData(DatabaseManager.DatabaseKey.TargetLevel, TargetLevel);
+        DatabaseManager.SaveData(DatabaseManager.DatabaseKey.unlockState, unlockState);
+        DatabaseManager.SaveData(DatabaseManager.DatabaseKey.unlockStateDesert, unlockStateDesert);
+        DatabaseManager.SaveData(DatabaseManager.DatabaseKey.unlockStateGraveyard, unlockStateGraveyard);
+        DatabaseManager.SaveData(DatabaseManager.DatabaseKey.unlockStateSnow, unlockStateSnow);
     }
     #endregion
 }

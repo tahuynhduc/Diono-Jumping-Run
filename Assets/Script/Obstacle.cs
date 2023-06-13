@@ -11,7 +11,7 @@ public class Obstacle : MonoBehaviour
     Uimanager UiEndless;
     UimanagerNormal UiNormal;
     InterstitialAdExample interstitialAdExample;
-    AdsInitializer adsInitializer;
+    //AdsInitializer adsInitializer;
 
     private int removeAds;
     // Start is called before the first frame update
@@ -22,7 +22,7 @@ public class Obstacle : MonoBehaviour
         UiEndless = Uimanager.FindObjectOfType<Uimanager>();
         UiNormal = UimanagerNormal.FindObjectOfType<UimanagerNormal>();
         interstitialAdExample = FindAnyObjectByType<InterstitialAdExample>();
-        adsInitializer = FindAnyObjectByType<AdsInitializer>();
+        //adsInitializer = FindAnyObjectByType<AdsInitializer>();
     }
 
     // Update is called once per frame
@@ -34,25 +34,23 @@ public class Obstacle : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            adsInitializer.OnInitializationComplete();
+            //adsInitializer.OnInitializationComplete();
             Time.timeScale = 0;
-            if(SaveGame.saveMode == 1)
+            bool checkBuy = DatabaseManager.LoadData<bool>(DatabaseManager.DatabaseKey.RemoveAds);
+            bool checkMode = DatabaseManager.LoadData<bool>(DatabaseManager.DatabaseKey.CheckMode);
+            if(checkMode)
             {
-                interstitialAdExample.ShowAd();
                 UiEndless.ShowGameOver();
-                if (SaveGame.removeAds != 1)
-                {
-                    interstitialAdExample.ShowAd();
-                }
             }
             else
             {
                 UiNormal.ShowPopup();
                 UiNormal.ShowGameOver();
-                if (SaveGame.removeAds != 1)
-                {
-                    interstitialAdExample.ShowAd();
-                }
+            }
+            if (checkBuy == false)
+            {
+                interstitialAdExample.ShowAd();
+
             }
         }
         else if (collision.gameObject.CompareTag("GameController"))

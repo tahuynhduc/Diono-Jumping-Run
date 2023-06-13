@@ -1,7 +1,9 @@
+using System;
 using UnityEngine;
 
 public class DatabaseManager : MonoBehaviour
 {
+    public static int coinsGame;
     private void Start()
     {
         bool loadedHighScore = LoadData<bool>(DatabaseKey.CheckShop);
@@ -16,20 +18,42 @@ public class DatabaseManager : MonoBehaviour
         GameLevel,
         RemoveAds,
         CheckShop,
-        CheckCharacter,
-        EndlessMode,
-        NormalMode
+        CheckMode,
+        CoinsGame,
+        CharacterOne,
+        CharacterTwo,
+        CharacterThree,
+        CharacterFour,
+        CharacterFive,
+        CharacterSix,
+        CharacterSeven,
+        chooseCharacter,
+        SaveMap,
+        BestScore,
+        TargetLevel,
+        unlockState,
+        unlockStateDesert,
+        unlockStateGraveyard,
+        unlockStateSnow
     }
 
     // Generic method to save data to PlayerPrefs
     public static void SaveData<T>(DatabaseKey key, T data)
     {
         string keyString = key.ToString();
-        string dataString = JsonUtility.ToJson(data);
+        string dataString = string.Empty;
+        if (typeof(T).IsPrimitive)
+        {
+            dataString = data.ToString();
+        }
+        else
+        {
+            dataString = JsonUtility.ToJson(data);
+        }
         PlayerPrefs.SetString(keyString, dataString);
         PlayerPrefs.Save();
+        Debug.Log($"Save: {keyString}: {dataString}");
     }
-
     // Generic method to load data from PlayerPrefs
     public static T LoadData<T>(DatabaseKey key)
     {
@@ -37,23 +61,51 @@ public class DatabaseManager : MonoBehaviour
         if (PlayerPrefs.HasKey(keyString))
         {
             string dataString = PlayerPrefs.GetString(keyString);
-            return JsonUtility.FromJson<T>(dataString);
+            Debug.Log($"Load: {keyString}: {dataString}");
+            if (typeof(T).IsPrimitive)
+            {
+                return (T)Convert.ChangeType(dataString, typeof(T));
+            }
+            else
+            {
+                return JsonUtility.FromJson<T>(dataString);
+            }
         }
         else
         {
+            Debug.Log($"Load: {keyString}: default");
             return default(T);
         }
     }
+    public static void CoinsGame(int value)
+    {
+        coinsGame += value;
+        SaveData(DatabaseKey.CoinsGame,coinsGame);
+    }
     public void Shop()
     {
-        bool check = true;
-        SaveData(DatabaseKey.CheckShop, check);
+        bool shop = true;
+        SaveData(DatabaseKey.CheckShop, shop);
     }
     public void Character()
     {
-        bool check = false;
-        SaveData(DatabaseKey.CheckShop, check);
-        Debug.Log(check);
+        bool character = false;
+        SaveData(DatabaseKey.CheckShop, character);
+    }
+    public void Endless()
+    {
+        bool endless = true;
+        SaveData(DatabaseKey.CheckMode, endless);
+    }
+    public void Normal()
+    {
+        bool normal = false;
+        SaveData(DatabaseKey.CheckMode, normal);
+    }
+    public void SaveRemoveAds()
+    {
+        bool removeAds = true;
+        SaveData(DatabaseKey.RemoveAds, removeAds);
     }
     // Example usage
     public static void ExampleUsage()
@@ -68,7 +120,7 @@ public class DatabaseManager : MonoBehaviour
 
         // Save player name
         string playerName = "John Doe";
-        SaveData(DatabaseKey.PlayerName, playerName);
+        //SaveData(DatabaseKey.PlayerName, playerName);
 
         // Load player name
         string loadedPlayerName = LoadData<string>(DatabaseKey.PlayerName);

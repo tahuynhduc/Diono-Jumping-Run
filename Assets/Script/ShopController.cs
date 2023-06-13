@@ -11,21 +11,15 @@ public class ShopController : MonoBehaviour
     public TextMeshProUGUI CharacterViewText;
     public GameObject CoinsView;
     public GameObject CharacterView;
-    private void Awake()
-    {
-    }
     void Start()
     {
-        Debug.Log(SaveGame.loadshop);
-        //bool checkShop = DatabaseManager.LoadData<bool>(DatabaseManager.DatabaseKey.CheckShop);
-        //string loadedPlayerName = DatabaseManager.LoadData<string>(DatabaseManager.DatabaseKey.PlayerName);
-        //Debug.Log(checkShop);
-        //Debug.Log(loadedPlayerName);
-        if (SaveGame.loadshop == 1)
+        bool checkShop = DatabaseManager.LoadData<bool>(DatabaseManager.DatabaseKey.CheckShop);
+        Debug.Log(checkShop);
+        if (checkShop)
         {
             ShowCoinsView();
         }
-        if (SaveGame.loadshop == 2)
+        if (checkShop == false)
         {
             ShowCharacterView();
         }
@@ -33,7 +27,7 @@ public class ShopController : MonoBehaviour
     private void Update()
     {
         CoinsText.fontStyle = FontStyles.Bold;
-        CoinsText.text = SaveGame.coinsGame.ToString();
+        CoinsText.text = DatabaseManager.coinsGame.ToString();
     }
     public void ShowCoinsView()
     {
@@ -49,9 +43,5 @@ public class ShopController : MonoBehaviour
         CharacterViewText.fontStyle = FontStyles.Underline;
         CoinsView.SetActive(false);
         CharacterView.SetActive(true);
-    }
-    public void BuyCoins()
-    {
-        SaveGame.SaveCoins(1000);
     }
 }

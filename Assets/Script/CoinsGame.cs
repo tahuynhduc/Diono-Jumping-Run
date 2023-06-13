@@ -7,6 +7,7 @@ public class CoinsGame : MonoBehaviour
 {
     Rigidbody2D coins;
     public float moveSpeed;
+    int coin;
 
     // Start is called before the first frame update
     void Start()
@@ -22,7 +23,7 @@ public class CoinsGame : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            SaveGame.SaveCoins(1);
+            DatabaseManager.CoinsGame(1);
             EasyObjectPool.instance.ReturnObjectToPool(gameObject);
 
         }
@@ -31,5 +32,4 @@ public class CoinsGame : MonoBehaviour
             EasyObjectPool.instance.ReturnObjectToPool(gameObject);
         }
     }
-
 }

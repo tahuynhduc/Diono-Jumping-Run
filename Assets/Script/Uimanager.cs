@@ -17,7 +17,7 @@ public class Uimanager : MonoBehaviour
     public Text bestScoreText;
 
     private int score;
-    public long bestScore;
+    long bestScore;
     private bool gameOver = false;
     private bool pause = false;
    
@@ -50,19 +50,10 @@ public class Uimanager : MonoBehaviour
         }
     }
     #region  score
-    public int scoreEndless()
-    {
-        return score = 0;
-    }
     public void ShowScore()
     {
         score++;
         scoreText.text = "Score: " + score;
-    }
-    public void zeroScore()
-    {
-        scoreEndless();
-        scoreText.text = "Score: " ;
     }
     #endregion
 
@@ -103,7 +94,6 @@ public class Uimanager : MonoBehaviour
         GameOverPanel.SetActive(false);
         pausePanel.SetActive(false);
         pause = false;
-        zeroScore();
         Time.timeScale = 1;
     }
     public void continueButton()
