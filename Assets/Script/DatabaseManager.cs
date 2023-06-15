@@ -20,21 +20,15 @@ public class DatabaseManager : MonoBehaviour
         CheckShop,
         CheckMode,
         CoinsGame,
-        CharacterOne,
-        CharacterTwo,
-        CharacterThree,
-        CharacterFour,
-        CharacterFive,
-        CharacterSix,
-        CharacterSeven,
-        chooseCharacter,
         SaveMap,
         BestScore,
         TargetLevel,
         unlockState,
         unlockStateDesert,
         unlockStateGraveyard,
-        unlockStateSnow
+        unlockStateSnow,
+        chooseCharacter
+       
     }
 
     // Generic method to save data to PlayerPrefs
@@ -42,7 +36,8 @@ public class DatabaseManager : MonoBehaviour
     {
         string keyString = key.ToString();
         string dataString = string.Empty;
-        if (typeof(T).IsPrimitive)
+        var datatType = typeof(T);
+        if (datatType != typeof(object) )
         {
             dataString = data.ToString();
         }
@@ -61,8 +56,9 @@ public class DatabaseManager : MonoBehaviour
         if (PlayerPrefs.HasKey(keyString))
         {
             string dataString = PlayerPrefs.GetString(keyString);
+            var datatType = typeof(T);
             Debug.Log($"Load: {keyString}: {dataString}");
-            if (typeof(T).IsPrimitive)
+            if (datatType != typeof(object))
             {
                 return (T)Convert.ChangeType(dataString, typeof(T));
             }
