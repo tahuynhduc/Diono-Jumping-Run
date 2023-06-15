@@ -28,24 +28,25 @@ public class GameController : MonoBehaviour
     {
         GameObject character;
         int check = DatabaseManager.LoadData<int>(DatabaseManager.DatabaseKey.chooseCharacter);
+        Debug.Log(check);
         switch (check)
         {
-            case 1:
+            case 0:
                 character = Instantiate(Resources.Load<GameObject>("Prefab/Character/Dino01_Sprite"), new Vector3(Random.Range(-13.5f, -13.5f), 7f, 0), Quaternion.identity);
                 break;
-            case 2:
+            case 1:
                 character = Instantiate(Resources.Load<GameObject>("Prefab/Character/Dino02_Sprite"), new Vector3(Random.Range(-12.37f, -12.37f), 7f, 0), Quaternion.identity);
                 break;
-            case 3:
+            case 2:
                 character = Instantiate(Resources.Load<GameObject>("Prefab/Character/Dino03_Sprite"), new Vector3(Random.Range(-12.7f, -12.7f), 7f, 0), Quaternion.identity);
                 break;
-            case 4:
+            case 3:
                 character = Instantiate(Resources.Load<GameObject>("Prefab/Character/Dino04_Sprite"), new Vector3(Random.Range(-12.74917f, -12.74917f), 7f, 0), Quaternion.identity);
                 break;
-            case 5:
+            case 4:
                 character = Instantiate(Resources.Load<GameObject>("Prefab/Character/Dino05_Sprite"), new Vector3(Random.Range(-12.55422f, -12.55422f), 7f, 0), Quaternion.identity);
                 break;
-            case 6:
+            case 5:
                 character = Instantiate(Resources.Load<GameObject>("Prefab/Character/Dino06_Sprite"), new Vector3(Random.Range(-12.35927f, -12.35927f), -7f, 0), Quaternion.identity);
                 break;
         }
