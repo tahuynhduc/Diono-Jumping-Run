@@ -88,7 +88,6 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshProFloatingText.cs" />
     <Compile Include="Assets\GooglePlayGames\BasicApi\SignInInteractivity.cs" />
     <Compile Include="Assets\GooglePlayGames\OurUtils\Misc.cs" />
-    <Compile Include="Assets\Script\CharacterShopItem.cs" />
     <Compile Include="Assets\GooglePlayGames\BasicApi\SavedGame\SavedGameMetadataUpdate.cs" />
     <Compile Include="Assets\GooglePlayGames\Platforms\Android\AndroidHelperFragment.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeB.cs" />
@@ -135,7 +134,7 @@
     <Compile Include="Assets\Script\Uimanager.cs" />
     <Compile Include="Assets\GooglePlayGames\Platforms\Android\AndroidJavaConverter.cs" />
     <Compile Include="Assets\Script\MoreScene.cs" />
-    <Compile Include="Assets\Script\CharacterShopManager.cs" />
+    <Compile Include="Assets\Script\Character.cs" />
     <Compile Include="Assets\GooglePlayGames\Platforms\Android\AndroidTaskUtils.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshSpawner.cs" />
     <Compile Include="Assets\GooglePlayGames\BasicApi\Nearby\DummyNearbyConnectionClient.cs" />
