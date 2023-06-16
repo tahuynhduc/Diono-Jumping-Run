@@ -29,25 +29,25 @@ public class CharacterShopItem : MonoBehaviour
         var text = string.Empty;
         if (isSlected)
         {
-            if (DatabaseManager.coinsGame >= data.price)
-            {
-                DatabaseManager.coinsGame -= data.price;
-                data.price = 0;
-                selectButton.SetActive(false);
-                data.hasBought = true;
-                text = "Selected";
-            }
+
+            DatabaseManager.coinsGame -= data.price;
+            data.price = 0;
+            data.hasBought = true;
+            selectButton.SetActive(false);
+            text = "Selected";
 
         }
         else if (data.hasBought)
         {
-            selectButton.SetActive(true);
             text = "Select";
+            selectButton.SetActive(true);
         }
-        else
+        else if (data.hasBought == false)
         {
+            print("check else:" + text);
             text = data.price.ToString();
             Debug.Log("price: " + text);
+            selectButton.SetActive(true);
         }
         lable.text = text;
     }

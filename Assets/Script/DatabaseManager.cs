@@ -37,7 +37,7 @@ public class DatabaseManager : MonoBehaviour
         string keyString = key.ToString();
         string dataString = string.Empty;
         var datatType = typeof(T);
-            if (datatType.IsPrimitive || datatType == typeof(string)) 
+        if (datatType.IsPrimitive || datatType == typeof(string))
         {
             dataString = data.ToString();
         }
@@ -50,16 +50,17 @@ public class DatabaseManager : MonoBehaviour
         Debug.Log($"Save: {keyString}: {dataString}");
     }
     // Generic method to load data from PlayerPrefs
-    public static T LoadData<T>(DatabaseKey key)
+    public static T LoadData<T>(DatabaseKey key, string defaultValue = "")
     {
         string keyString = key.ToString();
-        if (PlayerPrefs.HasKey(keyString))
+        string dataString = PlayerPrefs.GetString(keyString, defaultValue);
+        if (PlayerPrefs.HasKey(keyString) || !string.IsNullOrEmpty(dataString))
         {
-            string dataString = PlayerPrefs.GetString(keyString);
             Debug.Log($"Load: {keyString}: {dataString}");
             var datatType = typeof(T);
-            if (datatType.IsPrimitive || datatType == typeof(string)) 
+            if (datatType.IsPrimitive || datatType == typeof(string))
             {
+                Debug.Log($"string data: {dataString}");
                 return (T)Convert.ChangeType(dataString, typeof(T));
             }
             else
@@ -76,7 +77,7 @@ public class DatabaseManager : MonoBehaviour
     public static void CoinsGame(int value)
     {
         coinsGame += value;
-        SaveData(DatabaseKey.CoinsGame,coinsGame);
+        SaveData(DatabaseKey.CoinsGame, coinsGame);
     }
     public void Shop()
     {

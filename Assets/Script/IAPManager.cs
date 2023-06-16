@@ -16,11 +16,12 @@ public class IAPManager : MonoBehaviour
         Debug.Log($"on purchasing success: {product.definition.id}");
         if (product.definition.id == productone)
         {
-            BuyCoins(250);
+            DatabaseManager.coinsGame =0;
+            // BuyCoins(250);
         }
         if (product.definition.id == producttwo)
         {
-            BuyCoins(500);
+            BuyCoins(5000);
         }
         if (product.definition.id == removeads)
         {
