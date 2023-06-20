@@ -4,12 +4,6 @@ using UnityEngine;
 public class DatabaseManager : MonoBehaviour
 {
     public static int coinsGame;
-    private void Start()
-    {
-        bool loadedHighScore = LoadData<bool>(DatabaseKey.CheckShop);
-        Debug.Log("High Score: " + loadedHighScore);
-
-    }
     // Enum to define the keys for PlayerPrefs
     public enum DatabaseKey
     {
@@ -28,7 +22,10 @@ public class DatabaseManager : MonoBehaviour
         unlockStateGraveyard,
         unlockStateSnow,
         chooseCharacter,
-        characterListData
+        characterListData,
+        mucsicGame,
+        soundGame,
+        defaultAudio
     }
 
     // Generic method to save data to PlayerPrefs

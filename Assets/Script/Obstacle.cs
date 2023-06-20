@@ -63,8 +63,4 @@ public class Obstacle : MonoBehaviour
             EasyObjectPool.instance.ReturnObjectToPool(gameObject);
         }
     }
-  
-
-
-
 }

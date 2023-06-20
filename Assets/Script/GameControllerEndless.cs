@@ -5,5 +5,4 @@ using UnityEngine;
 
 public class GameControllerEndless : GameController
 {
-
 }

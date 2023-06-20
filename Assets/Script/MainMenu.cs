@@ -8,11 +8,11 @@ public class MainMenu : MonoBehaviour
     public void QuitButton()
     {
         QuitPanel.SetActive(true);
-        SaveGame.SaveCoins(0);
+        DatabaseManager.CoinsGame(0);
     }
     public void NoQuitGameButton()
     {
         QuitPanel.SetActive(false);
-        SaveGame.SaveCoins(0);
+        DatabaseManager.CoinsGame(0);
     }
 }

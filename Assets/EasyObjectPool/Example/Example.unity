@@ -156,7 +156,7 @@ MonoBehaviour:
   poolInfo:
   - poolName: ModelPool
     prefab: {fileID: 113036, guid: 771dc836b79c04bb983971851e396124, type: 3}
-    poolSize: 1
+    poolSize: 0
     fixedSize: 0
 --- !u!4 &16474699
 Transform:
@@ -696,6 +696,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   poolName: ModelPool
+  goList: []
 --- !u!4 &1049737156
 Transform:
   m_ObjectHideFlags: 0

@@ -6,7 +6,7 @@ using System.Collections.Generic;
 public class Example : MonoBehaviour {
 	
 	public string poolName;
-	List<GameObject> goList = new List<GameObject>();
+	[SerializeField] List<GameObject> goList = new List<GameObject>();
 	
 	public void CreateFromPoolAction() {
 		GameObject go = EasyObjectPool.instance.GetObjectFromPool(poolName,Vector3.zero,Quaternion.identity);

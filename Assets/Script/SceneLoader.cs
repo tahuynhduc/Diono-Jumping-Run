@@ -13,7 +13,7 @@ public class SceneLoader : MonoBehaviour
         //GAME_SCENE scene = GAME_SCENE.ShopScene;
         SceneManager.LoadScene(scene);
         Time.timeScale = 1.0f;
-        SaveGame.SaveCoins(0);
+        DatabaseManager.CoinsGame(0);
     }
     public void CheckMap(int value)
     {

@@ -10,10 +10,10 @@ public class Player : MonoBehaviour
     public float jump;
     private Animator animate;
     private bool checkJump;
-    private int checkSound;
+    bool soundGame;
     void Start()
     {
-        checkSound = PlayerPrefs.GetInt("checkMusic",0);
+        soundGame = DatabaseManager.LoadData<bool>(DatabaseManager.DatabaseKey.soundGame);
         music = FindAnyObjectByType<SettingMusic>();
         rb = GetComponent<Rigidbody2D>();
         animate = GetComponent<Animator>();
@@ -23,15 +23,14 @@ public class Player : MonoBehaviour
         if (Input.anyKeyDown && checkJump == true)
         {
             rb.velocity = Vector3.up * jump;
-            if(checkSound == 2)
+            if(soundGame)
             {
                 music.OnSound();
             }
-            if(checkSound == 1) 
+            else 
             {
                 music.OffSound();
             }
-            Debug.Log("Test");
         }
     }
     private void OnCollisionEnter2D(Collision2D collision)

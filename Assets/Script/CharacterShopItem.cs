@@ -7,35 +7,29 @@ public class CharacterShopItem : MonoBehaviour
     public ShopItemData data;
     public TextMeshProUGUI lable;
     public GameObject selectButton;
-    private bool isSlected = false;
-
-
+    private Action<ShopItemData> _onClickCallback;
     private void Start()
     {
         UpdateUI();
     }
-    public void SetData(ShopItemData shopItemData, bool isSlected)
+    public void SetData(ShopItemData shopItemData, Action<ShopItemData> callback)
     {
+        Debug.Log("Set Data function is running...");
         data = shopItemData;
-        this.isSlected = isSlected;
-        // DatabaseManager.SaveData(DatabaseManager.DatabaseKey.characterListData, data);
+        _onClickCallback = callback;
         UpdateUI();
     }
 
     private void UpdateUI()
     {
+        Debug.Log("Update UI function is running...");
         if (data == null)
             return;
         var text = string.Empty;
-        if (isSlected)
+        if (data.isSelected)
         {
-
-            DatabaseManager.coinsGame -= data.price;
-            data.price = 0;
-            data.hasBought = true;
             selectButton.SetActive(false);
             text = "Selected";
-
         }
         else if (data.hasBought)
         {
@@ -44,12 +38,13 @@ public class CharacterShopItem : MonoBehaviour
         }
         else if (data.hasBought == false)
         {
-            print("check else:" + text);
             text = data.price.ToString();
-            Debug.Log("price: " + text);
-            selectButton.SetActive(true);
         }
         lable.text = text;
+    }
+    public void OnClickButton()
+    {
+        _onClickCallback?.Invoke(data);
     }
 
 }
@@ -58,4 +53,5 @@ public class ShopItemData
 {
     public int price;
     public bool hasBought;
+    public bool isSelected;
 }

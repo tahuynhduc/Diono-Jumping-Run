@@ -9,14 +9,22 @@ public class GameController : MonoBehaviour
 {
     public float timeSpawn;
     private float spawn;
-    public string obstacleForest;
-    public string obstacleDesert;
-    public string obstacleCity;
-    public string obstacleMars;
-    public string obstacleSnow;
+    // public string obstacleForest;
+    // public string obstacleDesert;
+    // public string obstacleCity;
+    // public string obstacleMars;
+    // public string obstacleSnow;
+    int checkMap;
+    int check;
+    [SerializeField] List<string> dataObstacle;
     List<GameObject> listObstacle = new List<GameObject>();
+    [SerializeField] List<GameObject> dataCharacters;
+    [SerializeField] List<GameObject> dataBackgrounds;
+
     private void Start()
     {
+        checkMap = DatabaseManager.LoadData<int>(DatabaseManager.DatabaseKey.SaveMap);
+        check = DatabaseManager.LoadData<int>(DatabaseManager.DatabaseKey.chooseCharacter);
         CheckCharacter();
         CreateParallax();
     }
@@ -27,29 +35,7 @@ public class GameController : MonoBehaviour
     private void CheckCharacter()
     {
         GameObject character;
-        int check = DatabaseManager.LoadData<int>(DatabaseManager.DatabaseKey.chooseCharacter);
-        Debug.Log(check);
-        switch (check)
-        {
-            case 0:
-                character = Instantiate(Resources.Load<GameObject>("Prefab/Character/Dino01_Sprite"), new Vector3(Random.Range(-13.5f, -13.5f), 7f, 0), Quaternion.identity);
-                break;
-            case 1:
-                character = Instantiate(Resources.Load<GameObject>("Prefab/Character/Dino02_Sprite"), new Vector3(Random.Range(-12.37f, -12.37f), 7f, 0), Quaternion.identity);
-                break;
-            case 2:
-                character = Instantiate(Resources.Load<GameObject>("Prefab/Character/Dino03_Sprite"), new Vector3(Random.Range(-12.7f, -12.7f), 7f, 0), Quaternion.identity);
-                break;
-            case 3:
-                character = Instantiate(Resources.Load<GameObject>("Prefab/Character/Dino04_Sprite"), new Vector3(Random.Range(-12.74917f, -12.74917f), 7f, 0), Quaternion.identity);
-                break;
-            case 4:
-                character = Instantiate(Resources.Load<GameObject>("Prefab/Character/Dino05_Sprite"), new Vector3(Random.Range(-12.55422f, -12.55422f), 7f, 0), Quaternion.identity);
-                break;
-            case 5:
-                character = Instantiate(Resources.Load<GameObject>("Prefab/Character/Dino06_Sprite"), new Vector3(Random.Range(-12.35927f, -12.35927f), -7f, 0), Quaternion.identity);
-                break;
-        }
+        character = Instantiate(dataCharacters[check]);
     }
     public void RandomObstacle()
     {
@@ -63,53 +49,13 @@ public class GameController : MonoBehaviour
     public void CreateParallax()
     {
         GameObject parallax;
-        int checkMap = DatabaseManager.LoadData<int>(DatabaseManager.DatabaseKey.SaveMap);
-        switch (checkMap)
-        {
-            case 1:
-                parallax = Instantiate(Resources.Load<GameObject>("Prefab/Parallax/ParallaxForest"), new Vector3(Random.Range(0, 0), 0, 0), Quaternion.identity);
-                break;
-            case 2:
-                parallax = Instantiate(Resources.Load<GameObject>("Prefab/Parallax/ParallaxForest"), new Vector3(Random.Range(0, 0), 0, 0), Quaternion.identity);
-                break;
-            case 3:
-                parallax = Instantiate(Resources.Load<GameObject>("Prefab/Parallax/ParallaxForest"), new Vector3(Random.Range(0, 0), 0, 0), Quaternion.identity);
-                break;
-            case 4:
-                parallax = Instantiate(Resources.Load<GameObject>("Prefab/Parallax/ParallaxForest"), new Vector3(Random.Range(0, 0), 0, 0), Quaternion.identity);
-                break;
-            case 5:
-                parallax = Instantiate(Resources.Load<GameObject>("Prefab/Parallax/ParallaxForest"), new Vector3(Random.Range(0, 0), 0, 0), Quaternion.identity);
-                break;
-
-        }
+        parallax = Instantiate(dataBackgrounds[0]);
+        //parallax is not complete because just made a parallax
     }
     public void CreateFromPoolAction()
     {
         GameObject obstacle;
-        int checkMap = DatabaseManager.LoadData<int>(DatabaseManager.DatabaseKey.SaveMap);
-        switch (checkMap)
-        {
-            case 1:
-                obstacle = EasyObjectPool.instance.GetObjectFromPool(obstacleForest, new Vector3(Random.Range(22, 22), -6.027962f, 0), Quaternion.identity);
-                listObstacle.Add(obstacle);
-                break;
-            case 2:
-                obstacle = EasyObjectPool.instance.GetObjectFromPool(obstacleDesert, new Vector3(Random.Range(22, 22), -6f, 0), Quaternion.identity);
-                listObstacle.Add(obstacle);
-                break;
-            case 3:
-                obstacle = EasyObjectPool.instance.GetObjectFromPool(obstacleCity, new Vector3(Random.Range(22, 22), -6.1f, 0), Quaternion.identity);
-                listObstacle.Add(obstacle);
-                break;
-            case 4:
-                obstacle = EasyObjectPool.instance.GetObjectFromPool(obstacleMars, new Vector3(Random.Range(22, 22), -6f, 0), Quaternion.identity);
-                listObstacle.Add(obstacle);
-                break;
-            case 5:
-                obstacle = EasyObjectPool.instance.GetObjectFromPool(obstacleSnow, new Vector3(Random.Range(22, 22), -6f, 0), Quaternion.identity);
-                listObstacle.Add(obstacle);
-                break;
-        }
+        obstacle = EasyObjectPool.instance.GetObjectFromPool(dataObstacle[checkMap],new Vector3(Random.Range(22, 22), -6.027962f, 0), Quaternion.identity);
+        listObstacle.Add(obstacle);
     }
 }
