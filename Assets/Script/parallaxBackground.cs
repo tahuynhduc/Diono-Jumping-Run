@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class parallaxBackground : MonoBehaviour
 {
-    public float speedView;
+    [SerializeField] float speedView;
 
     private Renderer renderer;
 

@@ -7,22 +7,30 @@ using UnityEngine.UI;
 
 public class SceneLoader : MonoBehaviour
 {
-    //public void LoadScene()
+
+    public static bool checkMode;
+    public static bool checkShop;
+    public static int selectMap;
     public void LoadScene(string scene)
     {
-        //GAME_SCENE scene = GAME_SCENE.ShopScene;
         SceneManager.LoadScene(scene);
-        Time.timeScale = 1.0f;
         DatabaseManager.CoinsGame(0);
     }
     public void CheckMap(int value)
     {
-        int checkMap = value;
-        DatabaseManager.SaveData(DatabaseManager.DatabaseKey.SaveMap,checkMap);
+        selectMap = value;
+    }
+    public void CheckShop(bool check)
+    {
+        checkShop = check;
+    }
+    public void CheckMode(bool check)
+    {
+        checkMode = check;
     }
     public void LoadGameplay()
     {
-        bool checkMode = DatabaseManager.LoadData<bool>(DatabaseManager.DatabaseKey.CheckMode);
+
         if (checkMode)
         {
             LoadScene("GameplayEndless");

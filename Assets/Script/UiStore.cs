@@ -4,22 +4,25 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ShopController : MonoBehaviour
+public class UiStore : MonoBehaviour
 {
-    public TextMeshProUGUI CoinsText;
-    public TextMeshProUGUI CoinsViewText;
-    public TextMeshProUGUI CharacterViewText;
-    public GameObject CoinsView;
-    public GameObject CharacterView;
+    [SerializeField] TextMeshProUGUI CoinsText;
+    [SerializeField] TextMeshProUGUI CoinsViewText;
+    [SerializeField] TextMeshProUGUI CharacterViewText;
+    [SerializeField] GameObject CoinsView;
+    [SerializeField] GameObject CharacterView;
     void Start()
     {
-        var checkShop = DatabaseManager.LoadData<bool>(DatabaseManager.DatabaseKey.CheckShop);
-        Debug.Log(checkShop);
-        if (checkShop)
+        CheckShowUi();
+    }
+
+    private void CheckShowUi()
+    {
+        if (SceneLoader.checkShop)
         {
             ShowCoinsView();
         }
-        if (checkShop == false)
+        if (SceneLoader.checkShop == false)
         {
             ShowCharacterView();
         }
@@ -42,6 +45,5 @@ public class ShopController : MonoBehaviour
         CharacterViewText.fontStyle = FontStyles.Underline;
         CoinsView.SetActive(false);
         CharacterView.SetActive(true);
-
     }
 }

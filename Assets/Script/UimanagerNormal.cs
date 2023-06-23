@@ -9,89 +9,67 @@ using UnityEngine.UI;
 
 public class UimanagerNormal : MonoBehaviour
 {
-    public GameObject pausePanel;
-    public GameObject pauseButton;
-    public GameObject GameoverPanel, VictoriPanel;
-    public TextMeshProUGUI CoinsText;
-    public Slider Slider;
-    public GameObject PopupAds;
-
-    float unlockState;
-    float unlockStateDesert;
-    float unlockStateGraveyard;
-    float unlockStateSnow;
-    public float TargetLevel;
-    public float Timedown;
-    private bool gameOver = false;
-    private bool pause = false;
-    bool unContinue;
+    [SerializeField] GameObject pausePanel;
+    [SerializeField] GameObject pauseButton;
+    [SerializeField] GameObject GameoverPanel, VictoriPanel;
+    [SerializeField] TextMeshProUGUI CoinsText;
+    [SerializeField] Slider Slider;
+    [SerializeField] GameObject PopupAds;
     InterstitialAdExample interstitialAdExample;
+    GameControllerNormal gameControllerNormal;
 
-    // Start is called before the first frame update
-    private void Awake()
+    private void Start()
     {
-        TargetLevel = DatabaseManager.LoadData<float>(DatabaseManager.DatabaseKey.TargetLevel);
-        unlockState =DatabaseManager.LoadData<float>(DatabaseManager.DatabaseKey.unlockState);
-        unlockStateDesert =DatabaseManager.LoadData<float>(DatabaseManager.DatabaseKey.unlockStateDesert);
-        unlockStateGraveyard = DatabaseManager.LoadData<float>(DatabaseManager.DatabaseKey.unlockStateGraveyard);
-        unlockStateSnow = DatabaseManager.LoadData<float>(DatabaseManager.DatabaseKey.unlockStateSnow);
-        interstitialAdExample = FindAnyObjectByType<InterstitialAdExample>();
-        Slider.maxValue = TargetLevel;
-        Slider.value = TargetLevel;
-        Slider.minValue = 0;
-        Time.timeScale = 1;
+        ReferenceObject();
     }
+
+    private void ReferenceObject()
+    {
+        interstitialAdExample = FindAnyObjectByType<InterstitialAdExample>();
+        gameControllerNormal = FindAnyObjectByType<GameControllerNormal>();
+        Slider.maxValue = gameControllerNormal.target;
+        Slider.value = gameControllerNormal.target;
+        Slider.minValue = 0;
+    }
+
     void Update()
     {
         ShowCoinsText();
+        ShowStateGameplay();
+    }
+    private void ShowStateGameplay()
+    {
         Slider.value -= Time.deltaTime;
         if (Slider.value <= 0)
         {
-            Time.timeScale = 0;
+            gameControllerNormal.StateGame(0);
             VictoriPanel.SetActive(true);
         }
-        if (pause)
-        {
-            Time.timeScale = 0;
-        }
-        if (gameOver)
-        {
-            Time.timeScale = 0;
-            pauseButton.SetActive(false);
-        }
     }
+
     public void ShowCoinsText()
     {
         CoinsText.text = DatabaseManager.coinsGame.ToString();
     }
     public void ShowPopup()
     {
-        if (unContinue)
+        if (gameControllerNormal.unContinue)
             PopupAds.SetActive(false);
         else
             PopupAds.SetActive(true);
     }
-    public void ContinueWith10Coins()
-    {
-        if (DatabaseManager.coinsGame >= 10 && unContinue == false)
-        {
-            DatabaseManager.coinsGame -= 10;
-            unContinue = true;
-            continueButton();
-        }
-    }
+   
     public void hidenPopup()
     {
         PopupAds.SetActive(false);
     }
     public void SkipAd()
     {
-        if (unContinue == false)
+        if (gameControllerNormal.unContinue == false)
         {
-            bool checkBuy = DatabaseManager.LoadData<bool>(DatabaseManager.DatabaseKey.RemoveAds);
-            unContinue = true;
+            gameControllerNormal.unContinue = true;
             hidenPopup();
-            if (checkBuy == false)
+            if (gameControllerNormal.checkBuy == false)
             {
                 interstitialAdExample.ShowAd();
             }
@@ -99,64 +77,34 @@ public class UimanagerNormal : MonoBehaviour
         }
     }
     #region state game
-
     public void ShowGameOver()
     {
+        gameControllerNormal.StateGame(0);
+        pauseButton.SetActive(false);
         GameoverPanel.SetActive(true);
-        gameOver = true;
     }
     public void ShowPauseButton()
     {
+        gameControllerNormal.StateGame(0);
         pausePanel.SetActive(true);
-        pause = true;
     }
     public void replayButton()
     {
-        SceneManager.LoadScene("GameplayNormal");
-        gameOver = false;
+        gameControllerNormal.gameOver = false;
         GameoverPanel.SetActive(false);
         pausePanel.SetActive(false);
-        pause = false;
+        gameControllerNormal.pause = false;
+        SceneManager.LoadScene("GameplayNormal");
     }
     public void continueButton()
     {
         hidenPopup();
-        Time.timeScale = 1;
-        gameOver = false;
+        gameControllerNormal.StateGame(1);
+        gameControllerNormal.gameOver = false;
         GameoverPanel.SetActive(false);
         pausePanel.SetActive(false);
         pauseButton.SetActive(true);
-        pause = false;
-    }
-    public void NextButton()
-    {
-        SceneManager.LoadScene("GameplayNormal");
-        TargetLevel += 20;
-        int checkMap = DatabaseManager.LoadData<int>(DatabaseManager.DatabaseKey.SaveMap);
-        switch (checkMap)
-        {
-            case 1:
-                if (unlockState < TargetLevel)
-                    unlockState = TargetLevel;
-                break;
-            case 2:
-                if (unlockStateDesert < TargetLevel)
-                    unlockStateDesert = TargetLevel;
-                break;
-            case 3:
-                if (unlockStateGraveyard < TargetLevel)
-                    unlockStateGraveyard = TargetLevel;
-                break;
-            case 4:
-                if (unlockStateSnow < TargetLevel)
-                    unlockStateSnow = TargetLevel;
-                break;
-        }
-        DatabaseManager.SaveData(DatabaseManager.DatabaseKey.TargetLevel, TargetLevel);
-        DatabaseManager.SaveData(DatabaseManager.DatabaseKey.unlockState, unlockState);
-        DatabaseManager.SaveData(DatabaseManager.DatabaseKey.unlockStateDesert, unlockStateDesert);
-        DatabaseManager.SaveData(DatabaseManager.DatabaseKey.unlockStateGraveyard, unlockStateGraveyard);
-        DatabaseManager.SaveData(DatabaseManager.DatabaseKey.unlockStateSnow, unlockStateSnow);
+        gameControllerNormal.pause = false;
     }
     #endregion
 }

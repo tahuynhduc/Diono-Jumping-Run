@@ -11,21 +11,15 @@ public class DatabaseManager : MonoBehaviour
         PlayerName,
         GameLevel,
         RemoveAds,
-        CheckShop,
-        CheckMode,
         CoinsGame,
-        SaveMap,
         BestScore,
         TargetLevel,
-        unlockState,
-        unlockStateDesert,
-        unlockStateGraveyard,
-        unlockStateSnow,
+        listLevel,
+        listMap,
         chooseCharacter,
         characterListData,
         mucsicGame,
         soundGame,
-        defaultAudio
     }
 
     // Generic method to save data to PlayerPrefs
@@ -76,26 +70,7 @@ public class DatabaseManager : MonoBehaviour
         coinsGame += value;
         SaveData(DatabaseKey.CoinsGame, coinsGame);
     }
-    public void Shop()
-    {
-        bool shop = true;
-        SaveData(DatabaseKey.CheckShop, shop);
-    }
-    public void Character()
-    {
-        bool character = false;
-        SaveData(DatabaseKey.CheckShop, character);
-    }
-    public void Endless()
-    {
-        bool endless = true;
-        SaveData(DatabaseKey.CheckMode, endless);
-    }
-    public void Normal()
-    {
-        bool normal = false;
-        SaveData(DatabaseKey.CheckMode, normal);
-    }
+    
     public void SaveRemoveAds()
     {
         bool removeAds = true;
@@ -114,7 +89,7 @@ public class DatabaseManager : MonoBehaviour
 
         // Save player name
         string playerName = "John Doe";
-        //SaveData(DatabaseKey.PlayerName, playerName);
+        SaveData(DatabaseKey.PlayerName, playerName);
 
         // Load player name
         string loadedPlayerName = LoadData<string>(DatabaseKey.PlayerName);

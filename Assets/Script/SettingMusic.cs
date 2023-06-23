@@ -8,11 +8,14 @@ public class SettingMusic : MonoBehaviour
     static SettingMusic instance;
     [SerializeField] AudioSource music;
     [SerializeField] AudioSource sound;
-    SettingController settingController;
-    bool mucsicGame;
-    bool soundGame;
+    public bool musicGame;
+    public bool soundGame;
+    [SerializeField] string defaultMusic;
+    [SerializeField] string defaultSound;
+
     private void Awake()
     {
+        LoadData();
         if (instance != null && instance != this)
         {
             Destroy(gameObject);
@@ -23,12 +26,16 @@ public class SettingMusic : MonoBehaviour
     }
     void Start()
     {
-        sound.clip = Resources.Load<AudioClip>("audio/AudioManager/JumpAudio");
-        music.clip = Resources.Load<AudioClip>("audio/AudioManager/MusicGame");
-        mucsicGame = DatabaseManager.LoadData<bool>(DatabaseManager.DatabaseKey.mucsicGame,mucsicGame.ToString());
-        soundGame = DatabaseManager.LoadData<bool>(DatabaseManager.DatabaseKey.soundGame, soundGame.ToString());
         MusicGame();
         SoundGame();
+    }
+
+    private void LoadData()
+    {
+        musicGame = DatabaseManager.LoadData<bool>(DatabaseManager.DatabaseKey.mucsicGame,defaultMusic);
+        soundGame = DatabaseManager.LoadData<bool>(DatabaseManager.DatabaseKey.soundGame,defaultSound);
+        sound.clip = Resources.Load<AudioClip>("audio/AudioManager/JumpAudio");
+        music.clip = Resources.Load<AudioClip>("audio/AudioManager/MusicGame");
     }
 
     private void SoundGame()
@@ -45,7 +52,7 @@ public class SettingMusic : MonoBehaviour
 
     private void MusicGame()
     {
-        if (mucsicGame == false)
+        if (musicGame == false)
         {
             OffMusic();
         }
@@ -71,5 +78,10 @@ public class SettingMusic : MonoBehaviour
     public void OnSound()
     {
         sound.Play();
+    }
+    public void SaveAudio(bool audio)
+    {
+        DatabaseManager.SaveData(DatabaseManager.DatabaseKey.mucsicGame, musicGame);
+        DatabaseManager.SaveData(DatabaseManager.DatabaseKey.soundGame, soundGame);
     }
 }

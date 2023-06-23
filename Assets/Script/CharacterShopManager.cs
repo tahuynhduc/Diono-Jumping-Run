@@ -18,13 +18,19 @@ public class CharacterShopManager : MonoBehaviour
     [SerializeField] List<CharacterShopItem> shopItems;
     [SerializeField] String DefaultValue;
 
-    ShopController shopController;
+    UiStore uiStore;
 
     private void Awake()
     {
-        shopController = FindAnyObjectByType<ShopController>();
+        LoadData();
+    }
+
+    private void LoadData()
+    {
+        uiStore = FindAnyObjectByType<UiStore>();
         shopData = DatabaseManager.LoadData<ShopData>(DatabaseManager.DatabaseKey.characterListData, DefaultValue);
     }
+
     private void OnEnable()
     {
         ShowShopItems();
@@ -83,7 +89,7 @@ public class CharacterShopManager : MonoBehaviour
     private void BuyCoin(ShopItemData shopItemData)
     {
         HideBuyCharacterPanel();
-        shopController.ShowCoinsView();
+        uiStore.ShowCoinsView();
     }
     private Action _confirmAction;
     public void ShowBuyPopup(string message, Action confirmAction)

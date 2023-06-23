@@ -7,23 +7,27 @@ public class Player : MonoBehaviour
 {
     SettingMusic music;
     Rigidbody2D rb;
-    public float jump;
+    [SerializeField] float jump;
     private Animator animate;
     private bool checkJump;
-    bool soundGame;
     void Start()
     {
-        soundGame = DatabaseManager.LoadData<bool>(DatabaseManager.DatabaseKey.soundGame);
+        LoadData();
+    }
+
+    private void LoadData()
+    {
         music = FindAnyObjectByType<SettingMusic>();
         rb = GetComponent<Rigidbody2D>();
         animate = GetComponent<Animator>();
     }
+
     void Update()
     {
         if (Input.anyKeyDown && checkJump == true)
         {
             rb.velocity = Vector3.up * jump;
-            if(soundGame)
+            if(music.soundGame)
             {
                 music.OnSound();
             }

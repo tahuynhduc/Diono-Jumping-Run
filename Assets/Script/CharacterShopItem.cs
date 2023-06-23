@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class CharacterShopItem : MonoBehaviour
 {
-    public ShopItemData data;
-    public TextMeshProUGUI lable;
-    public GameObject selectButton;
+    [SerializeField] ShopItemData data;
+    [SerializeField] TextMeshProUGUI lable;
+    [SerializeField] GameObject selectButton;
     private Action<ShopItemData> _onClickCallback;
     private void Start()
     {

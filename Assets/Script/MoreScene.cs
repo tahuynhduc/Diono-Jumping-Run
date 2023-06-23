@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MoreScene : MonoBehaviour
 {
-    public GameObject appInfo;
+    [SerializeField] GameObject appInfo;
     public void ShowAppInfo()
     {
         appInfo.SetActive(true);

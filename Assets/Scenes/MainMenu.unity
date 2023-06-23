@@ -1126,17 +1126,17 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2037380939}
-        m_TargetAssemblyTypeName: DatabaseManager, Assembly-CSharp
-        m_MethodName: Shop
-        m_Mode: 1
+      - m_Target: {fileID: 2037380938}
+        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
+        m_MethodName: CheckShop
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
       - m_Target: {fileID: 2037380938}
         m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
@@ -2197,10 +2197,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2037380939}
-        m_TargetAssemblyTypeName: DatabaseManager, Assembly-CSharp
-        m_MethodName: Character
-        m_Mode: 1
+      - m_Target: {fileID: 2037380938}
+        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
+        m_MethodName: CheckShop
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3107,6 +3107,14 @@ PrefabInstance:
     - target: {fileID: 2135369757, guid: cc0a864b2b9cf5e4bbf7459fbe958d34, type: 3}
       propertyPath: defaultAudio
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2135369757, guid: cc0a864b2b9cf5e4bbf7459fbe958d34, type: 3}
+      propertyPath: defaultMusic
+      value: True
+      objectReference: {fileID: 0}
+    - target: {fileID: 2135369757, guid: cc0a864b2b9cf5e4bbf7459fbe958d34, type: 3}
+      propertyPath: defaultSound
+      value: True
       objectReference: {fileID: 0}
     - target: {fileID: 6809206488473752121, guid: cc0a864b2b9cf5e4bbf7459fbe958d34,
         type: 3}

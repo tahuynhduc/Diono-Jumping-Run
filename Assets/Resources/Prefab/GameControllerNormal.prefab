@@ -46,13 +46,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeSpawn: 2
-  obstacleForest: ObstacleForest
-  obstacleDesert: ObstacleDesert
-  obstacleCity: ObstacleCity
-  obstacleMars: ObstacleMars
-  obstacleSnow: ObstacleSnow
+  dataObstacle:
+  - ObstacleForest
+  - ObstacleDesert
+  - ObstacleCity
+  - ObstacleMars
+  - ObstacleSnow
+  dataCharacters:
+  - {fileID: 4902641065725657591, guid: 9464cf68176421749bba153d5f5708e5, type: 3}
+  - {fileID: 6923534059238710063, guid: ff7ecef6b8ca77f4b84e87a898ccb723, type: 3}
+  - {fileID: 177637003805210413, guid: f21f3002f29e81548b0b92e7c8db1a03, type: 3}
+  - {fileID: 6792679716817216211, guid: db23cd28d36c2d6478aefe1e783afd94, type: 3}
+  - {fileID: 1934043989632965327, guid: d9b204e4c33584142b38b6ce6f4bbb71, type: 3}
+  - {fileID: 4170990041780503584, guid: 580b70f0a7d2fa745b355fac980a59f4, type: 3}
+  dataBackgrounds:
+  - {fileID: 7311063756356953654, guid: 6d16a05ffa117224ab25c71fb993133e, type: 3}
+  - {fileID: 7311063756356953654, guid: 5a4914e8169276647b39a3032e4e57eb, type: 3}
+  - {fileID: 7311063756356953654, guid: cf9882bab4117a64cb4ea39015eb2c94, type: 3}
+  - {fileID: 7311063756356953654, guid: 17092ed0d1b11ce429a41c3c7f6dc5b7, type: 3}
+  - {fileID: 7311063756356953654, guid: 8b7932c59cd912444b4ead35ebd8dfcf, type: 3}
   timeCoins: 3
   coin: Circle
+  defaultMap: '{"stages":[{"levels":[{"time":20.0,"level":0,"unlocked":true},{"time":40.0,"level":1,"unlocked":false},{"time":60.0,"level":2,"unlocked":false},{"time":80.0,"level":3,"unlocked":false},{"time":100.0,"level":4,"unlocked":false}],"stage":0,"unlocked":true},{"levels":[{"time":20.0,"level":0,"unlocked":false},{"time":40.0,"level":1,"unlocked":false},{"time":60.0,"level":2,"unlocked":false},{"time":80.0,"level":3,"unlocked":false},{"time":100.0,"level":4,"unlocked":false}],"stage":1,"unlocked":false},{"levels":[{"time":20.0,"level":0,"unlocked":false},{"time":40.0,"level":1,"unlocked":false},{"time":60.0,"level":2,"unlocked":false},{"time":80.0,"level":3,"unlocked":false},{"time":100.0,"level":4,"unlocked":false}],"stage":2,"unlocked":false},{"levels":[{"time":20.0,"level":0,"unlocked":false},{"time":40.0,"level":1,"unlocked":false},{"time":60.0,"level":2,"unlocked":false},{"time":80.0,"level":3,"unlocked":false},{"time":100.0,"level":4,"unlocked":false}],"stage":3,"unlocked":false},{"levels":[{"time":20.0,"level":0,"unlocked":false},{"time":40.0,"level":1,"unlocked":false},{"time":60.0,"level":2,"unlocked":false},{"time":80.0,"level":3,"unlocked":false},{"time":100.0,"level":4,"unlocked":false}],"stage":4,"unlocked":false}]}'
+  target: 0
 --- !u!61 &5716273589906801494
 BoxCollider2D:
   m_ObjectHideFlags: 0

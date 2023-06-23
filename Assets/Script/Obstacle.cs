@@ -7,22 +7,21 @@ using UnityEngine.SocialPlatforms.Impl;
 public class Obstacle : MonoBehaviour
 {
     Rigidbody2D rb;
-    public float moveSpeed;
-    Uimanager UiEndless;
-    UimanagerNormal UiNormal;
+    [SerializeField] float moveSpeed;
+    UimanagerEndless uimanagerEndless;
+    GameControllerEndless gameControllerEndless;
+    UimanagerNormal uimanagerNormal;
     InterstitialAdExample interstitialAdExample;
-    //AdsInitializer adsInitializer;
 
     private int removeAds;
-    // Start is called before the first frame update
     
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        UiEndless = Uimanager.FindObjectOfType<Uimanager>();
-        UiNormal = UimanagerNormal.FindObjectOfType<UimanagerNormal>();
+        uimanagerEndless = FindObjectOfType<UimanagerEndless>();
+        gameControllerEndless = FindAnyObjectByType<GameControllerEndless>();
+        uimanagerNormal = FindObjectOfType<UimanagerNormal>();
         interstitialAdExample = FindAnyObjectByType<InterstitialAdExample>();
-        //adsInitializer = FindAnyObjectByType<AdsInitializer>();
     }
 
     // Update is called once per frame
@@ -34,28 +33,27 @@ public class Obstacle : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            //adsInitializer.OnInitializationComplete();
             Time.timeScale = 0;
             bool checkBuy = DatabaseManager.LoadData<bool>(DatabaseManager.DatabaseKey.RemoveAds);
-            bool checkMode = DatabaseManager.LoadData<bool>(DatabaseManager.DatabaseKey.CheckMode);
-            if(checkMode)
-            {
-                UiEndless.ShowGameOver();
-            }
-            else
-            {
-                UiNormal.ShowPopup();
-                UiNormal.ShowGameOver();
-            }
             if (checkBuy == false)
             {
                 interstitialAdExample.ShowAd();
-
+            }
+            if(SceneLoader.checkMode)
+            {
+                uimanagerEndless.ShowBestScore();
+                uimanagerEndless.ShowGameOver();
+            }
+            else if(SceneLoader.checkMode)
+            {
+                uimanagerNormal.ShowPopup();
+                uimanagerNormal.ShowGameOver();
             }
         }
         else if (collision.gameObject.CompareTag("GameController"))
         {
-            UiEndless.ShowScore();
+            gameControllerEndless.score++;
+            uimanagerEndless.ShowScore();
             EasyObjectPool.instance.ReturnObjectToPool(gameObject);
         }
         else if (collision.gameObject.CompareTag("DestroyObstacle"))

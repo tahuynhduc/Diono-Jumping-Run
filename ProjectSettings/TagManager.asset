@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Uimanager
+  - Ground
+  - DestroyObstacle
+  - Obstacle
   layers:
   - Default
   - TransparentFX

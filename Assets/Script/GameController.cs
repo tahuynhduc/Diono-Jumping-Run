@@ -7,35 +7,29 @@ using UnityEngine.UIElements;
 
 public class GameController : MonoBehaviour
 {
-    public float timeSpawn;
+    [SerializeField] float timeSpawn;
     private float spawn;
-    // public string obstacleForest;
-    // public string obstacleDesert;
-    // public string obstacleCity;
-    // public string obstacleMars;
-    // public string obstacleSnow;
-    int checkMap;
-    int check;
+    int createCharacter;
     [SerializeField] List<string> dataObstacle;
     List<GameObject> listObstacle = new List<GameObject>();
     [SerializeField] List<GameObject> dataCharacters;
     [SerializeField] List<GameObject> dataBackgrounds;
 
-    private void Start()
+    private void Awake()
     {
-        checkMap = DatabaseManager.LoadData<int>(DatabaseManager.DatabaseKey.SaveMap);
-        check = DatabaseManager.LoadData<int>(DatabaseManager.DatabaseKey.chooseCharacter);
-        CheckCharacter();
+        Time.timeScale = 1;
+        createCharacter = DatabaseManager.LoadData<int>(DatabaseManager.DatabaseKey.chooseCharacter);
+        CreateCharacter();
         CreateParallax();
     }
     void Update()
     {
         RandomObstacle();
     }
-    private void CheckCharacter()
+    private void CreateCharacter()
     {
         GameObject character;
-        character = Instantiate(dataCharacters[check]);
+        character = Instantiate(dataCharacters[createCharacter]);
     }
     public void RandomObstacle()
     {
@@ -55,7 +49,11 @@ public class GameController : MonoBehaviour
     public void CreateFromPoolAction()
     {
         GameObject obstacle;
-        obstacle = EasyObjectPool.instance.GetObjectFromPool(dataObstacle[checkMap],new Vector3(Random.Range(22, 22), -6.027962f, 0), Quaternion.identity);
+        obstacle = EasyObjectPool.instance.GetObjectFromPool(dataObstacle[SceneLoader.selectMap],new Vector3(Random.Range(22, 22), -6.027962f, 0), Quaternion.identity);
         listObstacle.Add(obstacle);
+    }
+    public void StateGame(int value)
+    {
+        Time.timeScale = value;
     }
 }

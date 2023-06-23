@@ -6,8 +6,7 @@ using UnityEngine;
 public class CoinsGame : MonoBehaviour
 {
     Rigidbody2D coins;
-    public float moveSpeed;
-    int coin;
+    [SerializeField] float moveSpeed;
 
     // Start is called before the first frame update
     void Start()

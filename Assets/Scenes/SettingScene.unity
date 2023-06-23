@@ -207,7 +207,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 731274433}
-        m_TargetAssemblyTypeName: SettingController, Assembly-CSharp
+        m_TargetAssemblyTypeName: UiSettings, Assembly-CSharp
         m_MethodName: MusicGame
         m_Mode: 6
         m_Arguments:
@@ -340,7 +340,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 731274433}
-        m_TargetAssemblyTypeName: SettingController, Assembly-CSharp
+        m_TargetAssemblyTypeName: UiSettings, Assembly-CSharp
         m_MethodName: SoundGame
         m_Mode: 6
         m_Arguments:
@@ -652,7 +652,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 731274428}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1124ae3fdfc0a354bab5630ec054f684, type: 3}
+  m_Script: {fileID: 11500000, guid: 16ab80f3c8d28b74e916ed2b400b7f87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   onMusic: {fileID: 229962751}
@@ -821,7 +821,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 731274433}
-        m_TargetAssemblyTypeName: SettingController, Assembly-CSharp
+        m_TargetAssemblyTypeName: UiSettings, Assembly-CSharp
         m_MethodName: MusicGame
         m_Mode: 6
         m_Arguments:
@@ -1114,7 +1114,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 731274433}
-        m_TargetAssemblyTypeName: SettingController, Assembly-CSharp
+        m_TargetAssemblyTypeName: UiSettings, Assembly-CSharp
         m_MethodName: SoundGame
         m_Mode: 6
         m_Arguments:
